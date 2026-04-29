@@ -282,39 +282,51 @@ const Slides: SlideData[] = [
   },
   {
     title: "La douleur terrain",
-    notes: "Chiffres documentés et études de cas sur le downtime pharmaceutique.",
-    transition: "Pour rendre ce problème concret, nous avons choisi un cas d’usage précis : l’autoclave M02.",
+    notes: "Au-delà des chiffres financiers, la réalité quotidienne est marquée par des frictions opérationnelles majeures : rapports papiers, délais de détection et manque de visibilité sur l'Audit Trail.",
+    transition: "Pour transformer cette réalité, nous avons choisi un cas d’usage critique : l’autoclave M02.",
     content: (
-      <div className="h-full flex flex-col items-center justify-center text-center">
-        <SlideTitle title="Documented Figures" subtitle="Downtime in Pharma: The Real Numbers" />
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-5xl">
-          <div className="bg-white rounded-3xl border border-light-gray/50 shadow-sm p-10 flex flex-col items-center">
-            <h4 className="text-lg font-bold text-primary-blue mb-4">Industry Benchmarks</h4>
-            <ul className="text-left text-sm text-dark-gray space-y-3">
-              <li>• The cost of one hour of downtime in the pharmaceutical industry ranges from <b>$100,000</b> to <b>$500,000</b> (Siemens SeaLINK report).</li>
-              <li>• 2024 analysis: <b>$30,000–$50,000</b> in standard industry, <b>over $200,000</b> in QIA applications.</li>
-              <li>• <b>Fortune 500</b> companies lose <b>$1.4 trillion</b> annually due to unplanned downtime—<b>11%</b> of their annual revenue (Siemens 2024).</li>
-              <li>• <b>Gartner 2024:</b> Predictive maintenance reduces unplanned downtime by <b>30%</b>.</li>
-              <li>• <b>McKinsey 2023 Timspark:</b> Predictive maintenance saves <b>15–25%</b> on maintenance budgets.</li>
-            </ul>
-            <div className="mt-8 text-xs text-dark-gray/60">Sources: Siemens, Gartner, McKinsey, People10, 2023–2024</div>
-          </div>
-          <div className="bg-primary-blue/5 rounded-3xl border border-primary-blue/10 shadow-sm p-10 flex flex-col items-center justify-center">
-            <h4 className="text-lg font-bold text-primary-blue mb-4">Real-World Impact</h4>
-            <p className="text-2xl font-extrabold text-primary-blue mb-2">INDUPHARMA réduit le downtime de 25 à 30%</p>
-            <p className="text-base text-dark-gray mb-4">Prouvé en milieu pharmaceutique</p>
-            <ul className="text-left text-sm text-dark-gray space-y-2 mb-4">
-              <li>• Case study: People10 + IIoT + AI → <b>–25/30% unplanned downtime</b> (2024)</li>
-            </ul>
-            <div className="flex flex-col gap-2 mt-4">
-              <span className="text-4xl font-bold text-primary-blue">$500K</span>
-              <span className="text-xs text-dark-gray/60">Max cost/hour (Siemens 2024)</span>
-              <span className="text-3xl font-bold text-primary-green mt-4">30%</span>
-              <span className="text-xs text-dark-gray/60">Downtime évitable (Gartner 2024)</span>
-              <span className="text-3xl font-bold text-primary-blue mt-4">11%</span>
-              <span className="text-xs text-dark-gray/60">CA annuel perdu Fortune 500</span>
-            </div>
-          </div>
+      <div className="h-full flex flex-col items-center justify-center">
+        <SlideTitle title="La réalité du terrain" subtitle="Frictions opérationnelles et risques de conformité" />
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
+          {[
+            { 
+              title: "Lourdeur Administrative", 
+              desc: "Rapports manuels, saisie papier et risque d'erreur humaine constant.", 
+              icon: FileText, 
+              color: "text-primary-blue bg-primary-blue/5" 
+            },
+            { 
+              title: "Angle Mort Temporel", 
+              desc: "Détection tardive des pannes et délais de communication entre services.", 
+              icon: Timer, 
+              color: "text-primary-green bg-primary-green/5" 
+            },
+            { 
+              title: "Déficit de Traçabilité", 
+              desc: "Difficulté de maintenir un Audit Trail (ALCOA+) précis sans automatisation.", 
+              icon: FileSearch, 
+              color: "text-red-500 bg-red-50" 
+            }
+          ].map((item, i) => (
+            <motion.div 
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 * i, duration: 0.5 }}
+              className="bg-white p-10 rounded-[2.5rem] border border-light-gray/60 shadow-sm flex flex-col items-center text-center transition-all hover:shadow-md hover:border-primary-blue/20"
+            >
+              <div className={`w-20 h-20 rounded-3xl flex items-center justify-center mb-8 ${item.color}`}>
+                <item.icon size={36} strokeWidth={1.5} />
+              </div>
+              <h4 className="text-xl font-bold text-main-text mb-4">{item.title}</h4>
+              <p className="text-[15px] text-dark-gray font-light leading-relaxed">
+                {item.desc}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+        <div className="mt-16 p-6 bg-bg-page/50 rounded-2xl border border-dashed border-light-gray text-dark-gray/60 text-sm italic">
+          "Un processus réactif est un processus qui coûte cher et qui risque la non-conformité."
         </div>
       </div>
     )
