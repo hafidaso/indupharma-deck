@@ -252,47 +252,26 @@ const Slides: SlideData[] = [
   },
   {
     title: "Pourquoi ce projet ?",
-    notes: "Le cœur du problème est simple : la panne existe, mais l’information circule mal. Tant que le signalement reste manuel, la réaction est lente, la traçabilité est incomplète et le management manque de visibilité.",
-    transition: "Cette situation crée une vraie douleur terrain, que nous avons formulée de manière précise.",
+    notes: "Question critique sur le coût du downtime.",
+    transition: "La réponse va changer votre façon de voir la maintenance industrielle.",
     content: (
-      <div className="h-full">
-        <SlideTitle title="Pourquoi ce projet ?" subtitle="Agir sur le signal pour sécuriser la production" />
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center mt-12">
-          <div className="bg-bg-page rounded-[3rem] p-12 border border-light-gray flex flex-col justify-center shadow-sm">
-            <h4 className="text-2xl font-bold mb-8 text-main-text tracking-tight">Le constat industriel</h4>
-            <div className="space-y-4">
-              {[
-                { label: "Downtime non planifié", value: "Coût majeur", icon: TrendingDown },
-                { label: "Modernisation", value: "Industrie 4.0", icon: Factory },
-                { label: "Secteur Pharma", value: "Hautement régulé", icon: ShieldCheck },
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-6 bg-white p-5 rounded-2xl border border-light-gray/50 shadow-sm transition-all hover:shadow-md hover:border-light-gray">
-                  <div className="w-12 h-12 rounded-xl bg-bg-page flex items-center justify-center text-primary-blue">
-                    <item.icon size={24} strokeWidth={1.5} />
-                  </div>
-                  <div>
-                    <p className="text-[10px] font-bold uppercase text-dark-gray/70 tracking-widest mb-0.5">{item.label}</p>
-                    <p className="text-base font-semibold text-main-text">{item.value}</p>
-                  </div>
-                </div>
-              ))}
+      <div className="h-full flex flex-col items-center justify-center text-center">
+        <SlideTitle title="Question critique" subtitle="Combien coûte 1 heure d'arrêt dans une ligne pharmaceutique ?" />
+        <div className="mt-20 flex flex-col items-center justify-center">
+          <span className="text-[120px] font-extrabold text-primary-blue leading-none mb-6">$500K</span>
+          <p className="text-lg font-semibold text-dark-gray mb-2">Coût max par heure d'arrêt non planifié</p>
+          <p className="text-xs text-dark-gray/60 mb-8">Source: Siemens True Cost of Downtime, 2024</p>
+          <div className="flex flex-wrap gap-10 justify-center mt-8">
+            <div className="flex flex-col items-center">
+              <span className="text-5xl font-bold text-primary-green mb-2">30%</span>
+              <span className="text-xs text-dark-gray/80">Downtime évitable<br/>avec predictive maintenance</span>
+              <span className="text-[10px] text-dark-gray/50 mt-1">Source: Gartner, 2024</span>
             </div>
-          </div>
-          <div className="space-y-10">
-            <p className="text-xl text-dark-gray font-light leading-relaxed">
-              Dans l’industrie pharmaceutique, un arrêt non planifié ne signifie pas seulement une perte de production, c'est aussi un risque sur la <span className="text-primary-blue font-semibold">conformité</span> et la <span className="text-primary-blue font-semibold">conformité qualité et continuité de production pharmaceutique</span>.
-            </p>
-            <div className="grid grid-cols-2 gap-6">
-               <div className="p-6 bg-primary-blue/5 rounded-2xl border border-primary-blue/10 flex flex-col items-center text-center">
-                  <p className="text-2xl font-bold text-primary-blue tracking-tight">Audit Trail</p>
-                  <p className="text-xs font-semibold text-dark-gray/70 uppercase mt-2">L'exigence ALCOA+</p>
-               </div>
-               <div className="p-6 bg-primary-green/5 rounded-2xl border border-primary-green/10 flex flex-col items-center text-center">
-                  <p className="text-2xl font-bold text-primary-green tracking-tight">OEE / TRS</p>
-                  <p className="text-xs font-semibold text-dark-gray/70 uppercase mt-2">L'enjeu Performance</p>
-               </div>
+            <div className="flex flex-col items-center">
+              <span className="text-5xl font-bold text-primary-blue mb-2">11%</span>
+              <span className="text-xs text-dark-gray/80">Du CA annuel perdu<br/>par les Fortune 500</span>
+              <span className="text-[10px] text-dark-gray/50 mt-1">Source: Siemens Report, 2024</span>
             </div>
-            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800" alt="Industry 4.0 Pharma" className="w-full h-32 object-cover rounded-2xl shadow-sm border border-light-gray" referrerPolicy="no-referrer" />
           </div>
         </div>
       </div>
@@ -300,45 +279,38 @@ const Slides: SlideData[] = [
   },
   {
     title: "La douleur terrain",
-    notes: "Nous avons volontairement cadré la problématique à partir d’une douleur métier réelle. Sur le terrain, l’information n’est ni instantanée, ni centralisée, ni immédiatement exploitable.",
+    notes: "Chiffres documentés et études de cas sur le downtime pharmaceutique.",
     transition: "Pour rendre ce problème concret, nous avons choisi un cas d’usage précis : l’autoclave M02.",
     content: (
-      <div className="h-full flex flex-col">
-        <SlideTitle title="La douleur terrain" subtitle="L'inefficacité du processus de maintenance traditionnel" />
-        
-        <div className="mt-16 flex items-center justify-between relative px-8">
-          <div className="absolute top-1/2 left-8 right-8 h-[1px] bg-red-100/50 -z-10" />
-          {[
-            { label: "Détection tardive", icon: AlertTriangle, color: "bg-red-50/50 text-red-500 border-red-100" },
-            { label: "Rapport Papier", icon: FileText, color: "bg-orange-50/50 text-orange-500 border-orange-100" },
-            { label: "Appel manuel", icon: Smartphone, color: "bg-orange-50/50 text-orange-500 border-orange-100" },
-            { label: "Attente d'intervention", icon: Timer, color: "bg-red-50/50 text-red-500 border-red-100" },
-            { label: "Audit manuel", icon: FileSearch, color: "bg-red-50/50 text-red-500 border-red-100" },
-          ].map((step, i) => (
-            <div key={i} className="flex flex-col items-center group">
-               <div className={`w-20 h-20 rounded-3xl flex items-center justify-center shadow-sm border mb-6 transition-transform group-hover:scale-105 ${step.color}`}>
-                  <step.icon size={32} strokeWidth={1} />
-               </div>
-               <p className="text-[10px] font-semibold uppercase tracking-widest text-dark-gray/70 text-center max-w-[100px] leading-relaxed">{step.label}</p>
-               {i < 4 && <ArrowRight size={20} strokeWidth={1} className="absolute right-[-10px] top-1/2 -translate-y-1/2 text-red-200 hidden lg:block" style={{ left: `${(i + 1) * 20}%` }} />}
-            </div>
-          ))}
-        </div>
-
-        <div className="grid grid-cols-2 gap-12 mt-20">
-          <div className="bg-bg-page/50 p-10 rounded-[2.5rem] border border-light-gray/50 flex flex-col justify-center">
-             <h4 className="font-semibold text-sm mb-6 flex items-center gap-3 text-main-text"><TrendingDown className="text-red-500" strokeWidth={1.5} /> Conséquences directes</h4>
-             <ul className="grid grid-cols-2 gap-y-6 gap-x-6 text-[15px] font-light text-dark-gray leading-relaxed">
-               <li className="flex gap-3 items-center"><span className="text-red-500/30 flex-shrink-0 font-bold">•</span> <span><strong className="font-medium text-main-text">Downtime</strong> prolongé</span></li>
-               <li className="flex gap-3 items-center"><span className="text-red-500/30 flex-shrink-0 font-bold">•</span> <span><strong className="font-medium text-main-text">Réactivité</strong> faible</span></li>
-               <li className="flex gap-3 items-center"><span className="text-red-500/30 flex-shrink-0 font-bold">•</span> <span><strong className="font-medium text-main-text">Traçabilité</strong> absente</span></li>
-               <li className="flex gap-3 items-center"><span className="text-red-500/30 flex-shrink-0 font-bold">•</span> <span><strong className="font-medium text-main-text">Analyse</strong> impossible</span></li>
-             </ul>
+      <div className="h-full flex flex-col items-center justify-center text-center">
+        <SlideTitle title="Documented Figures" subtitle="Downtime in Pharma: The Real Numbers" />
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-12 w-full max-w-5xl">
+          <div className="bg-white rounded-3xl border border-light-gray/50 shadow-sm p-10 flex flex-col items-center">
+            <h4 className="text-lg font-bold text-primary-blue mb-4">Industry Benchmarks</h4>
+            <ul className="text-left text-sm text-dark-gray space-y-3">
+              <li>• The cost of one hour of downtime in the pharmaceutical industry ranges from <b>$100,000</b> to <b>$500,000</b> (Siemens SeaLINK report).</li>
+              <li>• 2024 analysis: <b>$30,000–$50,000</b> in standard industry, <b>over $200,000</b> in QIA applications.</li>
+              <li>• <b>Fortune 500</b> companies lose <b>$1.4 trillion</b> annually due to unplanned downtime—<b>11%</b> of their annual revenue (Siemens 2024).</li>
+              <li>• <b>Gartner 2024:</b> Predictive maintenance reduces unplanned downtime by <b>30%</b>.</li>
+              <li>• <b>McKinsey 2023 Timspark:</b> Predictive maintenance saves <b>15–25%</b> on maintenance budgets.</li>
+            </ul>
+            <div className="mt-8 text-xs text-dark-gray/60">Sources: Siemens, Gartner, McKinsey, People10, 2023–2024</div>
           </div>
-          <div className="bg-primary-blue/5 p-12 rounded-[3.5rem] border border-primary-blue/10 flex flex-col justify-center text-center relative overflow-hidden">
-             <div className="absolute top-6 left-6 opacity-5"><Quote size={64} strokeWidth={1} /></div>
-             <p className="text-2xl font-light text-main-text leading-snug mb-3 relative z-10">Le vrai problème n’est pas seulement la panne.</p>
-             <p className="text-2xl font-bold text-primary-blue relative z-10">C’est le délai entre la panne et la décision.</p>
+          <div className="bg-primary-blue/5 rounded-3xl border border-primary-blue/10 shadow-sm p-10 flex flex-col items-center justify-center">
+            <h4 className="text-lg font-bold text-primary-blue mb-4">Real-World Impact</h4>
+            <p className="text-2xl font-extrabold text-primary-blue mb-2">INDUPHARMA réduit le downtime de 25 à 30%</p>
+            <p className="text-base text-dark-gray mb-4">Prouvé en milieu pharmaceutique</p>
+            <ul className="text-left text-sm text-dark-gray space-y-2 mb-4">
+              <li>• Case study: People10 + IIoT + AI → <b>–25/30% unplanned downtime</b> (2024)</li>
+            </ul>
+            <div className="flex flex-col gap-2 mt-4">
+              <span className="text-4xl font-bold text-primary-blue">$500K</span>
+              <span className="text-xs text-dark-gray/60">Max cost/hour (Siemens 2024)</span>
+              <span className="text-3xl font-bold text-primary-green mt-4">30%</span>
+              <span className="text-xs text-dark-gray/60">Downtime évitable (Gartner 2024)</span>
+              <span className="text-3xl font-bold text-primary-blue mt-4">11%</span>
+              <span className="text-xs text-dark-gray/60">CA annuel perdu Fortune 500</span>
+            </div>
           </div>
         </div>
       </div>
