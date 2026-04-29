@@ -545,6 +545,12 @@ const Slides: SlideData[] = [
       <div className="h-full flex flex-col">
         <SlideTitle title="Le moteur d’orchestration" subtitle="Fusion AI : Le coeur de l'intelligence opérationnelle" />
         
+        <div className="bg-primary-blue/5 border-l-4 border-primary-blue p-5 mb-10 rounded-r-2xl">
+          <p className="text-[15px] font-medium text-dark-gray leading-relaxed">
+            <span className="text-primary-blue font-bold">Fusion AI</span> = plateforme d'automatisation no-code qui orchestre les workflows complexes entre capteurs IoT, bases de données et équipes opérationnelles.
+          </p>
+        </div>
+
         <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
            <div className="relative flex justify-center">
               {/* Central Node */}
@@ -552,33 +558,39 @@ const Slides: SlideData[] = [
                 <AbaLogoIcon size={64} className="mb-2" onDark />
                  <p className="text-xs font-black uppercase tracking-widest text-center">FUSION AI</p>
               </div>
-              {/* Orbiting rings */}
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] border border-dashed border-primary-blue/20 rounded-full animate-spin-slow opacity-40" />
+              {/* Orbiting rings - slowed down */}
+              <motion.div 
+                animate={{ rotate: 360 }}
+                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] border border-dashed border-primary-blue/20 rounded-full opacity-40" 
+              />
            </div>
-
-           <div className="bg-white p-8 rounded-[2.5rem] border border-light-gray shadow-sm">
-              <h4 className="font-bold text-main-text mb-6 uppercase text-xs tracking-widest border-b border-light-gray pb-4">Fonctionnalités Clés</h4>
-              <ul className="space-y-4">
+ 
+           <div className="bg-white p-10 rounded-[3rem] border border-light-gray shadow-sm">
+              <h4 className="font-bold text-main-text mb-8 uppercase text-[10px] tracking-widest border-b border-light-gray pb-4">Le Workflow d'Orchestration</h4>
+              <div className="space-y-8">
                  {[
-                   { t: "Réception de données", d: "Données issues du terrain (ESP32)" },
-                   { t: "Webhooks Ops", d: "Transmission au dashboard opérationnel" },
-                   { t: "Gestion d'incidents", d: "Création et mise à jour d'alertes" },
-                   { t: "Outil technique", d: "Réception des actions du dashboard technique" },
-                   { t: "Workflow continu", d: "Poursuite du processus après action" },
-                   { t: "Synchronisation", d: "Notifications, statuts et historique (GMP)" },
+                   { t: "Recevoir", d: "Ingestion des données IoT (ESP32 / MQTT)" },
+                   { t: "Analyser", d: "Traitement & Détection d'anomalies en temps réel" },
+                   { t: "Alerter", d: "Transmission instantanée aux Dashboards Ops" },
+                   { t: "Déléguer", d: "Orchestration des actions & workflows techniciens" },
+                   { t: "Synchroniser", d: "Historisation GMP & Mise à jour des statuts" },
                  ].map((feat, i) => (
-                   <li key={i} className="flex gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary-blue mt-1.5 flex-shrink-0" />
-                      <div>
-                         <span className="font-bold text-xs text-main-text">{feat.t} :</span>
-                         <span className="text-xs text-dark-gray ml-1">{feat.d}</span>
+                   <div key={i} className="flex gap-6 items-start relative group">
+                      {i < 4 && <div className="absolute left-4 top-10 bottom-[-20px] w-0.5 bg-light-gray group-hover:bg-primary-blue/20 transition-colors" />}
+                      <div className="w-8 h-8 rounded-full bg-bg-page border border-light-gray flex items-center justify-center text-[10px] font-bold text-primary-blue shrink-0 group-hover:bg-primary-blue group-hover:text-white transition-all">
+                         0{i+1}
                       </div>
-                   </li>
+                      <div>
+                         <h5 className="font-bold text-sm text-main-text mb-1">{feat.t}</h5>
+                         <p className="text-xs text-dark-gray font-light">{feat.d}</p>
+                      </div>
+                   </div>
                  ))}
-              </ul>
+              </div>
            </div>
         </div>
-
+ 
         <div className="mt-12 p-8 bg-primary-blue text-white rounded-3xl shadow-xl flex items-center justify-between">
            <div>
               <p className="text-xl font-bold italic">"Fusion AI devient le point de liaison."</p>
