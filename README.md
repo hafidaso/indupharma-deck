@@ -43,3 +43,13 @@ A modern, visually-rich AI-powered presentation app for industrial pharma automa
 ---
 
 For questions or contributions, open an issue or PR.
+
+---
+
+## Présentation complète : contenu des slides
+
+Le texte intégral de toutes les slides est disponible dans le fichier [SLIDES_FULL.md](SLIDES_FULL.md).
+
+### Télécharger la présentation en PDF
+
+Le PDF de la présentation sera bientôt disponible ici. Si vous souhaitez générer un PDF à partir du texte, ouvrez [SLIDES_FULL.md](SLIDES_FULL.md) et utilisez un outil d'export (impression PDF, Pandoc, etc.).

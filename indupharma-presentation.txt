@@ -1,0 +1,7 @@
+INDUPHARMA — Présentation complète
+
+Voir le texte intégral dans SLIDES_FULL.md ou README.md.
+
+---
+
+(PDF à venir — vous pouvez générer un PDF à partir de SLIDES_FULL.md en utilisant un outil d'impression PDF ou Pandoc.)
