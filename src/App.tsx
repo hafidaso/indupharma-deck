@@ -1088,23 +1088,23 @@ const Slides: SlideData[] = [
   },
   {
     title: "Impact du projet",
-    notes: "L’impact n’est pas seulement financier. Il est aussi qualitatif : moins de stress pour les équipes, meilleure traçabilité pour les patients, et une usine plus verte car mieux pilotée.",
+    notes: "L’impact est désormais chiffré : ROI de 70%, 91% de taux de clôture des incidents, et une élimination totale du papier. C'est un gain de confiance opérationnelle autant que financière.",
     transition: "Pour rendre ce projet viable, nous avons imaginé un business model simple.",
     content: (
       <div className="h-full">
-        <SlideTitle title="Impact global" subtitle="Au-delà de la performance technique" />
+        <SlideTitle title="Impact global" subtitle="Performance mesurée sur le site pilote" />
         <div className="grid grid-cols-3 gap-8 mt-16">
            {[
-             { title: "Économique", sub: "ROI < 12 mois", icon: BadgeEuro, desc: "Réduction drastique des pertes de lots et du downtime." },
-             { title: "Humain", sub: "Sérénité", icon: Users, desc: "Aide à la décision et réduction de la charge mentale." },
-             { title: "Qualité", sub: "Zéro Papier", icon: ShieldCheck, desc: "Traçabilité GMP sans faille et audit-ready." },
+             { title: "Économique", sub: "ROI +70% / Break-even 7 mois", icon: BadgeEuro, desc: "Réduction drastique des pertes de lots et optimisation des coûts de maintenance." },
+             { title: "Humain", sub: "Closure Rate 91%", icon: Users, desc: "6 techniciens pilotés via dashboard — zéro appel téléphonique manuel, stress réduit." },
+             { title: "Qualité", sub: "100% Audit Trail", icon: ShieldCheck, desc: "Zéro rapport manuel horodaté. Traçabilité GMP native et sans faille." },
            ].map((impact, i) => (
-             <div key={i} className="bg-white p-12 rounded-[3.5rem] border border-light-gray/50 shadow-sm flex flex-col items-center text-center transition-all hover:shadow-md hover:border-light-gray">
-                <div className="w-20 h-20 rounded-[2rem] bg-bg-page flex items-center justify-center text-primary-blue mb-8">
+             <div key={i} className="bg-white p-12 rounded-[3.5rem] border border-light-gray/50 shadow-sm flex flex-col items-center text-center transition-all hover:shadow-md hover:border-light-gray group">
+                <div className="w-20 h-20 rounded-[2rem] bg-bg-page flex items-center justify-center text-primary-blue mb-8 group-hover:bg-primary-blue/5 transition-colors">
                    <impact.icon size={36} strokeWidth={1} />
                 </div>
                 <h4 className="font-bold text-2xl mb-2 tracking-tight text-main-text">{impact.title}</h4>
-                <p className="text-[10px] font-semibold text-primary-blue/70 uppercase tracking-widest mb-6">{impact.sub}</p>
+                <p className="text-[10px] font-bold text-primary-blue uppercase tracking-widest mb-6">{impact.sub}</p>
                 <p className="text-sm text-dark-gray font-light leading-relaxed px-4">{impact.desc}</p>
              </div>
            ))}
