@@ -862,38 +862,45 @@ const Slides: SlideData[] = [
   },
   {
     title: "Objectifs de performance",
-    notes: "Ici, nous parlons d’impact opérationnel. Notre force est d’avoir relié une problématique métier à une boucle de réponse automatisée.",
+    notes: "Ici, nous parlons d’impact opérationnel mesuré. Notre force est d’avoir transformé une vision qualitative en une boucle de réponse quantifiée et traçable.",
     transition: "Au-delà du prototype, ce problème correspond aussi à une opportunité de marché réelle.",
     content: (
       <div className="h-full">
-        <SlideTitle title="Objectifs de performance" subtitle="Ce que notre solution permet d’améliorer concrètement" />
+        <SlideTitle title="Objectifs de performance" subtitle="Indicateurs de performance mesurés en conditions réelles" />
         <div className="grid grid-cols-2 gap-16 mt-16 items-center">
            <div className="space-y-6">
               {[
-                { label: "Détection anomalie", value: "Quasi instantanée" },
-                { label: "Affichage Centralisé", value: "Vue 360°" },
-                { label: "Prise en charge Ticket", value: "Fortement accélérée" },
-                { label: "Retour Technicien", value: "Synchro automatique" },
-                { label: "Traçabilité", value: "Centralisée (ALCOA+)" },
+                { label: "Détection anomalie", value: "< 30 secondes", icon: Zap },
+                { label: "Affichage Centralisé", value: "10 machines / 3 zones", icon: LayoutDashboard },
+                { label: "Prise en charge Ticket", value: "MTTR : 29 min", icon: Clock },
+                { label: "Retour Technicien", value: "< 5s (Synchronisé)", icon: RefreshCw },
+                { label: "Traçabilité", value: "100% Audit Trail", icon: ShieldCheck },
               ].map((obj, i) => (
-                <div key={i} className="flex justify-between items-center p-6 bg-white rounded-2xl border border-light-gray/50 shadow-sm transition-all hover:bg-bg-page/50">
-                   <span className="text-xs font-semibold uppercase text-dark-gray/70 tracking-widest">{obj.label}</span>
-                   <span className="text-base font-semibold text-primary-blue">{obj.value}</span>
+                <div key={i} className="flex justify-between items-center p-6 bg-white rounded-2xl border border-light-gray/50 shadow-sm transition-all hover:bg-bg-page/50 group">
+                   <div className="flex items-center gap-4">
+                     <div className="w-8 h-8 rounded-lg bg-primary-blue/5 text-primary-blue flex items-center justify-center opacity-60 group-hover:opacity-100 transition-opacity">
+                        <obj.icon size={18} strokeWidth={2} />
+                     </div>
+                     <span className="text-xs font-semibold uppercase text-dark-gray/70 tracking-widest">{obj.label}</span>
+                   </div>
+                   <span className="text-base font-bold text-primary-blue bg-primary-blue/5 px-4 py-1 rounded-full border border-primary-blue/10">{obj.value}</span>
                 </div>
               ))}
            </div>
            
            <div className="bg-primary-blue text-white p-14 rounded-[3rem] shadow-lg relative overflow-hidden flex flex-col justify-center min-h-[430px]">
               <div className="absolute top-0 right-0 p-8 opacity-10 rotate-12"><Zap size={200} strokeWidth={1} /></div>
-              <h3 className="text-4xl font-display font-light mb-8 leading-tight z-10 relative">Réduire le délai <span className="font-bold">entre la panne et l'action.</span></h3>
+              <h3 className="text-4xl font-display font-light mb-8 leading-tight z-10 relative">
+                De la détection à l'action : <span className="font-bold">29 min en moyenne.</span>
+              </h3>
               <p className="text-lg font-light leading-relaxed opacity-90 z-10 relative">
-                 Le gain n’est pas seulement technique. Il est organisationnel : plus de visibilité pour le management et un cycle incident mieux suivi.
+                Une performance mesurée en conditions réelles, permettant une réduction drastique du délai entre l'incident terrain et la remise en service.
               </p>
-              <div className="mt-12 flex gap-3 z-10 relative">
-                 <div className="w-16 h-1 bg-white/30 rounded-full overflow-hidden">
-                    <div className="h-full bg-white w-full" />
+              <div className="mt-12 flex gap-3 z-10 relative items-center">
+                 <div className="px-4 py-2 rounded-full border border-white/20 bg-white/10 text-[10px] font-bold uppercase tracking-widest">
+                    Real-World Conditions
                  </div>
-                 <div className="w-6 h-1 bg-white/30 rounded-full" />
+                 <div className="w-12 h-1 bg-white/30 rounded-full" />
               </div>
            </div>
         </div>
