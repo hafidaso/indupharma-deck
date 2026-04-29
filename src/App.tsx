@@ -666,64 +666,61 @@ const Slides: SlideData[] = [
   },
   {
     title: "Maquette du projet",
-    notes: "Le projet est démontré à travers deux dashboards : l'un donne la visibilité opérationnelle, l'autre permet l'action technique et la synchronisation. Le premier dashboard donne la visibilité. Le second permet l’action et la synchronisation.",
-    transition: "Cette démonstration doit être mesurable. C’est pourquoi nous avons défini des KPIs.",
+    notes: "Voici la plateforme en action. C'est un environnement live qui connecte les capteurs aux dashboards. Notez l'interface épurée et la réactivité des données. En cas de coupure réseau, nous avons prévu des visuels de secours pour garantir la continuité de la présentation.",
+    transition: "Cette plateforme n'est pas seulement un outil, c'est le support de notre vision stratégique.",
     content: (
       <div className="h-full flex flex-col">
-        <SlideTitle title="Deux dashboards complémentaires" subtitle="Du pilotage global au suivi technique terrain" />
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-12 flex-1">
-           <div className="flex flex-col">
-              <div className="bg-bg-page/50 rounded-[2.5rem] overflow-hidden aspect-video relative group shadow-sm border border-light-gray/50 mb-8 transition-all hover:shadow-md">
-                 <iframe
-                   src="https://indupharma-live-dashboard.vercel.app/"
-                   title="INDUPHARMA Dashboard Operationnel Live"
-                   className="absolute inset-0 w-full h-full border-0"
-                   loading="lazy"
-                   referrerPolicy="no-referrer"
-                 />
-                 <div className="absolute bottom-6 left-6 flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm text-primary-blue">
-                       <LayoutDashboard size={14} />
-                    </div>
-                    <span className="text-xs font-semibold text-main-text tracking-wide uppercase">Dashboard Opérationnel</span>
-                 </div>
+        <SlideTitle title="Maquette Plateforme Live" subtitle="Démonstration interactive de l'écosystème INDUPHARMA" />
+        
+        <div className="flex-1 mt-6 relative group bg-bg-page rounded-[3rem] overflow-hidden border border-light-gray shadow-2xl">
+           {/* Fallback View (Visible while loading or if offline) */}
+           <div className="absolute inset-0 bg-white flex flex-col items-center justify-center text-center p-20 z-0">
+              <div className="w-24 h-24 bg-primary-blue/5 rounded-full flex items-center justify-center text-primary-blue mb-8">
+                 <LayoutDashboard size={48} strokeWidth={1} />
               </div>
-              <div className="space-y-4 px-6">
-                 <ul className="text-[15px] text-dark-gray font-light space-y-5 leading-relaxed">
-                    <li className="flex gap-4 items-start"><CheckCircle2 size={20} className="text-primary-blue mt-0.5 shrink-0" strokeWidth={1.5}/> <span><strong className="font-semibold text-main-text">Données temps réel</strong> depuis Fusion AI</span></li>
-                    <li className="flex gap-4 items-start"><CheckCircle2 size={20} className="text-primary-blue mt-0.5 shrink-0" strokeWidth={1.5}/> <span><strong className="font-semibold text-main-text">Alertes, incidents</strong> et statuts des équipements</span></li>
-                    <li className="flex gap-4 items-start"><CheckCircle2 size={20} className="text-primary-blue mt-0.5 shrink-0" strokeWidth={1.5}/> <span><strong className="font-semibold text-main-text">KPIs de performance</strong> et visibilité management</span></li>
-                 </ul>
+              <h4 className="text-2xl font-bold text-main-text mb-4">Plateforme INDUPHARMA Live</h4>
+              <p className="text-dark-gray max-w-md mx-auto font-light leading-relaxed">
+                 Chargement de la console de supervision en temps réel...
+              </p>
+              <div className="mt-10 flex gap-6">
+                 <div className="px-6 py-3 rounded-2xl bg-primary-blue/10 text-primary-blue text-xs font-bold uppercase tracking-widest">Vision Opérationnelle</div>
+                 <div className="px-6 py-3 rounded-2xl bg-primary-green/10 text-primary-green text-xs font-bold uppercase tracking-widest">Outils Techniques</div>
               </div>
            </div>
 
-           <div className="flex flex-col">
-              <div className="bg-bg-page/50 rounded-[2.5rem] overflow-hidden aspect-video relative group shadow-sm border border-light-gray/50 mb-8 transition-all hover:shadow-md">
-                 <iframe
-                   src="https://indupharma-live-dashboard.vercel.app/"
-                   title="INDUPHARMA Dashboard Technique Admin Live"
-                   className="absolute inset-0 w-full h-full border-0"
-                   loading="lazy"
-                   referrerPolicy="no-referrer"
-                 />
-                 <div className="absolute bottom-6 left-6 flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center shadow-sm text-primary-green">
-                       <Settings size={14} />
-                    </div>
-                    <span className="text-xs font-semibold text-main-text tracking-wide uppercase">Dashboard Technique</span>
-                 </div>
-              </div>
-              <div className="space-y-4 px-6">
-                 <ul className="text-[15px] text-dark-gray font-light space-y-5 leading-relaxed">
-                    <li className="flex gap-4 items-start"><RefreshCw size={20} className="text-primary-green mt-0.5 shrink-0" strokeWidth={1.5}/> <span><strong className="font-semibold text-main-text">Prise en charge</strong> et suivi interactif des tickets</span></li>
-                    <li className="flex gap-4 items-start"><RefreshCw size={20} className="text-primary-green mt-0.5 shrink-0" strokeWidth={1.5}/> <span><strong className="font-semibold text-main-text">Remontée d'actions</strong> terrain vers Fusion AI</span></li>
-                    <li className="flex gap-4 items-start"><RefreshCw size={20} className="text-primary-green mt-0.5 shrink-0" strokeWidth={1.5}/> <span><strong className="font-semibold text-main-text">Synchronisation native</strong> du cycle incident</span></li>
-                 </ul>
-              </div>
+           {/* Live Iframe */}
+           <iframe
+             src="https://indupharma-live-dashboard.vercel.app/"
+             title="INDUPHARMA Live Platform Demo"
+             className="absolute inset-0 w-full h-full border-0 z-10 opacity-0 transition-opacity duration-1000"
+             onLoad={(e) => (e.currentTarget.style.opacity = '1')}
+             loading="lazy"
+             referrerPolicy="no-referrer"
+           />
+
+           {/* Interactive Overlay Sidebar */}
+           <div className="absolute top-10 right-10 z-20 space-y-4 pointer-events-none group-hover:opacity-100 opacity-60 transition-opacity">
+              {[
+                { t: "Surveillance IoT", i: Zap },
+                { t: "Gestion d'Incidents", i: ShieldCheck },
+                { t: "Traçabilité ALCOA+", i: CheckCircle2 },
+              ].map((item, i) => (
+                <div key={i} className="bg-white/90 backdrop-blur-md px-6 py-4 rounded-2xl border border-white shadow-xl flex items-center gap-4 min-w-[240px]">
+                   <div className="w-10 h-10 rounded-xl bg-primary-blue text-white flex items-center justify-center">
+                      <item.i size={20} />
+                   </div>
+                   <span className="text-sm font-bold text-main-text">{item.t}</span>
+                </div>
+              ))}
            </div>
         </div>
-        <div className="mt-8 flex justify-center">
-           <div className="h-px w-full bg-gradient-to-r from-transparent via-primary-blue/20 to-transparent" />
+
+        <div className="mt-8 flex items-center justify-between px-10">
+           <p className="text-sm text-dark-gray/60 italic">Accès direct : <a href="https://indupharma-live-dashboard.vercel.app/" target="_blank" className="text-primary-blue underline">indupharma-live-dashboard.vercel.app</a></p>
+           <div className="flex items-center gap-2">
+              <div className="w-2 h-2 rounded-full bg-primary-green animate-pulse" />
+              <span className="text-[10px] font-black text-primary-green uppercase tracking-widest">Status: Live Environment</span>
+           </div>
         </div>
       </div>
     )
