@@ -397,10 +397,10 @@ const Slides: SlideData[] = [
         <SlideTitle title="Notre méthodologie" subtitle="Une démarche structurée pour un impact métier réel" />
         <div className="grid grid-cols-4 gap-8 mt-16">
           {[
-            { label: "Cadrer", title: "QQOQCCP", icon: Search, sub: "Définition du besoin" },
-            { label: "Comprendre", title: "5 Pourquoi", icon: HelpCircle, sub: "Cause racine" },
-            { label: "Modéliser", title: "BPMN", icon: GitCompare, sub: "As-Is / To-Be" },
-            { label: "Démontrer", title: "Prototypage", icon: Terminal, sub: "IoT & AI Proof" },
+            { label: "Cadrer", title: "Problem Scoping", icon: Search, sub: "Définition du besoin", output: "Scope & Objectifs" },
+            { label: "Comprendre", title: "Root Cause Analysis", icon: HelpCircle, sub: "Analyse des causes racines", output: "Cartographie de la douleur" },
+            { label: "Modéliser", title: "BPMN", icon: GitCompare, sub: "As-Is / To-Be", output: "Carte BPMN As-Is / To-Be" },
+            { label: "Démontrer", title: "Prototypage", icon: Terminal, sub: "IoT & AI Proof", output: "MVP IoT & Dashboard" },
           ].map((item, i) => (
              <div key={i} className="bg-white p-10 rounded-3xl border border-light-gray/50 shadow-sm flex flex-col items-center text-center group hover:shadow-md transition-all">
                 <div className="w-16 h-16 rounded-2xl bg-bg-page flex items-center justify-center text-primary-blue mb-6 group-hover:bg-primary-blue group-hover:text-white transition-colors">
@@ -408,7 +408,11 @@ const Slides: SlideData[] = [
                 </div>
                 <p className="text-[11px] font-bold text-primary-blue/80 uppercase tracking-widest mb-2">{item.label}</p>
                 <h4 className="font-semibold text-xl mb-3 text-main-text">{item.title}</h4>
-                <p className="text-sm text-dark-gray font-light">{item.sub}</p>
+                <p className="text-sm text-dark-gray font-light mb-8">{item.sub}</p>
+                <div className="mt-auto pt-4 border-t border-light-gray w-full">
+                  <p className="text-[10px] font-black text-primary-green uppercase tracking-wider mb-1">Livrable :</p>
+                  <p className="text-[11px] text-dark-gray font-bold">{item.output}</p>
+                </div>
              </div>
           ))}
         </div>
