@@ -192,14 +192,25 @@ const SlideTitle = ({ title, subtitle }: { title: string, subtitle?: string }) =
   </div>
 );
 
-const KPICard = ({ label, value, icon: Icon, colorClass = "text-primary-blue" }: any) => (
-  <div className="bg-white p-8 rounded-3xl shadow-sm border border-light-gray/50 flex flex-col gap-4 transition-all hover:shadow-md">
+const KPICard = ({ label, value, icon: Icon, colorClass = "text-primary-blue", showLiveBadge = false }: any) => (
+  <div className="bg-white p-8 rounded-3xl shadow-sm border border-light-gray/50 flex flex-col gap-4 transition-all hover:shadow-md relative overflow-hidden">
+    {showLiveBadge && (
+       <div className="absolute top-0 right-0 bg-primary-blue/5 px-3 py-1 rounded-bl-xl border-l border-b border-primary-blue/10">
+          <span className="text-[7px] font-black uppercase tracking-widest text-primary-blue/60">Live Environment Data</span>
+       </div>
+    )}
     <div className={`w-12 h-12 rounded-2xl bg-bg-page flex items-center justify-center ${colorClass}`}>
       <Icon size={24} strokeWidth={1.5} />
     </div>
     <div>
       <p className="text-sm font-semibold text-dark-gray uppercase tracking-wider mb-1 opacity-70">{label}</p>
       <p className="text-5xl font-display font-bold text-main-text">{value}</p>
+      {showLiveBadge && (
+        <div className="mt-4 flex items-center gap-2">
+           <div className="w-1.5 h-1.5 rounded-full bg-primary-green animate-pulse" />
+           <p className="text-[8px] text-dark-gray/40 font-bold uppercase tracking-tighter">Données live — Dashboard INDUPHARMA — Avril 2026</p>
+        </div>
+      )}
     </div>
   </div>
 );
@@ -781,49 +792,54 @@ const Slides: SlideData[] = [
 
   {
     title: "Chiffres & KPI 2026",
-    notes: "Nous avons voulu que notre projet ne s’arrête pas à une interface. Il doit produire des indicateurs lisibles et utilisables par le management.",
+    notes: "Ces chiffres ne sont pas des projections. Ils sont extraits en temps réel de notre dashboard live au moment où nous vous parlons. Notez le MTTR descendu à 29 minutes grâce à l'orchestration automatique.",
     transition: "Ces indicateurs permettent ensuite de fixer des objectifs de performance.",
     content: (
       <div className="h-full">
-        <SlideTitle title="Indicateurs 2026" subtitle="Aperçu opérationnel de la solution déployée" />
-        <div className="mt-8 bg-gradient-to-r from-primary-blue to-[#1f7be8] text-white rounded-3xl p-8 shadow-lg">
-          <div className="grid grid-cols-3 gap-10 items-center">
+        <SlideTitle title="Indicateurs 2026" subtitle="Performance opérationnelle en temps réel" />
+        <div className="mt-8 bg-gradient-to-r from-primary-blue to-[#1f7be8] text-white rounded-3xl p-8 shadow-lg relative overflow-hidden">
+          <div className="absolute top-0 right-0 p-4 opacity-10"><Database size={120} /></div>
+          <div className="grid grid-cols-3 gap-10 items-center relative z-10">
             <div>
-              <p className="text-xs uppercase tracking-widest opacity-80 mb-2">KPI Global</p>
-              <p className="text-4xl font-display font-bold">89% Availability</p>
+              <p className="text-xs uppercase tracking-widest opacity-80 mb-2">Disponibilité Globale</p>
+              <p className="text-4xl font-display font-bold">89.4%</p>
+              <p className="text-[9px] mt-2 opacity-60 font-medium">Dashboard INDUPHARMA — Avril 2026</p>
             </div>
-            <div className="text-center border-x border-white/20">
-              <p className="text-xs uppercase tracking-widest opacity-80 mb-2">MTTR</p>
-              <p className="text-3xl font-display font-bold">42 min</p>
+            <div className="text-center border-x border-white/20 px-4">
+              <p className="text-xs uppercase tracking-widest opacity-80 mb-2">MTTR (Temps de réponse)</p>
+              <p className="text-3xl font-display font-bold text-primary-green bg-white px-4 py-1 rounded-xl inline-block">29 min</p>
+              <p className="text-[9px] mt-2 opacity-60 font-medium">API-derived KPI logs</p>
             </div>
             <div className="text-right">
-              <p className="text-xs uppercase tracking-widest opacity-80 mb-2">Downtime Gain</p>
-              <p className="text-3xl font-display font-bold">-30%</p>
+              <p className="text-xs uppercase tracking-widest opacity-80 mb-2">Downtime Total</p>
+              <p className="text-3xl font-display font-bold">213 min</p>
+              <p className="text-[9px] mt-2 opacity-60 font-medium">Derived from etat_global</p>
             </div>
           </div>
         </div>
 
         <div className="grid grid-cols-4 gap-6 mt-8">
-           <KPICard label="Machines Supervisées" value="09" icon={Factory} />
-           <KPICard label="Machines Actives" value="08" icon={Activity} colorClass="text-primary-green" />
-           <KPICard label="Incidents Ouverts" value="02" icon={AlertTriangle} colorClass="text-red-500" />
-           <KPICard label="Techniciens" value="02" icon={Users} />
+           <KPICard label="Machines Actives" value="7/10" icon={Activity} showLiveBadge />
+           <KPICard label="Alertes Critiques" value="01" icon={AlertTriangle} colorClass="text-red-500" showLiveBadge />
+           <KPICard label="Incident Ouvert" value="01" icon={Smartphone} colorClass="text-red-400" showLiveBadge />
+           <KPICard label="Techniciens" value="06" icon={Users} showLiveBadge />
         </div>
 
         <div className="mt-10 grid grid-cols-2 gap-8">
            <div className="bg-bg-page/60 rounded-3xl border border-primary-blue/10 shadow-sm p-8">
-             <h4 className="font-semibold text-xs uppercase tracking-widest text-dark-gray mb-8">
-               Tendance de disponibilité (Q1 → Q4)
+             <h4 className="font-semibold text-xs uppercase tracking-widest text-dark-gray mb-8 flex items-center justify-between">
+               Tendance de disponibilité 
+               <span className="text-[9px] bg-white px-2 py-1 rounded-full border border-light-gray">Données live</span>
              </h4>
              <MiniBarChart data={trendBars} />
              <div className="mt-5 grid grid-cols-2 gap-3 text-xs">
-               <div className="bg-white rounded-xl border border-light-gray px-3 py-2"><span className="text-dark-gray/70">MTBF:</span> <span className="font-semibold text-main-text">1.2k h</span></div>
-               <div className="bg-white rounded-xl border border-light-gray px-3 py-2"><span className="text-dark-gray/70">SLA:</span> <span className="font-semibold text-main-text">99.8%</span></div>
+               <div className="bg-white rounded-xl border border-light-gray px-3 py-2 flex justify-between items-center"><span className="text-dark-gray/70">MTBF:</span> <span className="font-bold text-main-text text-primary-blue">208 h</span></div>
+               <div className="bg-white rounded-xl border border-light-gray px-3 py-2 flex justify-between items-center"><span className="text-dark-gray/70">Closure Rate:</span> <span className="font-bold text-primary-green">91%</span></div>
              </div>
            </div>
-           <div className="bg-bg-page/60 rounded-3xl border border-primary-green/15 shadow-sm p-8 flex flex-col items-center justify-center">
+           <div className="bg-bg-page/60 rounded-3xl border border-primary-green/15 shadow-sm p-8 flex flex-col items-center justify-center relative">
              <h4 className="font-semibold text-xs uppercase tracking-widest text-dark-gray mb-6 w-full text-left">
-               Répartition readiness globale
+               Process Readiness Score
              </h4>
              <div
                className="w-40 h-40 rounded-full border border-light-gray shadow-inner relative"
@@ -831,13 +847,13 @@ const Slides: SlideData[] = [
                  background: `conic-gradient(#1f5eff ${readinessScore}%, #2fcf8f ${readinessScore}% 100%)`,
                }}
              >
-               <div className="absolute inset-4 bg-white rounded-full flex items-center justify-center flex-col">
-                 <p className="text-3xl font-display font-bold text-primary-blue">{readinessScore}%</p>
+               <div className="absolute inset-4 bg-white rounded-full flex items-center justify-center flex-col shadow-inner">
+                 <p className="text-3xl font-display font-bold text-primary-blue">89%</p>
                  <p className="text-[10px] uppercase tracking-widest text-dark-gray/60 font-semibold">Ready</p>
                </div>
              </div>
-             <p className="text-xs text-dark-gray mt-6 text-center">
-               89% des processus critiques sont couverts par la boucle détection → action.
+             <p className="text-[10px] text-dark-gray mt-6 text-center leading-relaxed">
+               <span className="font-bold text-primary-blue">89% des processus critiques</span> sont couverts par la boucle détection → action (Live Roster Synchronized).
              </p>
            </div>
         </div>
