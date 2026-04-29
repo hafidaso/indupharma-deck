@@ -155,12 +155,7 @@
 
 ---
 
-### Slide 20: Risk & Mitigation
-**Sous-titre :** Maîtriser l’exécution, pas seulement la technologie
-- Risques : intégration IT/OT, adoption terrain, data quality
-- Mitigation : connecteurs standard, formation, calibration, monitoring
 
----
 
 ### Slide 21: Go-to-Market & Deployment
 **Sous-titre :** Passer du pilote à l’échelle multi-site

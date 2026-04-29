@@ -1083,40 +1083,6 @@ const Slides: SlideData[] = [
     )
   },
   {
-    title: "Risk & Mitigation",
-    notes: "Nous montrons ici un niveau de maturité projet: anticipation des risques et réponses concrètes.",
-    transition: "Avec ces risques cadrés, le plan de déploiement devient crédible.",
-    content: (
-      <div className="h-full">
-        <SlideTitle title="Risk & Mitigation" subtitle="Maîtriser l’exécution, pas seulement la technologie" />
-        <div className="mt-14 bg-white rounded-3xl border border-light-gray/60 shadow-sm overflow-hidden">
-          <table className="w-full">
-            <thead className="bg-bg-page/60">
-              <tr>
-                <th className="text-left p-6 text-xs uppercase tracking-widest text-dark-gray/70">Risque clé</th>
-                <th className="text-left p-6 text-xs uppercase tracking-widest text-dark-gray/70">Impact</th>
-                <th className="text-left p-6 text-xs uppercase tracking-widest text-dark-gray/70">Mitigation</th>
-              </tr>
-            </thead>
-            <tbody className="text-sm">
-              {[
-                ["Integration IT/OT", "Retard de mise en production", "Connecteurs standard, pilote sur 1 ligne, validation hebdo IT/OT."],
-                ["Adoption terrain", "Usage partiel du dashboard", "Formation rôles + SOP simples + champions atelier."],
-                ["Data quality", "Faux positifs / décisions faibles", "Règles de qualité capteurs + calibration mensuelle + monitoring anomalies."],
-              ].map((r, i) => (
-                <tr key={i} className="border-t border-light-gray/50">
-                  <td className="p-6 font-semibold text-main-text">{r[0]}</td>
-                  <td className="p-6 text-dark-gray">{r[1]}</td>
-                  <td className="p-6 text-dark-gray">{r[2]}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    )
-  },
-  {
     title: "Go-to-Market & Deployment",
     notes: "Le plan de déploiement progressif structure le passage du POC vers l’échelle.",
     transition: "Le scale doit rester conforme GMP, d’où la gouvernance et compliance.",
