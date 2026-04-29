@@ -16,7 +16,7 @@
 - Downtime non planifié : Coût majeur
 - Modernisation : Industrie 4.0
 - Secteur Pharma : Hautement régulé
-- Un arrêt non planifié = perte de production, risque sur conformité et sécurité patient
+- Un arrêt non planifié = perte de production, risque sur conformité qualité et continuité de production pharmaceutique
 - Audit Trail (ALCOA+), OEE/TRS (Performance)
 
 ---

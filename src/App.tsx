@@ -280,7 +280,7 @@ const Slides: SlideData[] = [
           </div>
           <div className="space-y-10">
             <p className="text-xl text-dark-gray font-light leading-relaxed">
-              Dans l’industrie pharmaceutique, un arrêt non planifé ne signifie pas seulement une perte de production, c'est aussi un risque sur la <span className="text-primary-blue font-semibold">conformité</span> et la <span className="text-primary-blue font-semibold">sécurité patient</span>.
+              Dans l’industrie pharmaceutique, un arrêt non planifié ne signifie pas seulement une perte de production, c'est aussi un risque sur la <span className="text-primary-blue font-semibold">conformité</span> et la <span className="text-primary-blue font-semibold">conformité qualité et continuité de production pharmaceutique</span>.
             </p>
             <div className="grid grid-cols-2 gap-6">
                <div className="p-6 bg-primary-blue/5 rounded-2xl border border-primary-blue/10 flex flex-col items-center text-center">
@@ -709,7 +709,7 @@ const Slides: SlideData[] = [
             <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-primary-blue/5 border border-primary-blue/10" />
             <img src="/logo.png" alt="INDUPHARMA Logo" className="h-32 object-contain mb-8 relative z-10" referrerPolicy="no-referrer" />
             <h3 className="text-3xl font-display font-bold text-main-text leading-tight mb-4 relative z-10">
-              L'excellence industrielle au service du patient.
+              L'excellence industrielle au service de la qualité pharmaceutique.
             </h3>
             <p className="text-base text-dark-gray leading-relaxed font-light relative z-10">
               Notre vision: transformer chaque incident en <span className="font-semibold text-primary-blue">décision rapide</span>, documentée et conforme GMP.
