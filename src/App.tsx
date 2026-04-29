@@ -218,7 +218,7 @@ const Slides: SlideData[] = [
     title: "INDUPHARMA",
     subtitle: "Réduction intelligente du downtime industriel pharmaceutique",
     secondarySubtitle: "Plateforme IIoT, Fusion AI et dashboard temps réel pour la maintenance proactive et la traçabilité GMP",
-    notes: "Bonjour à toutes et à tous. Nous allons vous présenter INDUPHARMA, une solution conçue pour réduire les arrêts non planifiés dans un environnement pharmaceutique, en combinant IoT, Fusion AI et dashboards de pilotage.",
+    notes: "Bonjour à toutes et à tous. Chaque heure d'arrêt non planifié peut coûter jusqu'à 500 000 dollars. C'est pour répondre à ce défi majeur que nous avons construit INDUPHARMA, une solution conçue pour réduire les arrêts dans un environnement pharmaceutique, en combinant IoT, Fusion AI et dashboards de pilotage.",
     transition: "Avant de présenter la solution, il faut d’abord comprendre le problème terrain.",
     content: (
       <div className="flex flex-col items-center justify-center h-full text-center">
@@ -236,6 +236,9 @@ const Slides: SlideData[] = [
           transition={{ delay: 0.3, duration: 0.6 }}
           className="max-w-4xl"
         >
+          <p className="text-xl text-primary-blue font-medium mb-12 italic opacity-90 tracking-tight">
+            "Chaque heure d'arrêt non planifié coûte jusqu'à $500K. Nous avons construit la solution."
+          </p>
           <div className="w-16 h-1 bg-primary-blue mx-auto mb-10 rounded-full opacity-50" />
           <p className="text-4xl text-main-text font-bold mb-6 leading-tight tracking-tight">
             Réduction intelligente du downtime industriel pharmaceutique
