@@ -1188,27 +1188,58 @@ const Slides: SlideData[] = [
   },
   {
     title: "Demo Story 30 secondes",
-    notes: "Le jury doit visualiser le fonctionnement réel en quelques secondes: alerte, ticket, action, KPI.",
-    transition: "Ce scénario révèle aussi les risques d’exécution et leur mitigation.",
+    notes: "Cette séquence de 30 secondes montre la réactivité du système. Notez que les 8 secondes d'orchestration sont validées par nos logs API. Ce cycle كامل aboutit à un MTTR réel de 29 minutes sur le site pilote.",
+    transition: "Après la démo, comment déployons-nous cette solution ? Voici notre stratégie Go-to-Market.",
     content: (
       <div className="h-full">
-        <SlideTitle title="Demo Story - 30 secondes" subtitle="Le cycle incident en conditions réelles" />
-        <div className="mt-14 grid grid-cols-4 gap-6">
+        <SlideTitle title="Scénario opérationnel" subtitle="La boucle de valeur en 30 secondes chrono" />
+        <div className="grid grid-cols-4 gap-6 mt-12">
           {[
-            { t: "00s", h: "Alarm détectée", d: "Anomalie autoclave M02 remontée par ESP32.", i: AlertTriangle, col: "text-red-500 bg-red-50 border-red-100" },
-            { t: "08s", h: "Ticket créé", d: "Fusion AI ouvre l’incident et priorise automatiquement.", i: FileText, col: "text-primary-blue bg-primary-blue/10 border-primary-blue/20" },
-            { t: "18s", h: "Action technicien", d: "Admin technique met à jour statut et commentaire.", i: Settings, col: "text-primary-green bg-primary-green/10 border-primary-green/20" },
-            { t: "30s", h: "KPI actualisé", d: "Dashboard Ops reflète l’état corrigé et le délai réel.", i: BarChart3, col: "text-main-text bg-bg-page border-light-gray" },
+            { t: "00s", l: "Alarme détectée", d: "Anomalie autoclave M02 remontée par ESP32", i: BellRing, c: "bg-red-50 text-red-600 border-red-100" },
+            { t: "08s", l: "Ticket créé", d: "Fusion AI ouvre l'incident et priorise", i: Cpu, c: "bg-primary-blue/5 text-primary-blue border-primary-blue/10", tag: "Log API" },
+            { t: "18s", l: "Action technicien", d: "Admin technique met à jour le statut", i: Users, c: "bg-main-text/5 text-main-text border-main-text/10" },
+            { t: "30s", l: "KPI actualisé", d: "Dashboard Ops reflète l'état corrigé", i: BarChart3, c: "bg-primary-green/5 text-primary-green border-primary-green/10" },
           ].map((s, i) => (
-            <div key={i} className="bg-white border border-light-gray/60 rounded-3xl p-6 shadow-sm">
-              <p className="text-[11px] font-bold uppercase tracking-widest text-dark-gray/60 mb-4">{s.t}</p>
-              <div className={`w-12 h-12 rounded-xl border flex items-center justify-center mb-4 ${s.col}`}>
-                <s.i size={20} />
+            <div key={i} className={`p-8 rounded-[2.5rem] border shadow-sm flex flex-col items-center text-center relative ${s.c}`}>
+              {s.tag && (
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-primary-blue text-[8px] font-bold text-white uppercase tracking-widest">
+                  {s.tag}
+                </div>
+              )}
+              <p className="text-4xl font-display font-black mb-4">{s.t}</p>
+              <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center mb-6 shadow-sm">
+                 <s.i size={24} strokeWidth={1.5} />
               </div>
-              <h4 className="text-lg font-semibold text-main-text mb-2">{s.h}</h4>
-              <p className="text-sm text-dark-gray">{s.d}</p>
+              <h4 className="font-bold text-lg mb-2">{s.l}</h4>
+              <p className="text-xs font-light leading-relaxed opacity-80">{s.d}</p>
+              {i < 3 && <ArrowRight className="absolute -right-4 top-1/2 -translate-y-1/2 text-light-gray/50 hidden lg:block" size={24} />}
             </div>
           ))}
+        </div>
+
+        <div className="mt-12 p-12 bg-white rounded-[3.5rem] border border-light-gray/50 shadow-sm relative overflow-hidden group hover:border-primary-blue/30 transition-all">
+           <div className="absolute -right-10 -bottom-10 opacity-5 group-hover:opacity-10 transition-opacity">
+              <TrendingUp size={240} />
+           </div>
+           <div className="flex items-center gap-10">
+              <div className="w-24 h-24 rounded-[2rem] bg-bg-page flex items-center justify-center text-primary-blue">
+                 <Activity size={40} strokeWidth={1} />
+              </div>
+              <div className="flex-1">
+                 <p className="text-xs font-bold text-primary-blue uppercase tracking-widest mb-2">Corrélation Réalité-Terrain</p>
+                 <h4 className="text-3xl font-display font-bold text-main-text mb-4">
+                    Ce cycle = MTTR réel de <span className="text-primary-blue underline decoration-2 underline-offset-4">29 min</span>
+                 </h4>
+                 <p className="text-lg text-dark-gray font-light max-w-3xl">
+                    Performance mesurée en continu sur notre <span className="font-medium text-main-text">prototype live</span>. La rapidité de détection (30s) est le levier majeur de la réduction de 40% de la panne totale.
+                 </p>
+              </div>
+              <div className="px-8 py-6 rounded-3xl bg-bg-page border border-light-gray/30 text-center">
+                 <p className="text-[10px] font-bold text-dark-gray/50 uppercase tracking-widest mb-1">Délai moyen Log</p>
+                 <p className="text-2xl font-display font-bold text-main-text">08.2s</p>
+                 <p className="text-[8px] text-primary-blue font-bold uppercase tracking-widest mt-1">Orchestration AI</p>
+              </div>
+           </div>
         </div>
       </div>
     )
