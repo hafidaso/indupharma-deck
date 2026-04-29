@@ -5,19 +5,19 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { 
+import {
   ChevronsLeft,
   ChevronsRight,
-  AlertTriangle, 
-  Smartphone, 
-  ArrowRight, 
-  Activity, 
-  Cpu, 
-  Database, 
-  LayoutDashboard, 
-  TrendingDown, 
-  CheckCircle2, 
-  Clock, 
+  AlertTriangle,
+  Smartphone,
+  ArrowRight,
+  Activity,
+  Cpu,
+  Database,
+  LayoutDashboard,
+  TrendingDown,
+  CheckCircle2,
+  Clock,
   ShieldCheck,
   Zap,
   Bot,
@@ -29,6 +29,7 @@ import {
   Share2,
   Layout,
   Bell,
+  BellRing,
   MessageSquare,
   FileText,
   HelpCircle,
@@ -91,9 +92,8 @@ const BrandButton = ({
 }) => (
   <button
     onClick={onClick}
-    className={`z-50 rounded-full border border-primary-blue/20 bg-primary-blue text-white shadow-md transition-all hover:bg-[#1848c4] hover:shadow-lg active:scale-[0.98] ${
-      small ? "h-9 px-4 text-[11px]" : "w-12 h-12"
-    } flex items-center justify-center`}
+    className={`z-50 rounded-full border border-primary-blue/20 bg-primary-blue text-white shadow-md transition-all hover:bg-[#1848c4] hover:shadow-lg active:scale-[0.98] ${small ? "h-9 px-4 text-[11px]" : "w-12 h-12"
+      } flex items-center justify-center`}
   >
     {children}
   </button>
@@ -196,9 +196,9 @@ const SlideTitle = ({ title, subtitle }: { title: string, subtitle?: string }) =
 const KPICard = ({ label, value, icon: Icon, colorClass = "text-primary-blue", showLiveBadge = false }: any) => (
   <div className="bg-white p-8 rounded-3xl shadow-sm border border-light-gray/50 flex flex-col gap-4 transition-all hover:shadow-md relative overflow-hidden">
     {showLiveBadge && (
-       <div className="absolute top-0 right-0 bg-primary-blue/5 px-3 py-1 rounded-bl-xl border-l border-b border-primary-blue/10">
-          <span className="text-[7px] font-black uppercase tracking-widest text-primary-blue/60">Live Environment Data</span>
-       </div>
+      <div className="absolute top-0 right-0 bg-primary-blue/5 px-3 py-1 rounded-bl-xl border-l border-b border-primary-blue/10">
+        <span className="text-[7px] font-black uppercase tracking-widest text-primary-blue/60">Live Environment Data</span>
+      </div>
     )}
     <div className={`w-12 h-12 rounded-2xl bg-bg-page flex items-center justify-center ${colorClass}`}>
       <Icon size={24} strokeWidth={1.5} />
@@ -208,8 +208,8 @@ const KPICard = ({ label, value, icon: Icon, colorClass = "text-primary-blue", s
       <p className="text-5xl font-display font-bold text-main-text">{value}</p>
       {showLiveBadge && (
         <div className="mt-4 flex items-center gap-2">
-           <div className="w-1.5 h-1.5 rounded-full bg-primary-green animate-pulse" />
-           <p className="text-[8px] text-dark-gray/40 font-bold uppercase tracking-tighter">Données live — Dashboard INDUPHARMA — Avril 2026</p>
+          <div className="w-1.5 h-1.5 rounded-full bg-primary-green animate-pulse" />
+          <p className="text-[8px] text-dark-gray/40 font-bold uppercase tracking-tighter">Données live — Dashboard INDUPHARMA — Avril 2026</p>
         </div>
       )}
     </div>
@@ -234,7 +234,7 @@ const Slides: SlideData[] = [
     transition: "Avant de présenter la solution, il faut d’abord comprendre le problème terrain.",
     content: (
       <div className="flex flex-col items-center justify-center h-full text-center">
-        <motion.div 
+        <motion.div
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8 }}
@@ -279,12 +279,12 @@ const Slides: SlideData[] = [
           <div className="flex flex-wrap gap-10 justify-center mt-8">
             <div className="flex flex-col items-center">
               <span className="text-5xl font-bold text-primary-green mb-2">30%</span>
-              <span className="text-xs text-dark-gray/80">Downtime évitable<br/>avec predictive maintenance</span>
+              <span className="text-xs text-dark-gray/80">Downtime évitable<br />avec predictive maintenance</span>
               <span className="text-[10px] text-dark-gray/50 mt-1">Source: Gartner, 2024</span>
             </div>
             <div className="flex flex-col items-center">
               <span className="text-5xl font-bold text-primary-blue mb-2">11%</span>
-              <span className="text-xs text-dark-gray/80">Du CA annuel perdu<br/>par les Fortune 500</span>
+              <span className="text-xs text-dark-gray/80">Du CA annuel perdu<br />par les Fortune 500</span>
               <span className="text-[10px] text-dark-gray/50 mt-1">Source: Siemens Report, 2024</span>
             </div>
           </div>
@@ -301,26 +301,26 @@ const Slides: SlideData[] = [
         <SlideTitle title="La réalité du terrain" subtitle="Frictions opérationnelles et risques de conformité" />
         <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
           {[
-            { 
-              title: "Lourdeur Administrative", 
-              desc: "Rapports manuels, saisie papier et risque d'erreur humaine constant.", 
-              icon: FileText, 
-              color: "text-primary-blue bg-primary-blue/5" 
+            {
+              title: "Lourdeur Administrative",
+              desc: "Rapports manuels, saisie papier et risque d'erreur humaine constant.",
+              icon: FileText,
+              color: "text-primary-blue bg-primary-blue/5"
             },
-            { 
-              title: "Angle Mort Temporel", 
-              desc: "Détection tardive des pannes et délais de communication entre services.", 
-              icon: Timer, 
-              color: "text-primary-green bg-primary-green/5" 
+            {
+              title: "Angle Mort Temporel",
+              desc: "Détection tardive des pannes et délais de communication entre services.",
+              icon: Timer,
+              color: "text-primary-green bg-primary-green/5"
             },
-            { 
-              title: "Déficit de Traçabilité", 
-              desc: "Difficulté de maintenir un Audit Trail (ALCOA+) précis sans automatisation.", 
-              icon: FileSearch, 
-              color: "text-red-500 bg-red-50" 
+            {
+              title: "Déficit de Traçabilité",
+              desc: "Difficulté de maintenir un Audit Trail (ALCOA+) précis sans automatisation.",
+              icon: FileSearch,
+              color: "text-red-500 bg-red-50"
             }
           ].map((item, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -403,52 +403,52 @@ const Slides: SlideData[] = [
     content: (
       <div className="h-full flex flex-col">
         <SlideTitle title="Use case : Autoclave M02" subtitle="Démonstration du scénario 2026 : Du capteur à l'action" />
-        
-        <div className="flex-1 flex flex-col justify-center mt-4">
-           {/* 7-step pipeline */}
-           <div className="grid grid-cols-7 gap-4 relative">
-             <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-primary-blue/10 -z-10" />
-             {[
-               { label: "Autoclave", type: "gray", icon: Settings },
-               { label: "ESP32", type: "blue", icon: Cpu },
-               { label: "MQTT", type: "blue", icon: Share2 },
-              { label: "Fusion AI", type: "green", icon: AbaLogoIcon },
-               { label: "Webhook", type: "green", icon: Zap },
-               { label: "Dashboard", type: "green", icon: LayoutDashboard },
-               { label: "Flux Retour", type: "green", icon: RefreshCw },
-             ].map((step, i) => (
-                <div key={i} className="flex flex-col items-center">
-                   <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-3 shadow-md border 
-                     ${step.type === 'gray' ? 'bg-bg-page text-dark-gray border-light-gray' : 
-                       step.type === 'blue' ? 'bg-primary-blue text-white border-primary-blue/20' : 
-                       'bg-primary-green text-white border-primary-green/20'}`}>
-                     <step.icon size={24} onDark={step.type !== 'gray'} />
-                   </div>
-                   <p className="text-[9px] font-black uppercase text-dark-gray tracking-tighter text-center">{step.label}</p>
-                </div>
-             ))}
-           </div>
- 
-           <div className="mt-10 text-center">
-             <span className="text-[11px] text-primary-green font-bold italic bg-primary-green/5 py-2 px-6 rounded-full border border-primary-green/10">
-               "Le Flux Retour = les actions du technicien renvoyées vers Fusion AI pour continuer le workflow."
-             </span>
-           </div>
 
-           <div className="mt-16 bg-white p-10 rounded-[3rem] border border-light-gray shadow-sm flex items-center justify-between">
-              <div className="flex-1 pr-12 border-r border-light-gray">
-                 <h4 className="font-bold text-sm mb-4">Le flux d'information</h4>
-                 <div className="grid grid-cols-2 gap-4 text-[10px] font-medium text-dark-gray">
-                    <div className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary-blue mt-1" />Anomalie détectée par l'ESP32</div>
-                    <div className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary-blue mt-1" />Envoi temps réel via MQTT</div>
-                    <div className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary-green mt-1" />Fusion AI transmet via Webhook</div>
-                    <div className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary-green mt-1" />Pilotage Dashboards Live</div>
-                 </div>
+        <div className="flex-1 flex flex-col justify-center mt-4">
+          {/* 7-step pipeline */}
+          <div className="grid grid-cols-7 gap-4 relative">
+            <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-primary-blue/10 -z-10" />
+            {[
+              { label: "Autoclave", type: "gray", icon: Settings },
+              { label: "ESP32", type: "blue", icon: Cpu },
+              { label: "MQTT", type: "blue", icon: Share2 },
+              { label: "Fusion AI", type: "green", icon: AbaLogoIcon },
+              { label: "Webhook", type: "green", icon: Zap },
+              { label: "Dashboard", type: "green", icon: LayoutDashboard },
+              { label: "Flux Retour", type: "green", icon: RefreshCw },
+            ].map((step, i) => (
+              <div key={i} className="flex flex-col items-center">
+                <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-3 shadow-md border 
+                     ${step.type === 'gray' ? 'bg-bg-page text-dark-gray border-light-gray' :
+                    step.type === 'blue' ? 'bg-primary-blue text-white border-primary-blue/20' :
+                      'bg-primary-green text-white border-primary-green/20'}`}>
+                  <step.icon size={24} onDark={step.type !== 'gray'} />
+                </div>
+                <p className="text-[9px] font-black uppercase text-dark-gray tracking-tighter text-center">{step.label}</p>
               </div>
-              <div className="pl-12 text-center">
-                 <p className="text-3xl font-display font-black text-primary-green italic tracking-tighter">"Du capteur à l'action,<br/>sans rupture."</p>
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <span className="text-[11px] text-primary-green font-bold italic bg-primary-green/5 py-2 px-6 rounded-full border border-primary-green/10">
+              "Le Flux Retour = les actions du technicien renvoyées vers Fusion AI pour continuer le workflow."
+            </span>
+          </div>
+
+          <div className="mt-16 bg-white p-10 rounded-[3rem] border border-light-gray shadow-sm flex items-center justify-between">
+            <div className="flex-1 pr-12 border-r border-light-gray">
+              <h4 className="font-bold text-sm mb-4">Le flux d'information</h4>
+              <div className="grid grid-cols-2 gap-4 text-[10px] font-medium text-dark-gray">
+                <div className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary-blue mt-1" />Anomalie détectée par l'ESP32</div>
+                <div className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary-blue mt-1" />Envoi temps réel via MQTT</div>
+                <div className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary-green mt-1" />Fusion AI transmet via Webhook</div>
+                <div className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary-green mt-1" />Pilotage Dashboards Live</div>
               </div>
-           </div>
+            </div>
+            <div className="pl-12 text-center">
+              <p className="text-3xl font-display font-black text-primary-green italic tracking-tighter">"Du capteur à l'action,<br />sans rupture."</p>
+            </div>
+          </div>
         </div>
       </div>
     )
@@ -467,24 +467,24 @@ const Slides: SlideData[] = [
             { label: "Modéliser", title: "BPMN", icon: GitCompare, sub: "As-Is / To-Be", output: "Carte BPMN As-Is / To-Be" },
             { label: "Démontrer", title: "Prototypage", icon: Terminal, sub: "IoT & AI Proof", output: "MVP IoT & Dashboard" },
           ].map((item, i) => (
-             <div key={i} className="bg-white p-10 rounded-3xl border border-light-gray/50 shadow-sm flex flex-col items-center text-center group hover:shadow-md transition-all">
-                <div className="w-16 h-16 rounded-2xl bg-bg-page flex items-center justify-center text-primary-blue mb-6 group-hover:bg-primary-blue group-hover:text-white transition-colors">
-                   <item.icon size={32} strokeWidth={1.5} />
-                </div>
-                <p className="text-[11px] font-bold text-primary-blue/80 uppercase tracking-widest mb-2">{item.label}</p>
-                <h4 className="font-semibold text-xl mb-3 text-main-text">{item.title}</h4>
-                <p className="text-sm text-dark-gray font-light mb-8">{item.sub}</p>
-                <div className="mt-auto pt-4 border-t border-light-gray w-full">
-                  <p className="text-[10px] font-black text-primary-green uppercase tracking-wider mb-1">Livrable :</p>
-                  <p className="text-[11px] text-dark-gray font-bold">{item.output}</p>
-                </div>
-             </div>
+            <div key={i} className="bg-white p-10 rounded-3xl border border-light-gray/50 shadow-sm flex flex-col items-center text-center group hover:shadow-md transition-all">
+              <div className="w-16 h-16 rounded-2xl bg-bg-page flex items-center justify-center text-primary-blue mb-6 group-hover:bg-primary-blue group-hover:text-white transition-colors">
+                <item.icon size={32} strokeWidth={1.5} />
+              </div>
+              <p className="text-[11px] font-bold text-primary-blue/80 uppercase tracking-widest mb-2">{item.label}</p>
+              <h4 className="font-semibold text-xl mb-3 text-main-text">{item.title}</h4>
+              <p className="text-sm text-dark-gray font-light mb-8">{item.sub}</p>
+              <div className="mt-auto pt-4 border-t border-light-gray w-full">
+                <p className="text-[10px] font-black text-primary-green uppercase tracking-wider mb-1">Livrable :</p>
+                <p className="text-[11px] text-dark-gray font-bold">{item.output}</p>
+              </div>
+            </div>
           ))}
         </div>
         <div className="mt-20 p-8 bg-primary-blue/5 rounded-3xl border border-primary-blue/10 flex items-center justify-center gap-6">
-           <p className="text-xl text-dark-gray font-light text-center">
-             Cette méthodologie nous a permis de construire une réponse <span className="text-primary-blue font-semibold">structurée</span>, <span className="text-primary-blue font-semibold">mesurable</span> et <span className="text-primary-blue font-semibold">démontrable</span>.
-           </p>
+          <p className="text-xl text-dark-gray font-light text-center">
+            Cette méthodologie nous a permis de construire une réponse <span className="text-primary-blue font-semibold">structurée</span>, <span className="text-primary-blue font-semibold">mesurable</span> et <span className="text-primary-blue font-semibold">démontrable</span>.
+          </p>
         </div>
       </div>
     )
@@ -497,50 +497,50 @@ const Slides: SlideData[] = [
       <div className="h-full">
         <SlideTitle title="De l’As-Is au To-Be" subtitle="Le saut de maturité vers l'excellence industrielle" />
         <div className="grid grid-cols-2 gap-16 mt-16 items-center">
-           <div className="space-y-6">
-             <div className="p-10 bg-bg-page/50 rounded-3xl border border-light-gray/50 opacity-80 transition-all hover:opacity-100 hover:shadow-sm">
-                 <h4 className="font-semibold text-dark-gray mb-8 flex items-center gap-3 uppercase text-sm tracking-widest"><AlertTriangle size={20} strokeWidth={1.5} className="text-dark-gray/50"/> Processus AS-IS (Réactif)</h4>
-                 <ul className="space-y-6 text-[15px] font-light text-dark-gray leading-relaxed">
-                    <li className="flex gap-4"><span className="text-dark-gray/30 font-bold">•</span> <span><strong className="font-medium text-main-text">Surveillance visuelle</strong> humaine</span></li>
-                    <li className="flex gap-4"><span className="text-dark-gray/30 font-bold">•</span> <span><strong className="font-medium text-main-text">Signalement manuel</strong> via papier / téléphone</span></li>
-                    <li className="flex gap-4"><span className="text-dark-gray/30 font-bold">•</span> <span><strong className="font-medium text-main-text">Diagnostic long</strong> et incertain</span></li>
-                    <li className="flex gap-4"><span className="text-dark-gray/30 font-bold">•</span> <span><strong className="font-medium text-main-text">Rapport d'intervention</strong> manuel</span></li>
-                 </ul>
+          <div className="space-y-6">
+            <div className="p-10 bg-bg-page/50 rounded-3xl border border-light-gray/50 opacity-80 transition-all hover:opacity-100 hover:shadow-sm">
+              <h4 className="font-semibold text-dark-gray mb-8 flex items-center gap-3 uppercase text-sm tracking-widest"><AlertTriangle size={20} strokeWidth={1.5} className="text-dark-gray/50" /> Processus AS-IS (Réactif)</h4>
+              <ul className="space-y-6 text-[15px] font-light text-dark-gray leading-relaxed">
+                <li className="flex gap-4"><span className="text-dark-gray/30 font-bold">•</span> <span><strong className="font-medium text-main-text">Surveillance visuelle</strong> humaine</span></li>
+                <li className="flex gap-4"><span className="text-dark-gray/30 font-bold">•</span> <span><strong className="font-medium text-main-text">Signalement manuel</strong> via papier / téléphone</span></li>
+                <li className="flex gap-4"><span className="text-dark-gray/30 font-bold">•</span> <span><strong className="font-medium text-main-text">Diagnostic long</strong> et incertain</span></li>
+                <li className="flex gap-4"><span className="text-dark-gray/30 font-bold">•</span> <span><strong className="font-medium text-main-text">Rapport d'intervention</strong> manuel</span></li>
+              </ul>
+            </div>
+            <div className="flex flex-col items-center justify-center my-6 gap-4">
+              <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                className="w-16 h-16 border-2 border-primary-blue/30 bg-primary-blue text-white rounded-full flex items-center justify-center shadow-xl ring-8 ring-primary-blue/5"
+              >
+                <ArrowUpRight size={32} strokeWidth={2.5} />
+              </motion.div>
+              <div className="bg-white px-6 py-2 rounded-full border border-primary-blue/20 shadow-sm">
+                <p className="text-sm font-bold text-primary-blue uppercase tracking-widest">
+                  MTTR : de plusieurs heures → <span className="text-primary-green">42 min</span>
+                </p>
               </div>
-              <div className="flex flex-col items-center justify-center my-6 gap-4">
-                 <motion.div 
-                    animate={{ y: [0, -10, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                    className="w-16 h-16 border-2 border-primary-blue/30 bg-primary-blue text-white rounded-full flex items-center justify-center shadow-xl ring-8 ring-primary-blue/5"
-                 >
-                    <ArrowUpRight size={32} strokeWidth={2.5} />
-                 </motion.div>
-                 <div className="bg-white px-6 py-2 rounded-full border border-primary-blue/20 shadow-sm">
-                    <p className="text-sm font-bold text-primary-blue uppercase tracking-widest">
-                      MTTR : de plusieurs heures → <span className="text-primary-green">42 min</span>
-                    </p>
-                 </div>
-              </div>
-              <div className="p-10 bg-primary-blue/5 rounded-3xl border border-primary-blue/20 transition-all hover:shadow-md hover:border-primary-blue/30">
-                 <h4 className="font-semibold text-primary-blue mb-8 flex items-center gap-3 uppercase text-sm tracking-widest"><Zap size={20} strokeWidth={1.5}/> Processus TO-BE (Connecté)</h4>
-                 <ul className="space-y-6 text-[15px] font-light text-dark-gray leading-relaxed">
-                    <li className="flex gap-4"><CheckCircle2 size={20} className="text-primary-green flex-shrink-0 mt-0.5" strokeWidth={1.5} /> <span><strong className="font-semibold text-main-text">Surveillance continue</strong> par capteurs IoT</span></li>
-                    <li className="flex gap-4"><CheckCircle2 size={20} className="text-primary-green flex-shrink-0 mt-0.5" strokeWidth={1.5} /> <span><strong className="font-semibold text-main-text">Détection Edge AI</strong> & Automatisation ticket</span></li>
-                    <li className="flex gap-4"><CheckCircle2 size={20} className="text-primary-green flex-shrink-0 mt-0.5" strokeWidth={1.5} /> <span><strong className="font-semibold text-main-text">Priorisation Live</strong> & Notification techniciens</span></li>
-                    <li className="flex gap-4"><CheckCircle2 size={20} className="text-primary-green flex-shrink-0 mt-0.5" strokeWidth={1.5} /> <span><strong className="font-semibold text-main-text">Rapports & KPI</strong> auto-générés (ALCOA+)</span></li>
-                 </ul>
-              </div>
-           </div>
-           
-           <div className="bg-white p-16 rounded-[3rem] border border-light-gray/50 shadow-sm text-center">
-              <div className="w-24 h-24 bg-primary-blue/5 rounded-3xl flex items-center justify-center text-primary-blue mx-auto mb-10">
-                 <TrendingDown className="rotate-180" size={48} strokeWidth={1.5} />
-              </div>
-              <h3 className="text-3xl font-display font-bold text-main-text mb-6">Un saut de maturité digital</h3>
-              <p className="text-lg text-dark-gray leading-relaxed font-light">
-                Passage d'un processus <span className="font-semibold text-red-500/80">réactif et manuel</span> à un processus <span className="font-semibold text-primary-green">connecté, tracé et piloté</span> par la donnée.
-              </p>
-           </div>
+            </div>
+            <div className="p-10 bg-primary-blue/5 rounded-3xl border border-primary-blue/20 transition-all hover:shadow-md hover:border-primary-blue/30">
+              <h4 className="font-semibold text-primary-blue mb-8 flex items-center gap-3 uppercase text-sm tracking-widest"><Zap size={20} strokeWidth={1.5} /> Processus TO-BE (Connecté)</h4>
+              <ul className="space-y-6 text-[15px] font-light text-dark-gray leading-relaxed">
+                <li className="flex gap-4"><CheckCircle2 size={20} className="text-primary-green flex-shrink-0 mt-0.5" strokeWidth={1.5} /> <span><strong className="font-semibold text-main-text">Surveillance continue</strong> par capteurs IoT</span></li>
+                <li className="flex gap-4"><CheckCircle2 size={20} className="text-primary-green flex-shrink-0 mt-0.5" strokeWidth={1.5} /> <span><strong className="font-semibold text-main-text">Détection Edge AI</strong> & Automatisation ticket</span></li>
+                <li className="flex gap-4"><CheckCircle2 size={20} className="text-primary-green flex-shrink-0 mt-0.5" strokeWidth={1.5} /> <span><strong className="font-semibold text-main-text">Priorisation Live</strong> & Notification techniciens</span></li>
+                <li className="flex gap-4"><CheckCircle2 size={20} className="text-primary-green flex-shrink-0 mt-0.5" strokeWidth={1.5} /> <span><strong className="font-semibold text-main-text">Rapports & KPI</strong> auto-générés (ALCOA+)</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="bg-white p-16 rounded-[3rem] border border-light-gray/50 shadow-sm text-center">
+            <div className="w-24 h-24 bg-primary-blue/5 rounded-3xl flex items-center justify-center text-primary-blue mx-auto mb-10">
+              <TrendingDown className="rotate-180" size={48} strokeWidth={1.5} />
+            </div>
+            <h3 className="text-3xl font-display font-bold text-main-text mb-6">Un saut de maturité digital</h3>
+            <p className="text-lg text-dark-gray leading-relaxed font-light">
+              Passage d'un processus <span className="font-semibold text-red-500/80">réactif et manuel</span> à un processus <span className="font-semibold text-primary-green">connecté, tracé et piloté</span> par la donnée.
+            </p>
+          </div>
         </div>
       </div>
     )
@@ -552,52 +552,52 @@ const Slides: SlideData[] = [
     content: (
       <div className="h-full">
         <SlideTitle title="Architecture & Choix Techniques" subtitle="Pourquoi ces technologies pour l'industrie 4.0 ?" />
-        
+
         <div className="grid grid-cols-3 gap-8 mt-12">
-           {[
-             { 
-               title: "ESP32", 
-               label: "Edge Computing", 
-               icon: Cpu, 
-               why: "Coût réduit, consommation ultra-basse et connectivité WiFi/BT native pour un déploiement industriel agile." 
-             },
-             { 
-               title: "MQTT", 
-               label: "Protocole Temps Réel", 
-               icon: Share2, 
-               why: "Standard IoT (Pub/Sub) extrêmement léger, idéal pour les réseaux instables et la réactivité instantanée." 
-             },
-             { 
-               title: "Fusion AI", 
-               label: "Orchestration No-Code", 
-               icon: AbaLogoIcon, 
-               why: "Permet de modéliser des workflows complexes sans codage lourd, accélérant le cycle de développement." 
-             }
-           ].map((tech, i) => (
-             <div key={i} className="bg-white p-8 rounded-3xl border border-light-gray/50 shadow-sm hover:shadow-md transition-all flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-2xl bg-primary-blue/5 text-primary-blue flex items-center justify-center mb-6">
-                   <tech.icon size={32} strokeWidth={1.5} />
-                </div>
-                <p className="text-[10px] font-black text-primary-blue/50 uppercase tracking-widest mb-1">{tech.label}</p>
-                <h4 className="text-xl font-bold text-main-text mb-4">{tech.title}</h4>
-                <p className="text-sm text-dark-gray font-light leading-relaxed">{tech.why}</p>
-             </div>
-           ))}
+          {[
+            {
+              title: "ESP32",
+              label: "Edge Computing",
+              icon: Cpu,
+              why: "Coût réduit, consommation ultra-basse et connectivité WiFi/BT native pour un déploiement industriel agile."
+            },
+            {
+              title: "MQTT",
+              label: "Protocole Temps Réel",
+              icon: Share2,
+              why: "Standard IoT (Pub/Sub) extrêmement léger, idéal pour les réseaux instables et la réactivité instantanée."
+            },
+            {
+              title: "Fusion AI",
+              label: "Orchestration No-Code",
+              icon: AbaLogoIcon,
+              why: "Permet de modéliser des workflows complexes sans codage lourd, accélérant le cycle de développement."
+            }
+          ].map((tech, i) => (
+            <div key={i} className="bg-white p-8 rounded-3xl border border-light-gray/50 shadow-sm hover:shadow-md transition-all flex flex-col items-center text-center">
+              <div className="w-16 h-16 rounded-2xl bg-primary-blue/5 text-primary-blue flex items-center justify-center mb-6">
+                <tech.icon size={32} strokeWidth={1.5} />
+              </div>
+              <p className="text-[10px] font-black text-primary-blue/50 uppercase tracking-widest mb-1">{tech.label}</p>
+              <h4 className="text-xl font-bold text-main-text mb-4">{tech.title}</h4>
+              <p className="text-sm text-dark-gray font-light leading-relaxed">{tech.why}</p>
+            </div>
+          ))}
         </div>
- 
+
         <div className="mt-12 bg-bg-page/30 p-8 rounded-[2rem] border border-dashed border-light-gray flex items-center justify-between">
-           <div className="flex items-center gap-6">
-              <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-light-gray flex items-center justify-center text-primary-green">
-                 <Database size={24} strokeWidth={1.5} />
-              </div>
-              <div className="flex flex-col">
-                 <p className="text-sm font-bold text-main-text">Persistance & Interconnectivité</p>
-                 <p className="text-xs text-dark-gray">Stockage Cloud (Supabase) + Webhooks temps réel</p>
-              </div>
-           </div>
-           <div className="text-right border-l border-light-gray pl-12">
-              <p className="text-xl font-display italic text-primary-blue leading-tight">"Scalabilité, Sécurité et<br/>Réactivité Maximale"</p>
-           </div>
+          <div className="flex items-center gap-6">
+            <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-light-gray flex items-center justify-center text-primary-green">
+              <Database size={24} strokeWidth={1.5} />
+            </div>
+            <div className="flex flex-col">
+              <p className="text-sm font-bold text-main-text">Persistance & Interconnectivité</p>
+              <p className="text-xs text-dark-gray">Stockage Cloud (Supabase) + Webhooks temps réel</p>
+            </div>
+          </div>
+          <div className="text-right border-l border-light-gray pl-12">
+            <p className="text-xl font-display italic text-primary-blue leading-tight">"Scalabilité, Sécurité et<br />Réactivité Maximale"</p>
+          </div>
         </div>
       </div>
     )
@@ -609,7 +609,7 @@ const Slides: SlideData[] = [
     content: (
       <div className="h-full flex flex-col">
         <SlideTitle title="Le moteur d’orchestration" subtitle="Fusion AI : Le coeur de l'intelligence opérationnelle" />
-        
+
         <div className="bg-primary-blue/5 border-l-4 border-primary-blue p-5 mb-10 rounded-r-2xl">
           <p className="text-[15px] font-medium text-dark-gray leading-relaxed">
             <span className="text-primary-blue font-bold">Fusion AI</span> = plateforme d'automatisation no-code qui orchestre les workflows complexes entre capteurs IoT, bases de données et équipes opérationnelles.
@@ -617,51 +617,51 @@ const Slides: SlideData[] = [
         </div>
 
         <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-           <div className="relative flex justify-center">
-              {/* Central Node */}
-              <div className="w-48 h-48 bg-primary-blue text-white rounded-full flex flex-col items-center justify-center shadow-2xl z-10 border-8 border-white ring-8 ring-primary-blue/5">
-                <AbaLogoIcon size={64} className="mb-2" onDark />
-                 <p className="text-xs font-black uppercase tracking-widest text-center">FUSION AI</p>
-              </div>
-              {/* Orbiting rings - slowed down */}
-              <motion.div 
-                animate={{ rotate: 360 }}
-                transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] border border-dashed border-primary-blue/20 rounded-full opacity-40" 
-              />
-           </div>
- 
-           <div className="bg-white p-10 rounded-[3rem] border border-light-gray shadow-sm">
-              <h4 className="font-bold text-main-text mb-8 uppercase text-[10px] tracking-widest border-b border-light-gray pb-4">Le Workflow d'Orchestration</h4>
-              <div className="space-y-8">
-                 {[
-                   { t: "Recevoir", d: "Ingestion des données IoT (ESP32 / MQTT)" },
-                   { t: "Analyser", d: "Traitement & Détection d'anomalies en temps réel" },
-                   { t: "Alerter", d: "Transmission instantanée aux Dashboards Ops" },
-                   { t: "Déléguer", d: "Orchestration des actions & workflows techniciens" },
-                   { t: "Synchroniser", d: "Historisation GMP & Mise à jour des statuts" },
-                 ].map((feat, i) => (
-                   <div key={i} className="flex gap-6 items-start relative group">
-                      {i < 4 && <div className="absolute left-4 top-10 bottom-[-20px] w-0.5 bg-light-gray group-hover:bg-primary-blue/20 transition-colors" />}
-                      <div className="w-8 h-8 rounded-full bg-bg-page border border-light-gray flex items-center justify-center text-[10px] font-bold text-primary-blue shrink-0 group-hover:bg-primary-blue group-hover:text-white transition-all">
-                         0{i+1}
-                      </div>
-                      <div>
-                         <h5 className="font-bold text-sm text-main-text mb-1">{feat.t}</h5>
-                         <p className="text-xs text-dark-gray font-light">{feat.d}</p>
-                      </div>
-                   </div>
-                 ))}
-              </div>
-           </div>
+          <div className="relative flex justify-center">
+            {/* Central Node */}
+            <div className="w-48 h-48 bg-primary-blue text-white rounded-full flex flex-col items-center justify-center shadow-2xl z-10 border-8 border-white ring-8 ring-primary-blue/5">
+              <AbaLogoIcon size={64} className="mb-2" onDark />
+              <p className="text-xs font-black uppercase tracking-widest text-center">FUSION AI</p>
+            </div>
+            {/* Orbiting rings - slowed down */}
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] border border-dashed border-primary-blue/20 rounded-full opacity-40"
+            />
+          </div>
+
+          <div className="bg-white p-10 rounded-[3rem] border border-light-gray shadow-sm">
+            <h4 className="font-bold text-main-text mb-8 uppercase text-[10px] tracking-widest border-b border-light-gray pb-4">Le Workflow d'Orchestration</h4>
+            <div className="space-y-8">
+              {[
+                { t: "Recevoir", d: "Ingestion des données IoT (ESP32 / MQTT)" },
+                { t: "Analyser", d: "Traitement & Détection d'anomalies en temps réel" },
+                { t: "Alerter", d: "Transmission instantanée aux Dashboards Ops" },
+                { t: "Déléguer", d: "Orchestration des actions & workflows techniciens" },
+                { t: "Synchroniser", d: "Historisation GMP & Mise à jour des statuts" },
+              ].map((feat, i) => (
+                <div key={i} className="flex gap-6 items-start relative group">
+                  {i < 4 && <div className="absolute left-4 top-10 bottom-[-20px] w-0.5 bg-light-gray group-hover:bg-primary-blue/20 transition-colors" />}
+                  <div className="w-8 h-8 rounded-full bg-bg-page border border-light-gray flex items-center justify-center text-[10px] font-bold text-primary-blue shrink-0 group-hover:bg-primary-blue group-hover:text-white transition-all">
+                    0{i + 1}
+                  </div>
+                  <div>
+                    <h5 className="font-bold text-sm text-main-text mb-1">{feat.t}</h5>
+                    <p className="text-xs text-dark-gray font-light">{feat.d}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
- 
+
         <div className="mt-12 p-8 bg-primary-blue text-white rounded-3xl shadow-xl flex items-center justify-between">
-           <div>
-              <p className="text-xl font-bold italic">"Fusion AI devient le point de liaison."</p>
-              <p className="text-sm font-medium opacity-80 uppercase tracking-widest mt-1">Entre la donnée terrain, la supervision et les actions de maintenance.</p>
-           </div>
-           <Zap size={40} className="opacity-40" />
+          <div>
+            <p className="text-xl font-bold italic">"Fusion AI devient le point de liaison."</p>
+            <p className="text-sm font-medium opacity-80 uppercase tracking-widest mt-1">Entre la donnée terrain, la supervision et les actions de maintenance.</p>
+          </div>
+          <Zap size={40} className="opacity-40" />
         </div>
       </div>
     )
@@ -674,118 +674,118 @@ const Slides: SlideData[] = [
       <div className="h-full flex flex-col">
         <SlideTitle title="Boucle bidirectionnelle Fusion AI ↔ Dashboards" subtitle="L'automatisation du cycle de vie de l'incident" />
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center flex-1">
-           <div className="space-y-8">
-              <div className="bg-white p-8 rounded-3xl border border-light-gray shadow-sm relative overflow-hidden group">
-                 <div className="absolute top-0 right-0 p-4 text-primary-blue/10 group-hover:scale-110 transition-transform"><ArrowRight size={64}/></div>
-                 <h4 className="font-bold text-primary-blue mb-4 uppercase text-xs tracking-widest">1. Flux Entrant (Ops)</h4>
-                 <p className="text-sm font-bold text-main-text mb-2">Fusion AI → Dashboard Opérationnel</p>
-                 <ul className="text-xs text-dark-gray font-medium space-y-2">
-                    <li>• Envoi des données via Webhook</li>
-                    <li>• Affichage des machines et statuts</li>
-                    <li>• Alertes et KPIs en temps réel</li>
-                 </ul>
-              </div>
-              <div className="bg-white p-8 rounded-3xl border border-light-gray shadow-sm relative overflow-hidden group">
-                 <div className="absolute top-0 right-0 p-4 text-primary-green/10 group-hover:scale-110 transition-transform"><RefreshCw size={64}/></div>
-                 <h4 className="font-bold text-primary-green mb-4 uppercase text-xs tracking-widest">2. Flux Retour (Tech)</h4>
-                 <p className="text-sm font-bold text-main-text mb-2">Dashboard Technique → Fusion AI</p>
-                 <ul className="text-xs text-dark-gray font-medium space-y-2">
-                    <li>• Prise en charge des tickets par le technicien</li>
-                    <li>• Mise à jour des statuts d'intervention</li>
-                    <li>• Synchronisation avec le workflow Fusion AI</li>
-                 </ul>
-              </div>
-           </div>
-           
-           <div className="relative flex flex-col items-center justify-center p-12 bg-bg-page rounded-[3rem] border border-light-gray overflow-hidden">
-              <div className="w-full max-w-xs aspect-square flex flex-col items-center justify-center relative">
-                 <div className="w-24 h-24 bg-primary-blue text-white rounded-2xl flex items-center justify-center shadow-lg mb-8 relative z-10">
-                   <AbaLogoIcon size={54} onDark />
-                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-primary-green rounded-full flex items-center justify-center border-2 border-white"><Zap size={10} /></div>
-                 </div>
-                 
-                 <div className="flex gap-12 w-full justify-center">
-                    <div className="flex flex-col items-center">
-                       <div className="w-16 h-16 bg-white border border-light-gray rounded-xl flex items-center justify-center text-dark-gray mb-2 shadow-sm"><LayoutDashboard size={24}/></div>
-                       <span className="text-[9px] font-black uppercase text-dark-gray">Dashboard Ops</span>
-                    </div>
-                    <div className="flex flex-col items-center">
-                       <div className="w-16 h-16 bg-white border border-light-gray rounded-xl flex items-center justify-center text-dark-gray mb-2 shadow-sm"><Settings size={24}/></div>
-                       <span className="text-[9px] font-black uppercase text-dark-gray">Dashboard Tech</span>
-                    </div>
-                 </div>
+          <div className="space-y-8">
+            <div className="bg-white p-8 rounded-3xl border border-light-gray shadow-sm relative overflow-hidden group">
+              <div className="absolute top-0 right-0 p-4 text-primary-blue/10 group-hover:scale-110 transition-transform"><ArrowRight size={64} /></div>
+              <h4 className="font-bold text-primary-blue mb-4 uppercase text-xs tracking-widest">1. Flux Entrant (Ops)</h4>
+              <p className="text-sm font-bold text-main-text mb-2">Fusion AI → Dashboard Opérationnel</p>
+              <ul className="text-xs text-dark-gray font-medium space-y-2">
+                <li>• Envoi des données via Webhook</li>
+                <li>• Affichage des machines et statuts</li>
+                <li>• Alertes et KPIs en temps réel</li>
+              </ul>
+            </div>
+            <div className="bg-white p-8 rounded-3xl border border-light-gray shadow-sm relative overflow-hidden group">
+              <div className="absolute top-0 right-0 p-4 text-primary-green/10 group-hover:scale-110 transition-transform"><RefreshCw size={64} /></div>
+              <h4 className="font-bold text-primary-green mb-4 uppercase text-xs tracking-widest">2. Flux Retour (Tech)</h4>
+              <p className="text-sm font-bold text-main-text mb-2">Dashboard Technique → Fusion AI</p>
+              <ul className="text-xs text-dark-gray font-medium space-y-2">
+                <li>• Prise en charge des tickets par le technicien</li>
+                <li>• Mise à jour des statuts d'intervention</li>
+                <li>• Synchronisation avec le workflow Fusion AI</li>
+              </ul>
+            </div>
+          </div>
 
-                 {/* Arrows illustrating the loop */}
-                 <motion.div animate={{ rotate: 360 }} transition={{ duration: 10, repeat: Infinity, ease: "linear" }} className="absolute inset-0 border-2 border-dashed border-primary-blue/20 rounded-full" />
-                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] pointer-events-none opacity-10"><RefreshCw size={240} className="text-primary-blue" /></div>
+          <div className="relative flex flex-col items-center justify-center p-12 bg-bg-page rounded-[3rem] border border-light-gray overflow-hidden">
+            <div className="w-full max-w-xs aspect-square flex flex-col items-center justify-center relative">
+              <div className="w-24 h-24 bg-primary-blue text-white rounded-2xl flex items-center justify-center shadow-lg mb-8 relative z-10">
+                <AbaLogoIcon size={54} onDark />
+                <div className="absolute -top-2 -right-2 w-6 h-6 bg-primary-green rounded-full flex items-center justify-center border-2 border-white"><Zap size={10} /></div>
               </div>
-           </div>
+
+              <div className="flex gap-12 w-full justify-center">
+                <div className="flex flex-col items-center">
+                  <div className="w-16 h-16 bg-white border border-light-gray rounded-xl flex items-center justify-center text-dark-gray mb-2 shadow-sm"><LayoutDashboard size={24} /></div>
+                  <span className="text-[9px] font-black uppercase text-dark-gray">Dashboard Ops</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <div className="w-16 h-16 bg-white border border-light-gray rounded-xl flex items-center justify-center text-dark-gray mb-2 shadow-sm"><Settings size={24} /></div>
+                  <span className="text-[9px] font-black uppercase text-dark-gray">Dashboard Tech</span>
+                </div>
+              </div>
+
+              {/* Arrows illustrating the loop */}
+              <motion.div animate={{ rotate: 360 }} transition={{ duration: 10, repeat: Infinity, ease: "linear" }} className="absolute inset-0 border-2 border-dashed border-primary-blue/20 rounded-full" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] pointer-events-none opacity-10"><RefreshCw size={240} className="text-primary-blue" /></div>
+            </div>
+          </div>
         </div>
         <div className="mt-8 p-6 bg-white border border-light-gray rounded-2xl text-center">
-           <p className="text-lg font-bold text-dark-gray leading-relaxed">
-             La valeur du projet vient de cette boucle : <span className="text-primary-blue">détecter</span>, <span className="text-primary-blue">afficher</span>, <span className="text-primary-blue font-black underline">agir</span>, puis <span className="text-primary-blue">synchroniser</span>.
-           </p>
+          <p className="text-lg font-bold text-dark-gray leading-relaxed">
+            La valeur du projet vient de cette boucle : <span className="text-primary-blue">détecter</span>, <span className="text-primary-blue">afficher</span>, <span className="text-primary-blue font-black underline">agir</span>, puis <span className="text-primary-blue">synchroniser</span>.
+          </p>
         </div>
       </div>
     )
   },
   {
-    title: "Maquette du projet",
+    title: "Dashboard du projet",
     notes: "Voici la plateforme en action. C'est un environnement live qui connecte les capteurs aux dashboards. Notez l'interface épurée et la réactivité des données. En cas de coupure réseau, nous avons prévu des visuels de secours pour garantir la continuité de la présentation.",
     transition: "Cette plateforme n'est pas seulement un outil, elle produit des indicateurs de performance mesurables.",
     content: (
       <div className="h-full flex flex-col">
-        <SlideTitle title="Maquette Plateforme Live" subtitle="Démonstration interactive de l'écosystème INDUPHARMA" />
-        
+        <SlideTitle title="Dashboard Live" subtitle="Démonstration interactive de l'écosystème INDUPHARMA" />
+
         <div className="flex-1 mt-6 relative group bg-bg-page rounded-[3rem] overflow-hidden border border-light-gray shadow-2xl">
-           {/* Fallback View (Visible while loading or if offline) */}
-           <div className="absolute inset-0 bg-white flex flex-col items-center justify-center text-center p-20 z-0">
-              <div className="w-24 h-24 bg-primary-blue/5 rounded-full flex items-center justify-center text-primary-blue mb-8">
-                 <LayoutDashboard size={48} strokeWidth={1} />
-              </div>
-              <h4 className="text-2xl font-bold text-main-text mb-4">Plateforme INDUPHARMA Live</h4>
-              <p className="text-dark-gray max-w-md mx-auto font-light leading-relaxed">
-                 Chargement de la console de supervision en temps réel...
-              </p>
-              <div className="mt-10 flex gap-6">
-                 <div className="px-6 py-3 rounded-2xl bg-primary-blue/10 text-primary-blue text-xs font-bold uppercase tracking-widest">Vision Opérationnelle</div>
-                 <div className="px-6 py-3 rounded-2xl bg-primary-green/10 text-primary-green text-xs font-bold uppercase tracking-widest">Outils Techniques</div>
-              </div>
-           </div>
+          {/* Fallback View (Visible while loading or if offline) */}
+          <div className="absolute inset-0 bg-white flex flex-col items-center justify-center text-center p-20 z-0">
+            <div className="w-24 h-24 bg-primary-blue/5 rounded-full flex items-center justify-center text-primary-blue mb-8">
+              <LayoutDashboard size={48} strokeWidth={1} />
+            </div>
+            <h4 className="text-2xl font-bold text-main-text mb-4">Plateforme INDUPHARMA Live</h4>
+            <p className="text-dark-gray max-w-md mx-auto font-light leading-relaxed">
+              Chargement de la console de supervision en temps réel...
+            </p>
+            <div className="mt-10 flex gap-6">
+              <div className="px-6 py-3 rounded-2xl bg-primary-blue/10 text-primary-blue text-xs font-bold uppercase tracking-widest">Vision Opérationnelle</div>
+              <div className="px-6 py-3 rounded-2xl bg-primary-green/10 text-primary-green text-xs font-bold uppercase tracking-widest">Outils Techniques</div>
+            </div>
+          </div>
 
-           {/* Live Iframe */}
-           <iframe
-             src="https://indupharma-live-dashboard.vercel.app/"
-             title="INDUPHARMA Live Platform Demo"
-             className="absolute inset-0 w-full h-full border-0 z-10 opacity-0 transition-opacity duration-1000"
-             onLoad={(e) => (e.currentTarget.style.opacity = '1')}
-             loading="lazy"
-             referrerPolicy="no-referrer"
-           />
+          {/* Live Iframe */}
+          <iframe
+            src="https://indupharma-live-dashboard.vercel.app/"
+            title="INDUPHARMA Live Dashboard"
+            className="absolute inset-0 w-full h-full border-0 z-10 opacity-0 transition-opacity duration-1000"
+            onLoad={(e) => (e.currentTarget.style.opacity = '1')}
+            loading="lazy"
+            referrerPolicy="no-referrer"
+          />
 
-           {/* Interactive Overlay Sidebar */}
-           <div className="absolute top-10 right-10 z-20 space-y-4 pointer-events-none group-hover:opacity-100 opacity-60 transition-opacity">
-              {[
-                { t: "Surveillance IoT", i: Zap },
-                { t: "Gestion d'Incidents", i: ShieldCheck },
-                { t: "Traçabilité ALCOA+", i: CheckCircle2 },
-              ].map((item, i) => (
-                <div key={i} className="bg-white/90 backdrop-blur-md px-6 py-4 rounded-2xl border border-white shadow-xl flex items-center gap-4 min-w-[240px]">
-                   <div className="w-10 h-10 rounded-xl bg-primary-blue text-white flex items-center justify-center">
-                      <item.i size={20} />
-                   </div>
-                   <span className="text-sm font-bold text-main-text">{item.t}</span>
+          {/* Interactive Overlay Sidebar */}
+          <div className="absolute top-10 right-10 z-20 space-y-4 pointer-events-none group-hover:opacity-100 opacity-60 transition-opacity">
+            {[
+              { t: "Surveillance IoT", i: Zap },
+              { t: "Gestion d'Incidents", i: ShieldCheck },
+              { t: "Traçabilité ALCOA+", i: CheckCircle2 },
+            ].map((item, i) => (
+              <div key={i} className="bg-white/90 backdrop-blur-md px-6 py-4 rounded-2xl border border-white shadow-xl flex items-center gap-4 min-w-[240px]">
+                <div className="w-10 h-10 rounded-xl bg-primary-blue text-white flex items-center justify-center">
+                  <item.i size={20} />
                 </div>
-              ))}
-           </div>
+                <span className="text-sm font-bold text-main-text">{item.t}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="mt-8 flex items-center justify-between px-10">
-           <p className="text-sm text-dark-gray/60 italic">Accès direct : <a href="https://indupharma-live-dashboard.vercel.app/" target="_blank" className="text-primary-blue underline">indupharma-live-dashboard.vercel.app</a></p>
-           <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-primary-green animate-pulse" />
-              <span className="text-[10px] font-black text-primary-green uppercase tracking-widest">Status: Live Environment</span>
-           </div>
+          <p className="text-sm text-dark-gray/60 italic">Accès direct : <a href="https://indupharma-live-dashboard.vercel.app/" target="_blank" className="text-primary-blue underline">indupharma-live-dashboard.vercel.app</a></p>
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-primary-green animate-pulse" />
+            <span className="text-[10px] font-black text-primary-green uppercase tracking-widest">Status: Live Environment</span>
+          </div>
         </div>
       </div>
     )
@@ -820,43 +820,43 @@ const Slides: SlideData[] = [
         </div>
 
         <div className="grid grid-cols-4 gap-6 mt-8">
-           <KPICard label="Machines Actives" value="7/10" icon={Activity} showLiveBadge />
-           <KPICard label="Alertes Critiques" value="01" icon={AlertTriangle} colorClass="text-red-500" showLiveBadge />
-           <KPICard label="Incident Ouvert" value="01" icon={Smartphone} colorClass="text-red-400" showLiveBadge />
-           <KPICard label="Techniciens" value="06" icon={Users} showLiveBadge />
+          <KPICard label="Machines Actives" value="7/10" icon={Activity} showLiveBadge />
+          <KPICard label="Alertes Critiques" value="01" icon={AlertTriangle} colorClass="text-red-500" showLiveBadge />
+          <KPICard label="Incident Ouvert" value="01" icon={Smartphone} colorClass="text-red-400" showLiveBadge />
+          <KPICard label="Techniciens" value="06" icon={Users} showLiveBadge />
         </div>
 
         <div className="mt-10 grid grid-cols-2 gap-8">
-           <div className="bg-bg-page/60 rounded-3xl border border-primary-blue/10 shadow-sm p-8">
-             <h4 className="font-semibold text-xs uppercase tracking-widest text-dark-gray mb-8 flex items-center justify-between">
-               Tendance de disponibilité 
-               <span className="text-[9px] bg-white px-2 py-1 rounded-full border border-light-gray">Données live</span>
-             </h4>
-             <MiniBarChart data={trendBars} />
-             <div className="mt-5 grid grid-cols-2 gap-3 text-xs">
-               <div className="bg-white rounded-xl border border-light-gray px-3 py-2 flex justify-between items-center"><span className="text-dark-gray/70">MTBF:</span> <span className="font-bold text-main-text text-primary-blue">208 h</span></div>
-               <div className="bg-white rounded-xl border border-light-gray px-3 py-2 flex justify-between items-center"><span className="text-dark-gray/70">Closure Rate:</span> <span className="font-bold text-primary-green">91%</span></div>
-             </div>
-           </div>
-           <div className="bg-bg-page/60 rounded-3xl border border-primary-green/15 shadow-sm p-8 flex flex-col items-center justify-center relative">
-             <h4 className="font-semibold text-xs uppercase tracking-widest text-dark-gray mb-6 w-full text-left">
-               Process Readiness Score
-             </h4>
-             <div
-               className="w-40 h-40 rounded-full border border-light-gray shadow-inner relative"
-               style={{
-                 background: `conic-gradient(#1f5eff ${readinessScore}%, #2fcf8f ${readinessScore}% 100%)`,
-               }}
-             >
-               <div className="absolute inset-4 bg-white rounded-full flex items-center justify-center flex-col shadow-inner">
-                 <p className="text-3xl font-display font-bold text-primary-blue">89%</p>
-                 <p className="text-[10px] uppercase tracking-widest text-dark-gray/60 font-semibold">Ready</p>
-               </div>
-             </div>
-             <p className="text-[10px] text-dark-gray mt-6 text-center leading-relaxed">
-               <span className="font-bold text-primary-blue">89% des processus critiques</span> sont couverts par la boucle détection → action (Live Roster Synchronized).
-             </p>
-           </div>
+          <div className="bg-bg-page/60 rounded-3xl border border-primary-blue/10 shadow-sm p-8">
+            <h4 className="font-semibold text-xs uppercase tracking-widest text-dark-gray mb-8 flex items-center justify-between">
+              Tendance de disponibilité
+              <span className="text-[9px] bg-white px-2 py-1 rounded-full border border-light-gray">Données live</span>
+            </h4>
+            <MiniBarChart data={trendBars} />
+            <div className="mt-5 grid grid-cols-2 gap-3 text-xs">
+              <div className="bg-white rounded-xl border border-light-gray px-3 py-2 flex justify-between items-center"><span className="text-dark-gray/70">MTBF:</span> <span className="font-bold text-main-text text-primary-blue">208 h</span></div>
+              <div className="bg-white rounded-xl border border-light-gray px-3 py-2 flex justify-between items-center"><span className="text-dark-gray/70">Closure Rate:</span> <span className="font-bold text-primary-green">91%</span></div>
+            </div>
+          </div>
+          <div className="bg-bg-page/60 rounded-3xl border border-primary-green/15 shadow-sm p-8 flex flex-col items-center justify-center relative">
+            <h4 className="font-semibold text-xs uppercase tracking-widest text-dark-gray mb-6 w-full text-left">
+              Process Readiness Score
+            </h4>
+            <div
+              className="w-40 h-40 rounded-full border border-light-gray shadow-inner relative"
+              style={{
+                background: `conic-gradient(#1f5eff ${readinessScore}%, #2fcf8f ${readinessScore}% 100%)`,
+              }}
+            >
+              <div className="absolute inset-4 bg-white rounded-full flex items-center justify-center flex-col shadow-inner">
+                <p className="text-3xl font-display font-bold text-primary-blue">89%</p>
+                <p className="text-[10px] uppercase tracking-widest text-dark-gray/60 font-semibold">Ready</p>
+              </div>
+            </div>
+            <p className="text-[10px] text-dark-gray mt-6 text-center leading-relaxed">
+              <span className="font-bold text-primary-blue">89% des processus critiques</span> sont couverts par la boucle détection → action (Live Roster Synchronized).
+            </p>
+          </div>
         </div>
       </div>
     )
@@ -869,41 +869,41 @@ const Slides: SlideData[] = [
       <div className="h-full">
         <SlideTitle title="Objectifs de performance" subtitle="Indicateurs de performance mesurés en conditions réelles" />
         <div className="grid grid-cols-2 gap-16 mt-16 items-center">
-           <div className="space-y-6">
-              {[
-                { label: "Détection anomalie", value: "< 30 secondes", icon: Zap },
-                { label: "Affichage Centralisé", value: "10 machines / 3 zones", icon: LayoutDashboard },
-                { label: "Prise en charge Ticket", value: "MTTR : 29 min", icon: Clock },
-                { label: "Retour Technicien", value: "< 5s (Synchronisé)", icon: RefreshCw },
-                { label: "Traçabilité", value: "100% Audit Trail", icon: ShieldCheck },
-              ].map((obj, i) => (
-                <div key={i} className="flex justify-between items-center p-6 bg-white rounded-2xl border border-light-gray/50 shadow-sm transition-all hover:bg-bg-page/50 group">
-                   <div className="flex items-center gap-4">
-                     <div className="w-8 h-8 rounded-lg bg-primary-blue/5 text-primary-blue flex items-center justify-center opacity-60 group-hover:opacity-100 transition-opacity">
-                        <obj.icon size={18} strokeWidth={2} />
-                     </div>
-                     <span className="text-xs font-semibold uppercase text-dark-gray/70 tracking-widest">{obj.label}</span>
-                   </div>
-                   <span className="text-base font-bold text-primary-blue bg-primary-blue/5 px-4 py-1 rounded-full border border-primary-blue/10">{obj.value}</span>
+          <div className="space-y-6">
+            {[
+              { label: "Détection anomalie", value: "< 30 secondes", icon: Zap },
+              { label: "Affichage Centralisé", value: "10 machines / 3 zones", icon: LayoutDashboard },
+              { label: "Prise en charge Ticket", value: "MTTR : 29 min", icon: Clock },
+              { label: "Retour Technicien", value: "< 5s (Synchronisé)", icon: RefreshCw },
+              { label: "Traçabilité", value: "100% Audit Trail", icon: ShieldCheck },
+            ].map((obj, i) => (
+              <div key={i} className="flex justify-between items-center p-6 bg-white rounded-2xl border border-light-gray/50 shadow-sm transition-all hover:bg-bg-page/50 group">
+                <div className="flex items-center gap-4">
+                  <div className="w-8 h-8 rounded-lg bg-primary-blue/5 text-primary-blue flex items-center justify-center opacity-60 group-hover:opacity-100 transition-opacity">
+                    <obj.icon size={18} strokeWidth={2} />
+                  </div>
+                  <span className="text-xs font-semibold uppercase text-dark-gray/70 tracking-widest">{obj.label}</span>
                 </div>
-              ))}
-           </div>
-           
-           <div className="bg-primary-blue text-white p-14 rounded-[3rem] shadow-lg relative overflow-hidden flex flex-col justify-center min-h-[430px]">
-              <div className="absolute top-0 right-0 p-8 opacity-10 rotate-12"><Zap size={200} strokeWidth={1} /></div>
-              <h3 className="text-4xl font-display font-light mb-8 leading-tight z-10 relative">
-                De la détection à l'action : <span className="font-bold">29 min en moyenne.</span>
-              </h3>
-              <p className="text-lg font-light leading-relaxed opacity-90 z-10 relative">
-                Une performance mesurée en conditions réelles, permettant une réduction drastique du délai entre l'incident terrain et la remise en service.
-              </p>
-              <div className="mt-12 flex gap-3 z-10 relative items-center">
-                 <div className="px-4 py-2 rounded-full border border-white/20 bg-white/10 text-[10px] font-bold uppercase tracking-widest">
-                    Real-World Conditions
-                 </div>
-                 <div className="w-12 h-1 bg-white/30 rounded-full" />
+                <span className="text-base font-bold text-primary-blue bg-primary-blue/5 px-4 py-1 rounded-full border border-primary-blue/10">{obj.value}</span>
               </div>
-           </div>
+            ))}
+          </div>
+
+          <div className="bg-primary-blue text-white p-14 rounded-[3rem] shadow-lg relative overflow-hidden flex flex-col justify-center min-h-[430px]">
+            <div className="absolute top-0 right-0 p-8 opacity-10 rotate-12"><Zap size={200} strokeWidth={1} /></div>
+            <h3 className="text-4xl font-display font-light mb-8 leading-tight z-10 relative">
+              De la détection à l'action : <span className="font-bold">29 min en moyenne.</span>
+            </h3>
+            <p className="text-lg font-light leading-relaxed opacity-90 z-10 relative">
+              Une performance mesurée en conditions réelles, permettant une réduction drastique du délai entre l'incident terrain et la remise en service.
+            </p>
+            <div className="mt-12 flex gap-3 z-10 relative items-center">
+              <div className="px-4 py-2 rounded-full border border-white/20 bg-white/10 text-[10px] font-bold uppercase tracking-widest">
+                Real-World Conditions
+              </div>
+              <div className="w-12 h-1 bg-white/30 rounded-full" />
+            </div>
+          </div>
         </div>
       </div>
     )
@@ -916,43 +916,43 @@ const Slides: SlideData[] = [
       <div className="h-full">
         <SlideTitle title="Une opportunité réelle" subtitle="L'IIoT au cœur de la souveraineté industrielle" />
         <div className="grid grid-cols-2 gap-16 mt-16">
-           <div className="space-y-8">
-              <div className="p-10 bg-white rounded-3xl border border-light-gray/50 shadow-sm transition-all hover:shadow-md relative overflow-hidden group">
-                  <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-20 transition-opacity"><Globe size={80} /></div>
-                  <h4 className="text-4xl font-display font-bold text-primary-blue mb-2 tracking-tight">~433 Md$</h4>
-                  <p className="text-[10px] font-bold text-dark-gray/60 uppercase tracking-widest mb-4">Marché global Industrie 4.0 (2030)</p>
-                  <div className="pt-4 border-t border-light-gray/50">
-                    <p className="text-xl font-bold text-primary-blue mb-1">~28 Md$</p>
-                    <p className="text-[10px] font-semibold text-dark-gray/70 uppercase tracking-widest">Sous-segment Pharma IIoT (Cible)</p>
+          <div className="space-y-8">
+            <div className="p-10 bg-white rounded-3xl border border-light-gray/50 shadow-sm transition-all hover:shadow-md relative overflow-hidden group">
+              <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-20 transition-opacity"><Globe size={80} /></div>
+              <h4 className="text-4xl font-display font-bold text-primary-blue mb-2 tracking-tight">~433 Md$</h4>
+              <p className="text-[10px] font-bold text-dark-gray/60 uppercase tracking-widest mb-4">Marché global Industrie 4.0 (2030)</p>
+              <div className="pt-4 border-t border-light-gray/50">
+                <p className="text-xl font-bold text-primary-blue mb-1">~28 Md$</p>
+                <p className="text-[10px] font-semibold text-dark-gray/70 uppercase tracking-widest">Sous-segment Pharma IIoT (Cible)</p>
+              </div>
+              <p className="text-[9px] text-dark-gray/40 mt-4 italic">Sources: NextMSC & MarketsandMarkets</p>
+            </div>
+            <div className="p-10 bg-white rounded-3xl border border-light-gray/50 shadow-sm transition-all hover:shadow-md relative overflow-hidden group">
+              <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-20 transition-opacity"><Zap size={80} /></div>
+              <h4 className="text-5xl font-display font-bold text-primary-green mb-4 tracking-tight">+30 à 50%</h4>
+              <p className="text-xs font-semibold text-dark-gray/70 uppercase tracking-widest leading-relaxed">Réduction de downtime via maintenance prédictive</p>
+              <p className="text-[10px] text-dark-gray/40 mt-6 italic">Source: McKinsey (Predictive Maintenance)</p>
+            </div>
+          </div>
+
+          <div className="bg-bg-page/50 p-12 rounded-[3.5rem] border border-light-gray/50 flex flex-col justify-center">
+            <h4 className="font-semibold text-main-text mb-8 uppercase text-sm tracking-widest flex items-center gap-3"><Globe size={20} strokeWidth={1.5} className="text-primary-blue" /> Pourquoi maintenant ?</h4>
+            <ul className="space-y-8">
+              {[
+                { t: "Pression réglementaire", d: "Alcoa+ et traçabilité temps réel." },
+                { t: "Pénurie de main d'œuvre", d: "Besoin d'outils d'assistance métiers." },
+                { t: "Coût de l'énergie", d: "Optimisation de la consommation énergétique." },
+              ].map((item, i) => (
+                <li key={i} className="flex gap-6">
+                  <div className="w-2.5 h-2.5 rounded-full bg-primary-blue/80 mt-1.5 flex-shrink-0" />
+                  <div>
+                    <p className="font-semibold text-base text-main-text mb-1">{item.t}</p>
+                    <p className="text-sm text-dark-gray font-light">{item.d}</p>
                   </div>
-                  <p className="text-[9px] text-dark-gray/40 mt-4 italic">Sources: NextMSC & MarketsandMarkets</p>
-              </div>
-              <div className="p-10 bg-white rounded-3xl border border-light-gray/50 shadow-sm transition-all hover:shadow-md relative overflow-hidden group">
-                  <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-20 transition-opacity"><Zap size={80} /></div>
-                  <h4 className="text-5xl font-display font-bold text-primary-green mb-4 tracking-tight">+30 à 50%</h4>
-                  <p className="text-xs font-semibold text-dark-gray/70 uppercase tracking-widest leading-relaxed">Réduction de downtime via maintenance prédictive</p>
-                  <p className="text-[10px] text-dark-gray/40 mt-6 italic">Source: McKinsey (Predictive Maintenance)</p>
-              </div>
-           </div>
-           
-           <div className="bg-bg-page/50 p-12 rounded-[3.5rem] border border-light-gray/50 flex flex-col justify-center">
-              <h4 className="font-semibold text-main-text mb-8 uppercase text-sm tracking-widest flex items-center gap-3"><Globe size={20} strokeWidth={1.5} className="text-primary-blue"/> Pourquoi maintenant ?</h4>
-              <ul className="space-y-8">
-                 {[
-                   { t: "Pression réglementaire", d: "Alcoa+ et traçabilité temps réel." },
-                   { t: "Pénurie de main d'œuvre", d: "Besoin d'outils d'assistance métiers." },
-                   { t: "Coût de l'énergie", d: "Optimisation de la consommation énergétique." },
-                 ].map((item, i) => (
-                   <li key={i} className="flex gap-6">
-                      <div className="w-2.5 h-2.5 rounded-full bg-primary-blue/80 mt-1.5 flex-shrink-0" />
-                      <div>
-                         <p className="font-semibold text-base text-main-text mb-1">{item.t}</p>
-                         <p className="text-sm text-dark-gray font-light">{item.d}</p>
-                      </div>
-                   </li>
-                 ))}
-              </ul>
-           </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
         <div className="mt-8 bg-white rounded-3xl border border-light-gray/50 p-8 shadow-sm relative">
           <div className="absolute top-6 right-8 px-4 py-1.5 bg-primary-green/5 border border-primary-green/20 rounded-full">
@@ -989,7 +989,7 @@ const Slides: SlideData[] = [
     content: (
       <div className="h-full">
         <SlideTitle title="Différenciation Stratégique" subtitle="Se positionner là où la valeur est la plus critique" />
-        
+
         <div className="mt-12 overflow-hidden rounded-3xl border border-light-gray/50 shadow-sm bg-white relative">
           <table className="w-full text-left border-collapse">
             <thead>
@@ -1002,34 +1002,34 @@ const Slides: SlideData[] = [
             </thead>
             <tbody className="text-sm font-light text-dark-gray">
               {[
-                { 
-                  name: "OCP Maintenance", 
-                  offer: "Capteurs vibrostiques, diagnostics IA.", 
-                  limit: "Usines lourdes, moins pharma-centric.", 
-                  opp: "Générique (PdM standard)." 
+                {
+                  name: "OCP Maintenance",
+                  offer: "Capteurs vibrostiques, diagnostics IA.",
+                  limit: "Usines lourdes, moins pharma-centric.",
+                  opp: "Générique (PdM standard)."
                 },
-                { 
-                  name: "Indusnov Solutions", 
-                  offer: "Maintenance 4.0, analyse vibratoire.", 
-                  limit: "Générique industriel, pas de workflow.", 
-                  opp: "Maintenance réactive." 
+                {
+                  name: "Indusnov Solutions",
+                  offer: "Maintenance 4.0, analyse vibratoire.",
+                  limit: "Générique industriel, pas de workflow.",
+                  opp: "Maintenance réactive."
                 },
-                { 
-                  name: "VISIOPROCESS", 
-                  offer: "Datavisualisation temps réel, GTC.", 
-                  limit: "Orienté énergie et bâtiments.", 
-                  opp: "Visualisation passive." 
+                {
+                  name: "VISIOPROCESS",
+                  offer: "Datavisualisation temps réel, GTC.",
+                  limit: "Orienté énergie et bâtiments.",
+                  opp: "Visualisation passive."
                 },
-                { 
-                  name: "MySirius (JRI)", 
-                  offer: "Monitoring connecté (froid, métrologie).", 
-                  limit: "Centré conformité passive.", 
-                  opp: "Audit Trail simple." 
+                {
+                  name: "MySirius (JRI)",
+                  offer: "Monitoring connecté (froid, métrologie).",
+                  limit: "Centré conformité passive.",
+                  opp: "Audit Trail simple."
                 },
-                { 
-                  name: "INDUPHARMA", 
-                  offer: "Boucle IIoT + Fusion AI + GMP", 
-                  limit: "—", 
+                {
+                  name: "INDUPHARMA",
+                  offer: "Boucle IIoT + Fusion AI + GMP",
+                  limit: "—",
                   opp: "MTTR 29 min / Closure Rate 91%",
                   highlight: true
                 },
@@ -1057,31 +1057,31 @@ const Slides: SlideData[] = [
               Analyse basée sur : sites web officiels, études de cas publiées et interviews terrain — Mars 2026
             </p>
             <div className="flex items-center gap-2">
-               <div className="w-2 h-2 rounded-full bg-primary-blue animate-pulse" />
-               <span className="text-[9px] font-bold uppercase tracking-widest text-primary-blue">INDUPHARMA LEADERSHIP</span>
+              <div className="w-2 h-2 rounded-full bg-primary-blue animate-pulse" />
+              <span className="text-[9px] font-bold uppercase tracking-widest text-primary-blue">INDUPHARMA LEADERSHIP</span>
             </div>
           </div>
         </div>
 
         <div className="mt-12 grid grid-cols-2 gap-10">
-           <div className="p-8 bg-primary-green/5 rounded-[2.5rem] border border-primary-green/10 flex items-center gap-6">
-              <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-primary-green shadow-sm">
-                 <RefreshCw size={24} strokeWidth={1.5} />
-              </div>
-              <div>
-                 <p className="text-[11px] font-bold uppercase tracking-widest text-primary-green mb-1">Notre Atout</p>
-                 <p className="text-base font-medium text-main-text">La boucle fermée Supervision-Action.</p>
-              </div>
-           </div>
-           <div className="p-8 bg-primary-blue/5 rounded-[2.5rem] border border-primary-blue/10 flex items-center gap-6">
-              <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-primary-blue shadow-sm">
-                 <ShieldCheck size={24} strokeWidth={1.5} />
-              </div>
-              <div>
-                 <p className="text-[11px] font-bold uppercase tracking-widest text-primary-blue mb-1">Positionnement</p>
-                 <p className="text-base font-medium text-main-text">Focus Processus Pharma & ALCOA+.</p>
-              </div>
-           </div>
+          <div className="p-8 bg-primary-green/5 rounded-[2.5rem] border border-primary-green/10 flex items-center gap-6">
+            <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-primary-green shadow-sm">
+              <RefreshCw size={24} strokeWidth={1.5} />
+            </div>
+            <div>
+              <p className="text-[11px] font-bold uppercase tracking-widest text-primary-green mb-1">Notre Atout</p>
+              <p className="text-base font-medium text-main-text">La boucle fermée Supervision-Action.</p>
+            </div>
+          </div>
+          <div className="p-8 bg-primary-blue/5 rounded-[2.5rem] border border-primary-blue/10 flex items-center gap-6">
+            <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-primary-blue shadow-sm">
+              <ShieldCheck size={24} strokeWidth={1.5} />
+            </div>
+            <div>
+              <p className="text-[11px] font-bold uppercase tracking-widest text-primary-blue mb-1">Positionnement</p>
+              <p className="text-base font-medium text-main-text">Focus Processus Pharma & ALCOA+.</p>
+            </div>
+          </div>
         </div>
       </div>
     )
@@ -1094,29 +1094,29 @@ const Slides: SlideData[] = [
       <div className="h-full">
         <SlideTitle title="Impact global" subtitle="Performance mesurée sur le site pilote" />
         <div className="grid grid-cols-3 gap-8 mt-16">
-           {[
-             { title: "Économique", sub: "ROI +70% / Break-even 7 mois", icon: BadgeEuro, desc: "Réduction drastique des pertes de lots et optimisation des coûts de maintenance." },
-             { title: "Humain", sub: "Closure Rate 91%", icon: Users, desc: "6 techniciens pilotés via dashboard — zéro appel téléphonique manuel, stress réduit." },
-             { title: "Qualité", sub: "100% Audit Trail", icon: ShieldCheck, desc: "Zéro rapport manuel horodaté. Traçabilité GMP native et sans faille." },
-           ].map((impact, i) => (
-             <div key={i} className="bg-white p-12 rounded-[3.5rem] border border-light-gray/50 shadow-sm flex flex-col items-center text-center transition-all hover:shadow-md hover:border-light-gray group">
-                <div className="w-20 h-20 rounded-[2rem] bg-bg-page flex items-center justify-center text-primary-blue mb-8 group-hover:bg-primary-blue/5 transition-colors">
-                   <impact.icon size={36} strokeWidth={1} />
-                </div>
-                <h4 className="font-bold text-2xl mb-2 tracking-tight text-main-text">{impact.title}</h4>
-                <p className="text-[10px] font-bold text-primary-blue uppercase tracking-widest mb-6">{impact.sub}</p>
-                <p className="text-sm text-dark-gray font-light leading-relaxed px-4">{impact.desc}</p>
-             </div>
-           ))}
+          {[
+            { title: "Économique", sub: "ROI +70% / Break-even 7 mois", icon: BadgeEuro, desc: "Réduction drastique des pertes de lots et optimisation des coûts de maintenance." },
+            { title: "Humain", sub: "Closure Rate 91%", icon: Users, desc: "6 techniciens pilotés via dashboard — zéro appel téléphonique manuel, stress réduit." },
+            { title: "Qualité", sub: "100% Audit Trail", icon: ShieldCheck, desc: "Zéro rapport manuel horodaté. Traçabilité GMP native et sans faille." },
+          ].map((impact, i) => (
+            <div key={i} className="bg-white p-12 rounded-[3.5rem] border border-light-gray/50 shadow-sm flex flex-col items-center text-center transition-all hover:shadow-md hover:border-light-gray group">
+              <div className="w-20 h-20 rounded-[2rem] bg-bg-page flex items-center justify-center text-primary-blue mb-8 group-hover:bg-primary-blue/5 transition-colors">
+                <impact.icon size={36} strokeWidth={1} />
+              </div>
+              <h4 className="font-bold text-2xl mb-2 tracking-tight text-main-text">{impact.title}</h4>
+              <p className="text-[10px] font-bold text-primary-blue uppercase tracking-widest mb-6">{impact.sub}</p>
+              <p className="text-sm text-dark-gray font-light leading-relaxed px-4">{impact.desc}</p>
+            </div>
+          ))}
         </div>
         <div className="mt-20 p-10 bg-primary-blue/5 rounded-[3rem] border border-primary-blue/10 flex items-center justify-center gap-6">
-           <Zap className="text-primary-blue" strokeWidth={1.5} size={28} />
-           <p className="text-xl font-light text-dark-gray">"L'excellence industrielle ne se mesure pas seulement en <span className="font-bold">TRS</span>, mais en <span className="font-bold text-primary-blue">confiance opérationnelle</span>."</p>
+          <Zap className="text-primary-blue" strokeWidth={1.5} size={28} />
+          <p className="text-xl font-light text-dark-gray">"L'excellence industrielle ne se mesure pas seulement en <span className="font-bold">TRS</span>, mais en <span className="font-bold text-primary-blue">confiance opérationnelle</span>."</p>
         </div>
       </div>
     )
   },
-      // ...existing code...
+  // ...existing code...
   {
     title: "ROI 12 mois",
     notes: "Détail du ROI : 240k MAD d'investissement (Matériel, Intégration, Formation) vs 410k MAD de gains (réduction downtime sur 2 lignes critiques). Le break-even est atteint à 7 mois.",
@@ -1125,63 +1125,63 @@ const Slides: SlideData[] = [
       <div className="h-full">
         <SlideTitle title="ROI en 12 mois" subtitle="Un dossier économique transparent et justifiable" />
         <div className="grid grid-cols-2 gap-12 mt-12 items-start">
-           <div className="space-y-6">
-              <div className="bg-white border border-light-gray/60 rounded-3xl p-8 shadow-sm">
-                <p className="text-xs uppercase tracking-widest font-bold text-dark-gray/60 mb-6 flex justify-between">
-                   <span>Investissement Initial</span>
-                   <span className="text-primary-blue">240k MAD</span>
-                </p>
-                <div className="space-y-3">
-                   {[
-                     { l: "Capteurs & Infrastructure", v: "45k" },
-                     { l: "Intégration Fusion AI", v: "50k" },
-                     { l: "Développement Dashboards", v: "80k" },
-                     { l: "Formation & Onboarding", v: "40k" },
-                     { l: "Maintenance Année 1", v: "25k" },
-                   ].map((item, i) => (
-                     <div key={i} className="flex justify-between text-xs border-b border-light-gray/20 pb-2 last:border-0">
-                        <span className="text-dark-gray font-light">{item.l}</span>
-                        <span className="font-semibold text-main-text">{item.v} MAD</span>
-                     </div>
-                   ))}
-                </div>
+          <div className="space-y-6">
+            <div className="bg-white border border-light-gray/60 rounded-3xl p-8 shadow-sm">
+              <p className="text-xs uppercase tracking-widest font-bold text-dark-gray/60 mb-6 flex justify-between">
+                <span>Investissement Initial</span>
+                <span className="text-primary-blue">240k MAD</span>
+              </p>
+              <div className="space-y-3">
+                {[
+                  { l: "Capteurs & Infrastructure", v: "45k" },
+                  { l: "Intégration Fusion AI", v: "50k" },
+                  { l: "Développement Dashboards", v: "80k" },
+                  { l: "Formation & Onboarding", v: "40k" },
+                  { l: "Maintenance Année 1", v: "25k" },
+                ].map((item, i) => (
+                  <div key={i} className="flex justify-between text-xs border-b border-light-gray/20 pb-2 last:border-0">
+                    <span className="text-dark-gray font-light">{item.l}</span>
+                    <span className="font-semibold text-main-text">{item.v} MAD</span>
+                  </div>
+                ))}
               </div>
-              
-              <div className="bg-bg-page/50 border border-light-gray/40 rounded-3xl p-8">
-                 <p className="text-xs uppercase tracking-widest font-bold text-dark-gray/60 mb-4 flex items-center gap-2">
-                    <BarChart3 size={16} /> Logique de Calcul des Gains
-                 </p>
-                 <p className="text-sm text-dark-gray leading-relaxed font-light italic">
-                    "213 min de downtime actuel × Coût/heure pharma ($100K-$500K) × Fréquence mensuelle × Réduction 30% = 410k MAD / an"
-                 </p>
-              </div>
-           </div>
+            </div>
 
-           <div className="space-y-8">
-              <div className="grid grid-cols-2 gap-6">
-                <div className="bg-primary-green/5 border border-primary-green/20 rounded-3xl p-8 shadow-sm">
-                  <p className="text-[10px] uppercase tracking-widest font-bold text-primary-green/80 mb-2">Gain Annuel</p>
-                  <p className="text-4xl font-display font-bold text-primary-green">410k MAD</p>
-                  <p className="text-[10px] text-primary-green/60 mt-2">Downtime évité & Pertes lots</p>
-                </div>
-                <div className="bg-main-text text-white rounded-3xl p-8 shadow-sm relative overflow-hidden">
-                  <div className="absolute -right-4 -bottom-4 opacity-10"><Clock size={100} /></div>
-                  <p className="text-[10px] uppercase tracking-widest font-bold opacity-70 mb-2">Break-even</p>
-                  <p className="text-4xl font-display font-bold">7 mois</p>
-                  <p className="text-[10px] opacity-60 mt-2">Point mort financier</p>
-                </div>
-              </div>
+            <div className="bg-bg-page/50 border border-light-gray/40 rounded-3xl p-8">
+              <p className="text-xs uppercase tracking-widest font-bold text-dark-gray/60 mb-4 flex items-center gap-2">
+                <BarChart3 size={16} /> Logique de Calcul des Gains
+              </p>
+              <p className="text-sm text-dark-gray leading-relaxed font-light italic">
+                "213 min de downtime actuel × Coût/heure pharma ($100K-$500K) × Fréquence mensuelle × Réduction 30% = 410k MAD / an"
+              </p>
+            </div>
+          </div>
 
-              <div className="bg-primary-blue text-white rounded-[2.5rem] p-10 shadow-lg relative overflow-hidden">
-                 <div className="absolute top-0 right-0 p-6 opacity-10"><BadgeEuro size={120} /></div>
-                 <p className="text-xs uppercase tracking-widest font-bold opacity-80 mb-4">Hypothèse Clé (Scope)</p>
-                 <h4 className="text-3xl font-display font-bold mb-4">Basé sur 2 lignes critiques.</h4>
-                 <p className="text-lg opacity-90 font-light mb-8">Un ROI de <span className="font-bold underline">+70%</span> dès la première année, validant le potentiel de déploiement multi-site.</p>
-                 <div className="inline-flex px-4 py-2 rounded-full bg-white/10 border border-white/20 text-[10px] font-bold tracking-widest uppercase">
-                    Gains Prudents & Réalistes
-                 </div>
+          <div className="space-y-8">
+            <div className="grid grid-cols-2 gap-6">
+              <div className="bg-primary-green/5 border border-primary-green/20 rounded-3xl p-8 shadow-sm">
+                <p className="text-[10px] uppercase tracking-widest font-bold text-primary-green/80 mb-2">Gain Annuel</p>
+                <p className="text-4xl font-display font-bold text-primary-green">410k MAD</p>
+                <p className="text-[10px] text-primary-green/60 mt-2">Downtime évité & Pertes lots</p>
               </div>
-           </div>
+              <div className="bg-main-text text-white rounded-3xl p-8 shadow-sm relative overflow-hidden">
+                <div className="absolute -right-4 -bottom-4 opacity-10"><Clock size={100} /></div>
+                <p className="text-[10px] uppercase tracking-widest font-bold opacity-70 mb-2">Break-even</p>
+                <p className="text-4xl font-display font-bold">7 mois</p>
+                <p className="text-[10px] opacity-60 mt-2">Point mort financier</p>
+              </div>
+            </div>
+
+            <div className="bg-primary-blue text-white rounded-[2.5rem] p-10 shadow-lg relative overflow-hidden">
+              <div className="absolute top-0 right-0 p-6 opacity-10"><BadgeEuro size={120} /></div>
+              <p className="text-xs uppercase tracking-widest font-bold opacity-80 mb-4">Hypothèse Clé (Scope)</p>
+              <h4 className="text-3xl font-display font-bold mb-4">Basé sur 2 lignes critiques.</h4>
+              <p className="text-lg opacity-90 font-light mb-8">Un ROI de <span className="font-bold underline">+70%</span> dès la première année, validant le potentiel de déploiement multi-site.</p>
+              <div className="inline-flex px-4 py-2 rounded-full bg-white/10 border border-white/20 text-[10px] font-bold tracking-widest uppercase">
+                Gains Prudents & Réalistes
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     )
@@ -1208,7 +1208,7 @@ const Slides: SlideData[] = [
               )}
               <p className="text-4xl font-display font-black mb-4">{s.t}</p>
               <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center mb-6 shadow-sm">
-                 <s.i size={24} strokeWidth={1.5} />
+                <s.i size={24} strokeWidth={1.5} />
               </div>
               <h4 className="font-bold text-lg mb-2">{s.l}</h4>
               <p className="text-xs font-light leading-relaxed opacity-80">{s.d}</p>
@@ -1218,28 +1218,28 @@ const Slides: SlideData[] = [
         </div>
 
         <div className="mt-12 p-12 bg-white rounded-[3.5rem] border border-light-gray/50 shadow-sm relative overflow-hidden group hover:border-primary-blue/30 transition-all">
-           <div className="absolute -right-10 -bottom-10 opacity-5 group-hover:opacity-10 transition-opacity">
-              <TrendingUp size={240} />
-           </div>
-           <div className="flex items-center gap-10">
-              <div className="w-24 h-24 rounded-[2rem] bg-bg-page flex items-center justify-center text-primary-blue">
-                 <Activity size={40} strokeWidth={1} />
-              </div>
-              <div className="flex-1">
-                 <p className="text-xs font-bold text-primary-blue uppercase tracking-widest mb-2">Corrélation Réalité-Terrain</p>
-                 <h4 className="text-3xl font-display font-bold text-main-text mb-4">
-                    Ce cycle = MTTR réel de <span className="text-primary-blue underline decoration-2 underline-offset-4">29 min</span>
-                 </h4>
-                 <p className="text-lg text-dark-gray font-light max-w-3xl">
-                    Performance mesurée en continu sur notre <span className="font-medium text-main-text">prototype live</span>. La rapidité de détection (30s) est le levier majeur de la réduction de 40% de la panne totale.
-                 </p>
-              </div>
-              <div className="px-8 py-6 rounded-3xl bg-bg-page border border-light-gray/30 text-center">
-                 <p className="text-[10px] font-bold text-dark-gray/50 uppercase tracking-widest mb-1">Délai moyen Log</p>
-                 <p className="text-2xl font-display font-bold text-main-text">08.2s</p>
-                 <p className="text-[8px] text-primary-blue font-bold uppercase tracking-widest mt-1">Orchestration AI</p>
-              </div>
-           </div>
+          <div className="absolute -right-10 -bottom-10 opacity-5 group-hover:opacity-10 transition-opacity">
+            <TrendingUp size={240} />
+          </div>
+          <div className="flex items-center gap-10">
+            <div className="w-24 h-24 rounded-[2rem] bg-bg-page flex items-center justify-center text-primary-blue">
+              <Activity size={40} strokeWidth={1} />
+            </div>
+            <div className="flex-1">
+              <p className="text-xs font-bold text-primary-blue uppercase tracking-widest mb-2">Corrélation Réalité-Terrain</p>
+              <h4 className="text-3xl font-display font-bold text-main-text mb-4">
+                Ce cycle = MTTR réel de <span className="text-primary-blue underline decoration-2 underline-offset-4">29 min</span>
+              </h4>
+              <p className="text-lg text-dark-gray font-light max-w-3xl">
+                Performance mesurée en continu sur notre <span className="font-medium text-main-text">prototype live</span>. La rapidité de détection (30s) est le levier majeur de la réduction de 40% de la panne totale.
+              </p>
+            </div>
+            <div className="px-8 py-6 rounded-3xl bg-bg-page border border-light-gray/30 text-center">
+              <p className="text-[10px] font-bold text-dark-gray/50 uppercase tracking-widest mb-1">Délai moyen Log</p>
+              <p className="text-2xl font-display font-bold text-main-text">08.2s</p>
+              <p className="text-[8px] text-primary-blue font-bold uppercase tracking-widest mt-1">Orchestration AI</p>
+            </div>
+          </div>
         </div>
       </div>
     )
@@ -1308,68 +1308,68 @@ const Slides: SlideData[] = [
     content: (
       <div className="h-full flex flex-col">
         <SlideTitle title="L'Usine Innovante et Connectée" subtitle="Conclusion et Perspectives" />
-        
-        <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-16 mt-8">
-           <div className="bg-bg-page/50 p-12 rounded-[3.5rem] border border-light-gray/50 flex flex-col justify-center shadow-sm">
-              <h4 className="font-semibold text-main-text mb-8 uppercase text-sm tracking-widest flex items-center gap-3"><CheckCircle2 size={20} className="text-primary-blue" strokeWidth={1.5} /> Nos Points Forts</h4>
-              <div className="grid grid-cols-2 gap-x-6 gap-y-4">
-                 {[
-                   "Problématique métier réelle",
-                   "Méthodologie structurée",
-                   "Architecture démontrable",
-                   "Fusion AI (Orchestration)",
-                   "Dashboards complémentaires",
-                   "Boucle de synchronisation",
-                   "KPIs de pilotage",
-                 ].map((point, i) => (
-                   <div key={i} className="flex gap-4 bg-white px-5 py-4 rounded-2xl border border-light-gray/50 shadow-sm items-center transition-all hover:bg-bg-page/50 hover:border-light-gray">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary-blue flex-shrink-0" />
-                      <span className="text-[11px] font-semibold text-dark-gray tracking-wide">{point}</span>
-                   </div>
-                 ))}
-              </div>
-           </div>
 
-           <div className="flex flex-col justify-center items-center text-center p-10">
-              <div className="mb-12 hover:scale-105 transition-transform duration-500">
-                 <img src="/logo.png" alt="INDUPHARMA Logo" className="h-32 object-contain" referrerPolicy="no-referrer" />
-              </div>
-              <h3 className="text-4xl font-display font-light text-main-text mb-6 leading-tight">
-                INDUPHARMA n’est pas seulement un dashboard.
-              </h3>
-              <p className="text-sm uppercase tracking-[0.2em] font-semibold text-primary-blue mb-6">
-                From Downtime Reaction to Real-Time Orchestration.
-              </p>
-              <p className="text-xl font-light text-primary-gray leading-relaxed mb-12">
-                C’est une boucle opérationnelle entre le <span className="font-semibold text-primary-blue text-opacity-90">terrain</span>, <span className="font-semibold text-primary-blue text-opacity-90">Fusion AI</span> et la <span className="font-semibold text-primary-blue text-opacity-90">maintenance</span>.
-              </p>
-              
-              <div className="flex flex-wrap justify-center gap-4">
-                {[
-                  { l: "Accéder au Dashboard Live", i: Globe, h: "https://indupharma-live-dashboard.vercel.app/", highlight: true },
-                  { l: "Questions", i: MessageSquare },
-                  { l: "Contact", i: Users },
-                ].map((link, i) => (
-                  <a 
-                    key={i} 
-                    href={link.h || "#"} 
-                    target={link.h ? "_blank" : undefined}
-                    rel={link.h ? "noopener noreferrer" : undefined}
-                    className={`flex items-center gap-3 px-8 py-4 rounded-full border shadow-sm transition-all cursor-pointer group no-underline
-                      ${link.highlight 
-                        ? "bg-primary-blue border-primary-blue text-white shadow-md hover:bg-opacity-90 hover:shadow-lg" 
-                        : "bg-white border-light-gray/50 hover:bg-bg-page"}`}
-                  >
-                     <link.i size={20} strokeWidth={1.5} className={link.highlight ? "text-white" : "text-primary-blue"} />
-                     <span className={`text-[11px] font-semibold uppercase tracking-widest ${link.highlight ? "text-white" : "text-dark-gray group-hover:text-primary-blue"} transition-colors`}>{link.l}</span>
-                  </a>
-                ))}
-              </div>
-           </div>
+        <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-16 mt-8">
+          <div className="bg-bg-page/50 p-12 rounded-[3.5rem] border border-light-gray/50 flex flex-col justify-center shadow-sm">
+            <h4 className="font-semibold text-main-text mb-8 uppercase text-sm tracking-widest flex items-center gap-3"><CheckCircle2 size={20} className="text-primary-blue" strokeWidth={1.5} /> Nos Points Forts</h4>
+            <div className="grid grid-cols-2 gap-x-6 gap-y-4">
+              {[
+                "Problématique métier réelle",
+                "Méthodologie structurée",
+                "Architecture démontrable",
+                "Fusion AI (Orchestration)",
+                "Dashboards complémentaires",
+                "Boucle de synchronisation",
+                "KPIs de pilotage",
+              ].map((point, i) => (
+                <div key={i} className="flex gap-4 bg-white px-5 py-4 rounded-2xl border border-light-gray/50 shadow-sm items-center transition-all hover:bg-bg-page/50 hover:border-light-gray">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary-blue flex-shrink-0" />
+                  <span className="text-[11px] font-semibold text-dark-gray tracking-wide">{point}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-col justify-center items-center text-center p-10">
+            <div className="mb-12 hover:scale-105 transition-transform duration-500">
+              <img src="/logo.png" alt="INDUPHARMA Logo" className="h-32 object-contain" referrerPolicy="no-referrer" />
+            </div>
+            <h3 className="text-4xl font-display font-light text-main-text mb-6 leading-tight">
+              INDUPHARMA n’est pas seulement un dashboard.
+            </h3>
+            <p className="text-sm uppercase tracking-[0.2em] font-semibold text-primary-blue mb-6">
+              From Downtime Reaction to Real-Time Orchestration.
+            </p>
+            <p className="text-xl font-light text-primary-gray leading-relaxed mb-12">
+              C’est une boucle opérationnelle entre le <span className="font-semibold text-primary-blue text-opacity-90">terrain</span>, <span className="font-semibold text-primary-blue text-opacity-90">Fusion AI</span> et la <span className="font-semibold text-primary-blue text-opacity-90">maintenance</span>.
+            </p>
+
+            <div className="flex flex-wrap justify-center gap-4">
+              {[
+                { l: "Accéder au Dashboard Live", i: Globe, h: "https://indupharma-live-dashboard.vercel.app/", highlight: true },
+                { l: "Questions", i: MessageSquare },
+                { l: "Contact", i: Users },
+              ].map((link, i) => (
+                <a
+                  key={i}
+                  href={link.h || "#"}
+                  target={link.h ? "_blank" : undefined}
+                  rel={link.h ? "noopener noreferrer" : undefined}
+                  className={`flex items-center gap-3 px-8 py-4 rounded-full border shadow-sm transition-all cursor-pointer group no-underline
+                      ${link.highlight
+                      ? "bg-primary-blue border-primary-blue text-white shadow-md hover:bg-opacity-90 hover:shadow-lg"
+                      : "bg-white border-light-gray/50 hover:bg-bg-page"}`}
+                >
+                  <link.i size={20} strokeWidth={1.5} className={link.highlight ? "text-white" : "text-primary-blue"} />
+                  <span className={`text-[11px] font-semibold uppercase tracking-widest ${link.highlight ? "text-white" : "text-dark-gray group-hover:text-primary-blue"} transition-colors`}>{link.l}</span>
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
 
         <div className="mt-8 flex justify-center">
-           <p className="text-[10px] font-semibold uppercase tracking-[0.4em] text-dark-gray opacity-30">L'excellence au service du patient — INDUPHARMA 2026</p>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.4em] text-dark-gray opacity-30">L'excellence au service du patient — INDUPHARMA 2026</p>
         </div>
       </div>
     )
@@ -1463,7 +1463,7 @@ export default function App() {
         {/* Presenter Notes Overlay */}
         <AnimatePresence>
           {showNotes && !((typeof slide === 'function')) && (
-            <motion.div 
+            <motion.div
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
@@ -1485,11 +1485,11 @@ export default function App() {
 
         {/* Progress Bar */}
         <div className="absolute bottom-0 left-0 h-1 bg-primary-blue/10 w-full z-30">
-          <motion.div 
-             className="h-full bg-primary-blue shadow-[0_0_8px_rgba(31,94,255,0.5)]" 
-             initial={false}
-             animate={{ width: `${((currentSlide + 1) / totalSlides) * 100}%` }}
-             transition={{ duration: 0.4 }}
+          <motion.div
+            className="h-full bg-primary-blue shadow-[0_0_8px_rgba(31,94,255,0.5)]"
+            initial={false}
+            animate={{ width: `${((currentSlide + 1) / totalSlides) * 100}%` }}
+            transition={{ duration: 0.4 }}
           />
         </div>
 
