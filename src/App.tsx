@@ -1304,7 +1304,7 @@ const Slides: SlideData[] = [
   },
   {
     title: "Governance & Compliance",
-    notes: "La confiance pharma repose sur la traçabilité, la gouvernance d’accès et l’auditabilité bout-en-bout.",
+    notes: "La conformité est au cœur du design : ALCOA+ est implémenté nativement (ex: timestamp/signature auto). Le RBAC (Ops, Admin, QA) est actif dans le dashboard.",
     transition: "Nous pouvons conclure sur la promesse stratégique du projet.",
     content: (
       <div className="h-full">
@@ -1312,22 +1312,50 @@ const Slides: SlideData[] = [
         <div className="mt-12 grid grid-cols-2 gap-10">
           <div className="space-y-5">
             {[
-              { t: "ALCOA+ Ready", d: "Data Attributable, Legible, Contemporaneous, Original, Accurate." },
-              { t: "Audit Trail", d: "Chaque action technicien est horodatée, signée, et historisée." },
-              { t: "Access Roles", d: "Séparation claire: Ops, Admin technique, Management, QA." },
-              { t: "Incident Traceability", d: "Chaîne complète: détection → ticket → action → clôture." },
-            ].map((item, i) => (
-              <div key={i} className="bg-white rounded-2xl border border-light-gray/60 p-6 shadow-sm">
-                <p className="text-lg font-semibold text-main-text mb-1">{item.t}</p>
-                <p className="text-sm text-dark-gray">{item.d}</p>
+              { t: "ALCOA+ Ready", d: "Data Attributable, Legible, Contemporaneous, Original, Accurate", ex: "Ex: Clôture ticket → Timestamp auto + User ID + Signature Fusion AI", i: ShieldCheck },
+              { t: "Audit Trail", d: "Chaque action technicien est horodatée, signée, et historisée.", ex: "Log immuable stocké en base de données sécurisée", i: History },
+              { t: "Access Roles (RBAC)", d: "Séparation : Ops, Admin technique, Management, QA", ex: "Système de permissions natif & actif dans le dashboard", i: Users },
+              { t: "Incident Traceability", d: "Chaîne complète : détection → ticket → action → clôture", ex: "Lien déterministe entre alerte ESP32 et rapport final", i: Activity },
+            ].map((c, i) => (
+              <div key={i} className="bg-white border border-light-gray/50 rounded-[2rem] p-6 shadow-sm hover:border-primary-blue/30 transition-all group">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-bg-page flex items-center justify-center text-primary-blue group-hover:bg-primary-blue/5 transition-colors">
+                    <c.i size={24} strokeWidth={1.5} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-main-text text-lg">{c.t}</h4>
+                    <p className="text-xs text-dark-gray font-light mb-2">{c.d}</p>
+                    <div className="inline-block px-3 py-1 rounded-lg bg-primary-blue/5 border border-primary-blue/10 text-[9px] font-bold text-primary-blue uppercase tracking-tight">
+                       {c.ex}
+                    </div>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
-          <div className="bg-primary-blue text-white rounded-[2.5rem] p-10 shadow-xl flex flex-col justify-center relative overflow-hidden">
-            <div className="absolute -top-10 -right-6 opacity-15"><ShieldCheck size={180} /></div>
-            <p className="text-xs uppercase tracking-widest opacity-80 mb-4">Compliance Value</p>
-            <h3 className="text-4xl font-display font-bold leading-tight mb-5">Audit-ready by design.</h3>
-            <p className="text-base opacity-90">La conformité n’est pas un module ajouté: elle est intégrée au workflow opérationnel INDUPHARMA.</p>
+          <div className="flex flex-col gap-6">
+            <div className="bg-primary-blue text-white rounded-[3rem] p-10 shadow-lg relative overflow-hidden flex-1 flex flex-col justify-center">
+              <div className="absolute -right-12 -bottom-12 opacity-10 rotate-12">
+                 <ShieldCheck size={280} />
+              </div>
+              <h4 className="text-4xl font-display font-black mb-6 leading-tight">Audit-ready by design.</h4>
+              <p className="text-xl font-light opacity-90 leading-relaxed">
+                La conformité n'est pas un module ajouté : elle est <span className="font-bold underline decoration-2 underline-offset-4 text-white">intégrée nativement</span> au workflow opérationnel <span className="font-bold">INDUPHARMA</span>.
+              </p>
+              <div className="mt-10 flex items-center gap-4">
+                 <div className="flex -space-x-3">
+                    {[1,2,3].map(i => <div key={i} className="w-8 h-8 rounded-full border-2 border-primary-blue bg-white/20 backdrop-blur-sm" />)}
+                 </div>
+                 <p className="text-[10px] font-bold uppercase tracking-widest opacity-70">Approuvé par QA Strategy</p>
+              </div>
+            </div>
+            <div className="bg-main-text text-white rounded-[2.5rem] p-8 flex items-center justify-between border border-white/10">
+               <div>
+                  <p className="text-[10px] font-bold opacity-50 uppercase tracking-widest mb-1">Standard de Conformité</p>
+                  <p className="text-xl font-display font-bold">GMP & ALCOA+ Compliant</p>
+               </div>
+               <CheckCircle2 className="text-primary-green" size={32} />
+            </div>
           </div>
         </div>
       </div>
