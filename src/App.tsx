@@ -909,22 +909,28 @@ const Slides: SlideData[] = [
   },
   {
     title: "Opportunité marché",
-    notes: "Nous ne sommes pas sur un marché de niche. Toutes les usines pharmaceutiques cherchent à réduire leur downtime. La maturité IIoT est devenue une nécessité réglementaire et économique.",
+    notes: "Nous ne sommes pas sur un marché de niche. Toutes les usines pharmaceutiques cherchent à réduire leur downtime. Notez la spécificité du segment Pharma IIoT (~28 Md$) qui est notre cible prioritaire. La maturité IIoT est devenue une nécessité réglementaire et économique.",
     transition: "Cette opportunité se traduit par des impacts concrets à plusieurs niveaux.",
     content: (
       <div className="h-full">
         <SlideTitle title="Une opportunité réelle" subtitle="L'IIoT au cœur de la souveraineté industrielle" />
         <div className="grid grid-cols-2 gap-16 mt-16">
            <div className="space-y-8">
-              <div className="p-10 bg-white rounded-3xl border border-light-gray/50 shadow-sm transition-all hover:shadow-md">
-                 <h4 className="text-5xl font-display font-bold text-primary-blue mb-4 tracking-tight">~433 Md$</h4>
-                 <p className="text-xs font-semibold text-dark-gray/70 uppercase tracking-widest leading-relaxed">Marché global de l’industrie 4.0 (horizon 2030)</p>
-                 <p className="text-[11px] text-dark-gray/70 mt-3">Source: NextMSC (USD 432.99B, 2030)</p>
+              <div className="p-10 bg-white rounded-3xl border border-light-gray/50 shadow-sm transition-all hover:shadow-md relative overflow-hidden group">
+                  <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-20 transition-opacity"><Globe size={80} /></div>
+                  <h4 className="text-4xl font-display font-bold text-primary-blue mb-2 tracking-tight">~433 Md$</h4>
+                  <p className="text-[10px] font-bold text-dark-gray/60 uppercase tracking-widest mb-4">Marché global Industrie 4.0 (2030)</p>
+                  <div className="pt-4 border-t border-light-gray/50">
+                    <p className="text-xl font-bold text-primary-blue mb-1">~28 Md$</p>
+                    <p className="text-[10px] font-semibold text-dark-gray/70 uppercase tracking-widest">Sous-segment Pharma IIoT (Cible)</p>
+                  </div>
+                  <p className="text-[9px] text-dark-gray/40 mt-4 italic">Sources: NextMSC & MarketsandMarkets</p>
               </div>
-              <div className="p-10 bg-white rounded-3xl border border-light-gray/50 shadow-sm transition-all hover:shadow-md">
-                 <h4 className="text-5xl font-display font-bold text-primary-green mb-4 tracking-tight">+30 à 50%</h4>
-                 <p className="text-xs font-semibold text-dark-gray/70 uppercase tracking-widest leading-relaxed">Réduction de downtime via maintenance prédictive</p>
-                 <p className="text-[11px] text-dark-gray/70 mt-3">Source: McKinsey (Predictive Maintenance)</p>
+              <div className="p-10 bg-white rounded-3xl border border-light-gray/50 shadow-sm transition-all hover:shadow-md relative overflow-hidden group">
+                  <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-20 transition-opacity"><Zap size={80} /></div>
+                  <h4 className="text-5xl font-display font-bold text-primary-green mb-4 tracking-tight">+30 à 50%</h4>
+                  <p className="text-xs font-semibold text-dark-gray/70 uppercase tracking-widest leading-relaxed">Réduction de downtime via maintenance prédictive</p>
+                  <p className="text-[10px] text-dark-gray/40 mt-6 italic">Source: McKinsey (Predictive Maintenance)</p>
               </div>
            </div>
            
@@ -947,23 +953,28 @@ const Slides: SlideData[] = [
               </ul>
            </div>
         </div>
-        <div className="mt-8 bg-white rounded-3xl border border-light-gray/50 p-8 shadow-sm">
+        <div className="mt-8 bg-white rounded-3xl border border-light-gray/50 p-8 shadow-sm relative">
+          <div className="absolute top-6 right-8 px-4 py-1.5 bg-primary-green/5 border border-primary-green/20 rounded-full">
+            <p className="text-[10px] font-bold text-primary-green uppercase tracking-widest flex items-center gap-2">
+              <TrendingUp size={12} /> Le ROI de 70% sur site pilote finance l'expansion Phase 2
+            </p>
+          </div>
           <h4 className="font-semibold text-main-text mb-4 uppercase text-sm tracking-widest flex items-center gap-3">
             <ArrowUpRight size={18} className="text-primary-blue" />
-            Vision 2030 - Prochaines étapes
+            Vision 2030 - Roadmap de déploiement
           </h4>
           <div className="grid grid-cols-3 gap-6 text-sm">
             <div className="bg-primary-blue/5 border border-primary-blue/15 rounded-2xl p-5">
               <p className="font-semibold text-primary-blue mb-2">2026-2027</p>
-              <p className="text-dark-gray">Pilotes multi-lignes, fiabilisation capteurs, standardisation SOP GMP.</p>
+              <p className="text-[11px] text-dark-gray leading-relaxed">Pilotes multi-lignes, fiabilisation capteurs, standardisation SOP GMP.</p>
             </div>
             <div className="bg-primary-green/5 border border-primary-green/15 rounded-2xl p-5">
               <p className="font-semibold text-primary-green mb-2">2028</p>
-              <p className="text-dark-gray">Déploiement inter-sites, scoring de criticité, maintenance prescriptive assistée IA.</p>
+              <p className="text-[11px] text-dark-gray leading-relaxed">Déploiement inter-sites, scoring de criticité, maintenance prescriptive.</p>
             </div>
             <div className="bg-bg-page border border-light-gray rounded-2xl p-5">
               <p className="font-semibold text-main-text mb-2">2029-2030</p>
-              <p className="text-dark-gray">Jumeau digital des actifs critiques, benchmark OEE groupe, pilotage ROI temps réel.</p>
+              <p className="text-[11px] text-dark-gray leading-relaxed">Jumeau digital, benchmark OEE groupe, pilotage ROI temps réel.</p>
             </div>
           </div>
         </div>
