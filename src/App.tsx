@@ -283,7 +283,7 @@ const Slides: SlideData[] = [
   {
     title: "La douleur terrain",
     notes: "Au-delà des chiffres financiers, la réalité quotidienne est marquée par des frictions opérationnelles majeures : rapports papiers, délais de détection et manque de visibilité sur l'Audit Trail.",
-    transition: "Pour transformer cette réalité, nous avons choisi un cas d’usage critique : l’autoclave M02.",
+    transition: "Pour transformer cette réalité, nous avons défini une vision stratégique claire : passer de la surveillance passive à l’action augmentée.",
     content: (
       <div className="h-full flex flex-col items-center justify-center">
         <SlideTitle title="La réalité du terrain" subtitle="Frictions opérationnelles et risques de conformité" />
@@ -327,6 +327,59 @@ const Slides: SlideData[] = [
         </div>
         <div className="mt-16 p-6 bg-bg-page/50 rounded-2xl border border-dashed border-light-gray text-dark-gray/60 text-sm italic">
           "Un processus réactif est un processus qui coûte cher et qui risque la non-conformité."
+        </div>
+      </div>
+    )
+  },
+  {
+    title: "Vision Stratégique",
+    notes: "Notre projet ne se contente pas d'être une interface technique. C'est une vision de l'industrie pharmaceutique de demain : connectée, résiliente et centrée sur la performance. Cette vision définit notre objectif 'North Star'.",
+    transition: "Cette vision se concrétise à travers un cas d’usage critique : l’autoclave M02.",
+    content: (
+      <div className="h-full">
+        <SlideTitle title="Vision Stratégique" subtitle="De la surveillance passive à la décision augmentée" />
+        <div className="grid grid-cols-2 gap-12 mt-10 items-stretch">
+          <div className="bg-white rounded-[2.5rem] border border-light-gray/60 p-10 shadow-sm relative overflow-hidden">
+            <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-primary-blue/5 border border-primary-blue/10" />
+            <img src="/logo.png" alt="INDUPHARMA Logo" className="h-32 object-contain mb-8 relative z-10" referrerPolicy="no-referrer" />
+            <h3 className="text-3xl font-display font-bold text-main-text leading-tight mb-4 relative z-10">
+              L'excellence industrielle au service de la qualité pharmaceutique.
+            </h3>
+            <p className="text-base text-dark-gray leading-relaxed font-light relative z-10">
+              Notre vision: transformer chaque incident en <span className="font-semibold text-primary-blue">décision rapide</span>, documentée et conforme GMP.
+            </p>
+            <div className="mt-8 flex gap-3 flex-wrap relative z-10">
+              <span className="px-4 py-2 rounded-full text-[10px] uppercase tracking-widest font-semibold bg-primary-blue/10 text-primary-blue border border-primary-blue/20">Connecté</span>
+              <span className="px-4 py-2 rounded-full text-[10px] uppercase tracking-widest font-semibold bg-primary-green/10 text-primary-green border border-primary-green/20">Traçable</span>
+              <span className="px-4 py-2 rounded-full text-[10px] uppercase tracking-widest font-semibold bg-light-gray/60 text-dark-gray border border-light-gray">Actionnable</span>
+            </div>
+          </div>
+
+          <div className="bg-bg-page/60 rounded-[2.5rem] border border-light-gray/60 p-8">
+            <h4 className="text-xs uppercase tracking-widest font-semibold text-dark-gray/70 mb-6">Boucle de valeur cible</h4>
+            <div className="space-y-4">
+              {[
+                { title: "Detect", desc: "Anomalie identifiée en temps réel via ESP32 + règles Fusion AI.", icon: AlertTriangle, tone: "text-primary-blue bg-primary-blue/10 border-primary-blue/20" },
+                { title: "Decide", desc: "Priorisation et orientation du ticket avec contexte opérationnel.", icon: LayoutDashboard, tone: "text-primary-green bg-primary-green/10 border-primary-green/20" },
+                { title: "Act", desc: "Intervention technicien puis synchronisation automatique du cycle incident.", icon: Zap, tone: "text-dark-gray bg-white border-light-gray" },
+              ].map((step, i) => (
+                <div key={i} className="bg-white rounded-2xl border border-light-gray/60 p-4 flex gap-4 items-start shadow-sm">
+                  <div className={`w-10 h-10 rounded-xl border flex items-center justify-center flex-shrink-0 ${step.tone}`}>
+                    <step.icon size={18} strokeWidth={1.7} />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-main-text">{step.title}</p>
+                    <p className="text-xs text-dark-gray/80 leading-relaxed">{step.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-8 bg-primary-blue text-white rounded-2xl px-8 py-5 flex items-center justify-between shadow-lg">
+          <p className="text-sm uppercase tracking-widest font-semibold opacity-90">North Star Goal</p>
+          <p className="text-lg font-light">Actuellement <span className="opacity-70 italic">MTTR = 42 min</span>. Notre cible : <span className="font-bold text-primary-green bg-white/10 px-3 py-1 rounded-lg">moins de 20 min</span>.</p>
         </div>
       </div>
     )
@@ -667,7 +720,7 @@ const Slides: SlideData[] = [
   {
     title: "Maquette du projet",
     notes: "Voici la plateforme en action. C'est un environnement live qui connecte les capteurs aux dashboards. Notez l'interface épurée et la réactivité des données. En cas de coupure réseau, nous avons prévu des visuels de secours pour garantir la continuité de la présentation.",
-    transition: "Cette plateforme n'est pas seulement un outil, c'est le support de notre vision stratégique.",
+    transition: "Cette plateforme n'est pas seulement un outil, elle produit des indicateurs de performance mesurables.",
     content: (
       <div className="h-full flex flex-col">
         <SlideTitle title="Maquette Plateforme Live" subtitle="Démonstration interactive de l'écosystème INDUPHARMA" />
@@ -725,59 +778,7 @@ const Slides: SlideData[] = [
       </div>
     )
   },
-  {
-    title: "Vision Stratégique",
-    notes: "Notre projet ne se contente pas d'être une interface technique. C'est une vision de l'industrie pharmaceutique de demain : connectée, résiliente et centrée sur la performance. Cette maquette de vision montre l'intégration parfaite de la donnée et de l'action.",
-    transition: "Cette vision se traduit par des chiffres concrets que nous allons analyser.",
-    content: (
-      <div className="h-full">
-        <SlideTitle title="Vision Stratégique" subtitle="De la surveillance passive à la décision augmentée" />
-        <div className="grid grid-cols-2 gap-12 mt-10 items-stretch">
-          <div className="bg-white rounded-[2.5rem] border border-light-gray/60 p-10 shadow-sm relative overflow-hidden">
-            <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-primary-blue/5 border border-primary-blue/10" />
-            <img src="/logo.png" alt="INDUPHARMA Logo" className="h-32 object-contain mb-8 relative z-10" referrerPolicy="no-referrer" />
-            <h3 className="text-3xl font-display font-bold text-main-text leading-tight mb-4 relative z-10">
-              L'excellence industrielle au service de la qualité pharmaceutique.
-            </h3>
-            <p className="text-base text-dark-gray leading-relaxed font-light relative z-10">
-              Notre vision: transformer chaque incident en <span className="font-semibold text-primary-blue">décision rapide</span>, documentée et conforme GMP.
-            </p>
-            <div className="mt-8 flex gap-3 flex-wrap relative z-10">
-              <span className="px-4 py-2 rounded-full text-[10px] uppercase tracking-widest font-semibold bg-primary-blue/10 text-primary-blue border border-primary-blue/20">Connecté</span>
-              <span className="px-4 py-2 rounded-full text-[10px] uppercase tracking-widest font-semibold bg-primary-green/10 text-primary-green border border-primary-green/20">Traçable</span>
-              <span className="px-4 py-2 rounded-full text-[10px] uppercase tracking-widest font-semibold bg-light-gray/60 text-dark-gray border border-light-gray">Actionnable</span>
-            </div>
-          </div>
 
-          <div className="bg-bg-page/60 rounded-[2.5rem] border border-light-gray/60 p-8">
-            <h4 className="text-xs uppercase tracking-widest font-semibold text-dark-gray/70 mb-6">Boucle de valeur cible</h4>
-            <div className="space-y-4">
-              {[
-                { title: "Detect", desc: "Anomalie identifiée en temps réel via ESP32 + règles Fusion AI.", icon: AlertTriangle, tone: "text-primary-blue bg-primary-blue/10 border-primary-blue/20" },
-                { title: "Decide", desc: "Priorisation et orientation du ticket avec contexte opérationnel.", icon: LayoutDashboard, tone: "text-primary-green bg-primary-green/10 border-primary-green/20" },
-                { title: "Act", desc: "Intervention technicien puis synchronisation automatique du cycle incident.", icon: Zap, tone: "text-dark-gray bg-white border-light-gray" },
-              ].map((step, i) => (
-                <div key={i} className="bg-white rounded-2xl border border-light-gray/60 p-4 flex gap-4 items-start shadow-sm">
-                  <div className={`w-10 h-10 rounded-xl border flex items-center justify-center flex-shrink-0 ${step.tone}`}>
-                    <step.icon size={18} strokeWidth={1.7} />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-main-text">{step.title}</p>
-                    <p className="text-xs text-dark-gray/80 leading-relaxed">{step.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-8 bg-primary-blue text-white rounded-2xl px-8 py-5 flex items-center justify-between shadow-lg">
-          <p className="text-sm uppercase tracking-widest font-semibold opacity-90">North Star</p>
-          <p className="text-lg font-light">Réduire le délai entre détection et action de <span className="font-bold">plus de 50%</span>.</p>
-        </div>
-      </div>
-    )
-  },
   {
     title: "Chiffres & KPI 2026",
     notes: "Nous avons voulu que notre projet ne s’arrête pas à une interface. Il doit produire des indicateurs lisibles et utilisables par le management.",
