@@ -363,6 +363,12 @@ const Slides: SlideData[] = [
                 </div>
              ))}
            </div>
+ 
+           <div className="mt-10 text-center">
+             <span className="text-[11px] text-primary-green font-bold italic bg-primary-green/5 py-2 px-6 rounded-full border border-primary-green/10">
+               "Le Flux Retour = les actions du technicien renvoyées vers Fusion AI pour continuer le workflow."
+             </span>
+           </div>
 
            <div className="mt-16 bg-white p-10 rounded-[3rem] border border-light-gray shadow-sm flex items-center justify-between">
               <div className="flex-1 pr-12 border-r border-light-gray">
