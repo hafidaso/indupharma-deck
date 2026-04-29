@@ -481,44 +481,57 @@ const Slides: SlideData[] = [
     )
   },
   {
-    title: "Notre solution",
-    notes: "Chaque brique a un rôle précis. L’ESP32 capte le terrain, MQTT transmet, Fusion AI orchestre, Supabase historise, et les dashboards permettent le pilotage et l'action. On a ici une chaîne complète du terrain à la décision.",
-    transition: "Dans cette architecture, Fusion AI joue un rôle central d'orchestration.",
+    title: "Architecture & Choix Techniques",
+    notes: "Pourquoi ces choix ? L'ESP32 pour son coût et sa robustesse, MQTT pour sa légèreté temps réel, et Fusion AI pour son orchestration no-code qui nous permet d'être agiles. On ne construit pas juste un gadget, on construit un système industriel scalable.",
+    transition: "Cette architecture repose sur des choix technologiques précis pour garantir performance et scalabilité.",
     content: (
       <div className="h-full">
-        <SlideTitle title="Notre solution" subtitle="L'architecture intégrée INDUPHARMA" />
-        <div className="mt-16 flex items-center justify-center">
-           <div className="grid grid-cols-5 gap-10 items-center w-full max-w-5xl">
-              {[
-                { label: "Capteurs", sub: "ESP32", icon: Settings },
-                { label: "Transit", sub: "MQTT", icon: Share2 },
-                { label: "Orchestration", sub: "Fusion AI", icon: AbaLogoIcon, active: true },
-                { label: "Cloud Data", sub: "Webhooks", icon: Database },
-                { label: "Dashboards", icon: LayoutDashboard },
-              ].map((step, i) => (
-                <div key={i} className="flex flex-col items-center">
-                   <div className={`w-28 h-28 rounded-3xl flex flex-col items-center justify-center shadow-sm border transition-all ${step.active ? 'bg-primary-blue text-white border-primary-blue scale-110 shadow-lg shadow-primary-blue/20' : 'bg-white text-dark-gray border-light-gray/50'}`}>
-                      <step.icon size={32} strokeWidth={1.5} className="mb-3" onDark={step.active} />
-                      <span className="text-[11px] font-semibold uppercase tracking-wider">{step.label}</span>
-                   </div>
-                   {i < 4 && <div className="mt-6 text-primary-gray opacity-30"><ArrowRight size={24} strokeWidth={1.5}/></div>}
+        <SlideTitle title="Architecture & Choix Techniques" subtitle="Pourquoi ces technologies pour l'industrie 4.0 ?" />
+        
+        <div className="grid grid-cols-3 gap-8 mt-12">
+           {[
+             { 
+               title: "ESP32", 
+               label: "Edge Computing", 
+               icon: Cpu, 
+               why: "Coût réduit, consommation ultra-basse et connectivité WiFi/BT native pour un déploiement industriel agile." 
+             },
+             { 
+               title: "MQTT", 
+               label: "Protocole Temps Réel", 
+               icon: Share2, 
+               why: "Standard IoT (Pub/Sub) extrêmement léger, idéal pour les réseaux instables et la réactivité instantanée." 
+             },
+             { 
+               title: "Fusion AI", 
+               label: "Orchestration No-Code", 
+               icon: AbaLogoIcon, 
+               why: "Permet de modéliser des workflows complexes sans codage lourd, accélérant le cycle de développement." 
+             }
+           ].map((tech, i) => (
+             <div key={i} className="bg-white p-8 rounded-3xl border border-light-gray/50 shadow-sm hover:shadow-md transition-all flex flex-col items-center text-center">
+                <div className="w-16 h-16 rounded-2xl bg-primary-blue/5 text-primary-blue flex items-center justify-center mb-6">
+                   <tech.icon size={32} strokeWidth={1.5} />
                 </div>
-              ))}
-           </div>
+                <p className="text-[10px] font-black text-primary-blue/50 uppercase tracking-widest mb-1">{tech.label}</p>
+                <h4 className="text-xl font-bold text-main-text mb-4">{tech.title}</h4>
+                <p className="text-sm text-dark-gray font-light leading-relaxed">{tech.why}</p>
+             </div>
+           ))}
         </div>
-
-        <div className="mt-20 grid grid-cols-2 gap-16 items-center">
-           <div className="bg-bg-page/50 p-10 rounded-[2.5rem] border border-light-gray/50 flex flex-col justify-center">
-              <div className="w-14 h-14 bg-white rounded-2xl shadow-sm border border-light-gray flex items-center justify-center text-primary-blue mb-6">
-                 <RefreshCw size={24} strokeWidth={1.5} />
+ 
+        <div className="mt-12 bg-bg-page/30 p-8 rounded-[2rem] border border-dashed border-light-gray flex items-center justify-between">
+           <div className="flex items-center gap-6">
+              <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-light-gray flex items-center justify-center text-primary-green">
+                 <Database size={24} strokeWidth={1.5} />
               </div>
-              <p className="text-xl font-bold text-primary-blue mb-3">Boucle Bidirectionnelle</p>
-              <p className="text-base text-dark-gray font-light leading-relaxed">
-                INDUPHARMA ne se limite pas à afficher des données : la plateforme permet aussi de renvoyer les actions terrain vers Fusion AI pour continuer le workflow.
-              </p>
+              <div className="flex flex-col">
+                 <p className="text-sm font-bold text-main-text">Persistance & Interconnectivité</p>
+                 <p className="text-xs text-dark-gray">Stockage Cloud (Supabase) + Webhooks temps réel</p>
+              </div>
            </div>
-           <div className="text-center px-12 border-l border-light-gray/50">
-              <p className="text-3xl font-display font-light text-main-text leading-snug">"Une seule <span className="font-bold text-primary-blue">chaîne de valeur</span>, du signal faible à l'action corrective."</p>
+           <div className="text-right border-l border-light-gray pl-12">
+              <p className="text-xl font-display italic text-primary-blue leading-tight">"Scalabilité, Sécurité et<br/>Réactivité Maximale"</p>
            </div>
         </div>
       </div>
