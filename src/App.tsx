@@ -1119,27 +1119,69 @@ const Slides: SlideData[] = [
       // ...existing code...
   {
     title: "ROI 12 mois",
-    notes: "Cette slide donne un cadre décisionnel financier simple: investissement, gains, et point mort en moins d’un an.",
+    notes: "Détail du ROI : 240k MAD d'investissement (Matériel, Intégration, Formation) vs 410k MAD de gains (réduction downtime sur 2 lignes critiques). Le break-even est atteint à 7 mois.",
     transition: "Après la rentabilité, nous montrons le scénario opérationnel en 30 secondes.",
     content: (
       <div className="h-full">
-        <SlideTitle title="ROI en 12 mois" subtitle="Un dossier économique lisible pour décision rapide" />
-        <div className="grid grid-cols-3 gap-8 mt-14">
-          {[
-            { l: "Coût de déploiement", v: "240k MAD", s: "Capteurs, intégration, onboarding", c: "text-primary-blue" },
-            { l: "Gain annuel estimé", v: "410k MAD", s: "Downtime évité, pertes lots réduites", c: "text-primary-green" },
-            { l: "Break-even", v: "7 mois", s: "Hypothèse: 2 lignes critiques", c: "text-main-text" },
-          ].map((k, i) => (
-            <div key={i} className="bg-white border border-light-gray/60 rounded-3xl p-10 shadow-sm">
-              <p className="text-xs uppercase tracking-widest font-semibold text-dark-gray/70 mb-4">{k.l}</p>
-              <p className={`text-5xl font-display font-bold mb-3 ${k.c}`}>{k.v}</p>
-              <p className="text-sm text-dark-gray">{k.s}</p>
-            </div>
-          ))}
-        </div>
-        <div className="mt-10 bg-primary-blue/5 border border-primary-blue/15 rounded-2xl p-7 flex items-center justify-between">
-          <p className="text-lg text-main-text">ROI annuel estimé: <span className="font-bold text-primary-blue">+70%</span></p>
-          <p className="text-sm text-dark-gray">Base: gains prudents, sans expansion multi-site.</p>
+        <SlideTitle title="ROI en 12 mois" subtitle="Un dossier économique transparent et justifiable" />
+        <div className="grid grid-cols-2 gap-12 mt-12 items-start">
+           <div className="space-y-6">
+              <div className="bg-white border border-light-gray/60 rounded-3xl p-8 shadow-sm">
+                <p className="text-xs uppercase tracking-widest font-bold text-dark-gray/60 mb-6 flex justify-between">
+                   <span>Investissement Initial</span>
+                   <span className="text-primary-blue">240k MAD</span>
+                </p>
+                <div className="space-y-3">
+                   {[
+                     { l: "Capteurs & Infrastructure", v: "45k" },
+                     { l: "Intégration Fusion AI", v: "50k" },
+                     { l: "Développement Dashboards", v: "80k" },
+                     { l: "Formation & Onboarding", v: "40k" },
+                     { l: "Maintenance Année 1", v: "25k" },
+                   ].map((item, i) => (
+                     <div key={i} className="flex justify-between text-xs border-b border-light-gray/20 pb-2 last:border-0">
+                        <span className="text-dark-gray font-light">{item.l}</span>
+                        <span className="font-semibold text-main-text">{item.v} MAD</span>
+                     </div>
+                   ))}
+                </div>
+              </div>
+              
+              <div className="bg-bg-page/50 border border-light-gray/40 rounded-3xl p-8">
+                 <p className="text-xs uppercase tracking-widest font-bold text-dark-gray/60 mb-4 flex items-center gap-2">
+                    <BarChart3 size={16} /> Logique de Calcul des Gains
+                 </p>
+                 <p className="text-sm text-dark-gray leading-relaxed font-light italic">
+                    "213 min de downtime actuel × Coût/heure pharma ($100K-$500K) × Fréquence mensuelle × Réduction 30% = 410k MAD / an"
+                 </p>
+              </div>
+           </div>
+
+           <div className="space-y-8">
+              <div className="grid grid-cols-2 gap-6">
+                <div className="bg-primary-green/5 border border-primary-green/20 rounded-3xl p-8 shadow-sm">
+                  <p className="text-[10px] uppercase tracking-widest font-bold text-primary-green/80 mb-2">Gain Annuel</p>
+                  <p className="text-4xl font-display font-bold text-primary-green">410k MAD</p>
+                  <p className="text-[10px] text-primary-green/60 mt-2">Downtime évité & Pertes lots</p>
+                </div>
+                <div className="bg-main-text text-white rounded-3xl p-8 shadow-sm relative overflow-hidden">
+                  <div className="absolute -right-4 -bottom-4 opacity-10"><Clock size={100} /></div>
+                  <p className="text-[10px] uppercase tracking-widest font-bold opacity-70 mb-2">Break-even</p>
+                  <p className="text-4xl font-display font-bold">7 mois</p>
+                  <p className="text-[10px] opacity-60 mt-2">Point mort financier</p>
+                </div>
+              </div>
+
+              <div className="bg-primary-blue text-white rounded-[2.5rem] p-10 shadow-lg relative overflow-hidden">
+                 <div className="absolute top-0 right-0 p-6 opacity-10"><BadgeEuro size={120} /></div>
+                 <p className="text-xs uppercase tracking-widest font-bold opacity-80 mb-4">Hypothèse Clé (Scope)</p>
+                 <h4 className="text-3xl font-display font-bold mb-4">Basé sur 2 lignes critiques.</h4>
+                 <p className="text-lg opacity-90 font-light mb-8">Un ROI de <span className="font-bold underline">+70%</span> dès la première année, validant le potentiel de déploiement multi-site.</p>
+                 <div className="inline-flex px-4 py-2 rounded-full bg-white/10 border border-white/20 text-[10px] font-bold tracking-widest uppercase">
+                    Gains Prudents & Réalistes
+                 </div>
+              </div>
+           </div>
         </div>
       </div>
     )
