@@ -37,6 +37,7 @@ import {
   Terminal,
   Quote,
   ArrowUpRight,
+  TrendingUp,
   Users,
   Wallet,
   MapPin,
@@ -989,14 +990,14 @@ const Slides: SlideData[] = [
       <div className="h-full">
         <SlideTitle title="Différenciation Stratégique" subtitle="Se positionner là où la valeur est la plus critique" />
         
-        <div className="mt-12 overflow-hidden rounded-3xl border border-light-gray/50 shadow-sm bg-white">
+        <div className="mt-12 overflow-hidden rounded-3xl border border-light-gray/50 shadow-sm bg-white relative">
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="bg-bg-page/50 border-b border-light-gray/50">
                 <th className="p-6 text-xs font-semibold uppercase text-dark-gray/70 tracking-widest">Acteur / Solution</th>
-                <th className="p-6 text-xs font-semibold uppercase text-dark-gray/70 tracking-widest text-center">Ce qu’ils proposent</th>
-                <th className="p-6 text-xs font-semibold uppercase text-dark-gray/70 tracking-widest text-center">Limite observée</th>
-                <th className="p-6 text-xs font-bold uppercase tracking-widest bg-primary-blue/5 text-primary-blue text-center">Opportunité INDUPHARMA</th>
+                <th className="p-6 text-xs font-semibold uppercase text-dark-gray/70 tracking-widest text-center">Focus Offre</th>
+                <th className="p-6 text-xs font-semibold uppercase text-dark-gray/70 tracking-widest text-center">Limite Critique</th>
+                <th className="p-6 text-xs font-bold uppercase tracking-widest bg-primary-blue/5 text-primary-blue text-center">Valeur Opérationnelle (ROI)</th>
               </tr>
             </thead>
             <tbody className="text-sm font-light text-dark-gray">
@@ -1005,36 +1006,61 @@ const Slides: SlideData[] = [
                   name: "OCP Maintenance", 
                   offer: "Capteurs vibrostiques, diagnostics IA.", 
                   limit: "Usines lourdes, moins pharma-centric.", 
-                  opp: "Spécialisation Pharma (Autoclave, Salles Blanches)." 
+                  opp: "Générique (PdM standard)." 
                 },
                 { 
                   name: "Indusnov Solutions", 
                   offer: "Maintenance 4.0, analyse vibratoire.", 
                   limit: "Générique industriel, pas de workflow.", 
-                  opp: "Cycle incident centralisé & ALCOA+." 
+                  opp: "Maintenance réactive." 
                 },
                 { 
                   name: "VISIOPROCESS", 
                   offer: "Datavisualisation temps réel, GTC.", 
                   limit: "Orienté énergie et bâtiments.", 
-                  opp: "La boucle Terrain → Fusion AI → Dashboard." 
+                  opp: "Visualisation passive." 
                 },
                 { 
                   name: "MySirius (JRI)", 
                   offer: "Monitoring connecté (froid, métrologie).", 
                   limit: "Centré conformité passive.", 
-                  opp: "Supervision Active & Maintenance Prédictive." 
+                  opp: "Audit Trail simple." 
+                },
+                { 
+                  name: "INDUPHARMA", 
+                  offer: "Boucle IIoT + Fusion AI + GMP", 
+                  limit: "—", 
+                  opp: "MTTR 29 min / Closure Rate 91%",
+                  highlight: true
                 },
               ].map((row, i) => (
-                <tr key={i} className="border-b border-light-gray/30 last:border-0 hover:bg-bg-page/30 transition-colors">
-                  <td className="p-6 font-medium text-main-text">{row.name}</td>
+                <tr key={i} className={`border-b border-light-gray/30 last:border-0 transition-colors ${row.highlight ? 'bg-primary-blue/10 font-medium' : 'hover:bg-bg-page/30'}`}>
+                  <td className={`p-6 ${row.highlight ? 'font-bold text-primary-blue' : 'font-medium text-main-text'}`}>{row.name}</td>
                   <td className="p-6 text-center">{row.offer}</td>
                   <td className="p-6 italic text-center opacity-70">{row.limit}</td>
-                  <td className="p-6 font-semibold text-primary-blue bg-primary-blue/5 text-center">{row.opp}</td>
+                  <td className={`p-6 text-center ${row.highlight ? 'font-black text-primary-blue' : 'font-semibold text-primary-blue/60'}`}>
+                    {row.highlight ? (
+                      <div className="flex flex-col items-center gap-1">
+                        <span>{row.opp}</span>
+                        <span className="text-[10px] font-bold uppercase text-primary-green">Réduction MTTR -40%</span>
+                      </div>
+                    ) : (
+                      row.opp
+                    )}
+                  </td>
                 </tr>
               ))}
             </tbody>
           </table>
+          <div className="bg-bg-page/30 p-4 border-t border-light-gray/50 flex justify-between items-center">
+            <p className="text-[10px] text-dark-gray/50 italic">
+              Analyse basée sur : sites web officiels, études de cas publiées et interviews terrain — Mars 2026
+            </p>
+            <div className="flex items-center gap-2">
+               <div className="w-2 h-2 rounded-full bg-primary-blue animate-pulse" />
+               <span className="text-[9px] font-bold uppercase tracking-widest text-primary-blue">INDUPHARMA LEADERSHIP</span>
+            </div>
+          </div>
         </div>
 
         <div className="mt-12 grid grid-cols-2 gap-10">
