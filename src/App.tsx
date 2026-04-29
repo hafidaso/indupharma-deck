@@ -1211,6 +1211,28 @@ const Slides: SlideData[] = [
         </div>
       </div>
     )
+
+  },
+  {
+    title: "Team",
+    notes: "Présentation de l'équipe projet INDUPHARMA.",
+    transition: "Merci pour votre attention.",
+    content: (
+      <div className="h-full flex flex-col items-center justify-center text-center">
+        <SlideTitle title="L'équipe projet INDUPHARMA" subtitle="" />
+        <div className="mt-20 flex flex-wrap justify-center gap-10 w-full max-w-3xl">
+          {["M. Kassi", "M. Ezzi", "H. Belayd", "M. Mabrouk"].map((name, i) => (
+            <div
+              key={i}
+              className="bg-white rounded-full border-2 border-primary-blue/20 shadow-md px-12 py-8 flex items-center justify-center text-3xl font-extrabold text-primary-blue tracking-wide hover:scale-105 transition-transform duration-300 min-w-[200px] min-h-[80px]"
+            >
+              {name}
+            </div>
+          ))}
+        </div>
+        <div className="mt-16 text-xs text-dark-gray/60 font-semibold tracking-widest uppercase">INDUPHARMA 2026</div>
+      </div>
+    )
   }
 ];
 
