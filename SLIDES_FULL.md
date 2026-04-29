@@ -135,13 +135,7 @@
 
 ---
 
-### Slide 17: Business Model
-**Sous-titre :** Une approche pragmatique et scalable
-- Phase 1 : Kit INDU-Box (vente, installation, formation)
-- Phase 2 : Fusion AI Core (SaaS, workflows, cloud data)
-- One-time fee par machine, abonnement mensuel SaaS
 
----
 
 ### Slide 18: ROI 12 mois
 **Sous-titre :** Un dossier économique lisible pour décision rapide

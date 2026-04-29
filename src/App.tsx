@@ -1027,45 +1027,7 @@ const Slides: SlideData[] = [
       </div>
     )
   },
-  {
-    title: "Business Model",
-    notes: "Notre modèle est progressif. On commence par un kit hardware accessible pour prouver la valeur (POC), puis on déploie à l’échelle avec un abonnement SaaS pour l’intelligence Fusion AI.",
-    transition: "Nous arrivons maintenant à la fin de notre présentation.",
-    content: (
-      <div className="h-full">
-        <SlideTitle title="Business Model" subtitle="Une approche pragmatique et scalable" />
-        <div className="grid grid-cols-2 gap-16 mt-16">
-           <div className="bg-white p-14 rounded-[3.5rem] border border-light-gray/50 shadow-sm relative overflow-hidden transition-all hover:shadow-md">
-              <div className="absolute top-0 right-0 p-8 opacity-5"><Settings size={120} strokeWidth={1} /></div>
-              <h4 className="font-semibold text-primary-blue uppercase text-xs tracking-widest mb-10">Phase 1 : Setup Hardware</h4>
-              <p className="text-4xl font-display font-bold text-main-text mb-6">Kit INDU-Box</p>
-              <ul className="space-y-4 text-sm text-dark-gray font-light">
-                 <li className="flex gap-4 items-center"><div className="w-1.5 h-1.5 bg-primary-blue rounded-full absolute" /><span className="pl-6">Vente du boîtier durci</span></li>
-                 <li className="flex gap-4 items-center"><div className="w-1.5 h-1.5 bg-primary-blue rounded-full absolute" /><span className="pl-6">Installation & Calibration</span></li>
-                 <li className="flex gap-4 items-center"><div className="w-1.5 h-1.5 bg-primary-blue rounded-full absolute" /><span className="pl-6">Formation des équipes</span></li>
-              </ul>
-              <div className="mt-12 pt-10 border-t border-light-gray/50">
-                 <p className="text-sm font-semibold text-dark-gray opacity-60">One-time fee per machine</p>
-              </div>
-           </div>
-
-           <div className="bg-primary-blue text-white p-14 rounded-[3.5rem] shadow-xl relative overflow-hidden transition-all hover:shadow-2xl">
-             <div className="absolute top-0 right-0 p-8 opacity-25"><AbaLogoIcon size={136} onDark /></div>
-              <h4 className="font-semibold uppercase text-xs tracking-widest mb-10 opacity-80">Phase 2 : Intelligence SaaS</h4>
-              <p className="text-4xl font-display font-bold mb-6">Fusion AI Core</p>
-              <ul className="space-y-4 text-sm font-light opacity-90">
-                 <li className="flex gap-4 items-center"><div className="w-1.5 h-1.5 bg-white rounded-full absolute" /><span className="pl-6">Workflows Automation Illimités</span></li>
-                 <li className="flex gap-4 items-center"><div className="w-1.5 h-1.5 bg-white rounded-full absolute" /><span className="pl-6">Cloud Data & Historisation</span></li>
-                 <li className="flex gap-4 items-center"><div className="w-1.5 h-1.5 bg-white rounded-full absolute" /><span className="pl-6">Maintenance de la boucle Loop</span></li>
-              </ul>
-              <div className="mt-12 pt-10 border-t border-white/20">
-                 <p className="text-sm font-semibold opacity-80">Monthly Subscription</p>
-              </div>
-           </div>
-        </div>
-      </div>
-    )
-  },
+      // ...existing code...
   {
     title: "ROI 12 mois",
     notes: "Cette slide donne un cadre décisionnel financier simple: investissement, gains, et point mort en moins d’un an.",
