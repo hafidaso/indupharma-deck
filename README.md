@@ -1,20 +1,45 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+---
 
-# Run and deploy your AI Studio app
+## INDU PHARMA DECK
 
-This contains everything you need to run your app locally.
+A modern, visually-rich AI-powered presentation app for industrial pharma automation, built with React, Vite, TailwindCSS, and motion/react.
 
-View your app in AI Studio: https://ai.studio/apps/944f1dc9-acdc-405b-b000-9412ba5dd03c
+### Features
+- **Custom branding:** Uses your logo and ABA partner logo from the `public/` directory for perfect Vercel/static hosting compatibility.
+- **Animated slides:** Smooth transitions and modern layout.
+- **KPI & Chart graphics:** Ready for business/industrial data.
+- **Mobile-friendly:** Responsive and accessible.
 
-## Run Locally
+### Assets
+- Place your logo and partner logos in the `public/` directory (e.g. `public/logo.png`, `public/aba.svg`).
+- Reference them in your code as `/logo.png` and `/aba.svg`.
 
-**Prerequisites:**  Node.js
-
+### Local Development
 
 1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+   ```bash
+   npm install
+   ```
+2. Set your Gemini API key in `.env.local`:
+   ```env
+   GEMINI_API_KEY=your-key-here
+   ```
+3. Run the app locally:
+   ```bash
+   npm run dev
+   ```
+
+### Deployment (Vercel/Netlify/etc)
+- All static assets in `public/` are automatically served at the root (`/logo.png`).
+- No need to change asset paths for deployment.
+- Redeploy after adding or updating images.
+
+### Presentation Tips
+- Use your logo in the first and last slides for brand recall.
+- Keep slide content focused and visual.
+- Use the built-in chart components for KPIs and trends.
+- For best results, use high-contrast images and keep text concise.
+
+---
+
+For questions or contributions, open an issue or PR.
