@@ -18,6 +18,7 @@ import {
   TrendingDown,
   CheckCircle2,
   Clock,
+  History,
   ShieldCheck,
   Zap,
   Bot,
@@ -262,6 +263,39 @@ const Slides: SlideData[] = [
             Smart Automation Challenge 2026
           </div>
         </motion.div>
+      </div>
+    )
+  },
+  {
+    title: "Team",
+    notes: "Voici l'équipe derrière INDUPHARMA. Nous combinons des expertises en architecture IIoT, IA, Frontend et Hardware pour une solution end-to-end.",
+    transition: "Maintenant que vous connaissez l'équipe, abordons le problème que nous résolvons.",
+    content: (
+      <div className="h-full">
+        <SlideTitle title="L'équipe projet INDUPHARMA" subtitle="Une expertise complémentaire pour l'industrie 4.0" />
+        <div className="mt-12 grid grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {[
+            { n: "M. Kassi", r: "Chef de projet / Architecture IIoT", i: Users },
+            { n: "M. Ezzi", r: "Développement Fusion AI & Workflows", i: Cpu },
+            { n: "H. Belayd", r: "Dashboard & Frontend", i: LayoutDashboard },
+            { n: "M. Mabrouk", r: "Hardware ESP32 & Capteurs", i: Settings },
+          ].map((member, i) => (
+            <div key={i} className="bg-white border border-light-gray/60 rounded-[3rem] p-8 shadow-sm flex items-center gap-8 group hover:border-primary-blue/30 transition-all hover:shadow-md">
+              <div className="w-20 h-20 rounded-[2rem] bg-bg-page flex items-center justify-center text-primary-blue group-hover:bg-primary-blue/5 transition-colors">
+                <member.i size={36} strokeWidth={1.5} />
+              </div>
+              <div>
+                <h4 className="text-3xl font-display font-black text-main-text mb-1">{member.n}</h4>
+                <p className="text-sm font-bold text-primary-blue/70 uppercase tracking-widest">{member.r}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-16 flex justify-center">
+           <div className="px-6 py-3 rounded-full bg-main-text text-white text-[10px] font-bold uppercase tracking-[0.3em]">
+              Smart Automation Challenge 2026
+           </div>
+        </div>
       </div>
     )
   },
@@ -1363,96 +1397,76 @@ const Slides: SlideData[] = [
   },
   {
     title: "Conclusion",
-    notes: "Merci de nous avoir écoutés. INDUPHARMA répond à un problème concret : réduire les arrêts non planifiés et améliorer la traçabilité dans un contexte pharmaceutique. Nous sommes convaincus que cette boucle opérationnelle est la brique manquante pour beaucoup d'usines.",
+    notes: "Merci de nous avoir écoutés. INDUPHARMA répond à un problème concret : réduire les arrêts non planifiés et améliorer la traçabilité. Nous concluons sur nos 3 piliers de réussite.",
     transition: "Fin de la présentation.",
     content: (
       <div className="h-full flex flex-col">
         <SlideTitle title="L'Usine Innovante et Connectée" subtitle="Conclusion et Perspectives" />
 
         <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-16 mt-8">
-          <div className="bg-bg-page/50 p-12 rounded-[3.5rem] border border-light-gray/50 flex flex-col justify-center shadow-sm">
-            <h4 className="font-semibold text-main-text mb-8 uppercase text-sm tracking-widest flex items-center gap-3"><CheckCircle2 size={20} className="text-primary-blue" strokeWidth={1.5} /> Nos Points Forts</h4>
-            <div className="grid grid-cols-2 gap-x-6 gap-y-4">
+          <div className="bg-bg-page/50 p-12 rounded-[3.5rem] border border-light-gray/50 flex flex-col justify-center shadow-sm relative overflow-hidden">
+            <div className="absolute top-0 right-0 p-10 opacity-5">
+               <BarChart3 size={200} />
+            </div>
+            <h4 className="font-bold text-main-text mb-10 uppercase text-xs tracking-widest flex items-center gap-3">
+               <div className="w-8 h-8 rounded-lg bg-primary-blue text-white flex items-center justify-center">
+                  <Activity size={16} />
+               </div>
+               Performance mesurée sur site pilote
+            </h4>
+            <div className="space-y-6">
               {[
-                "Problématique métier réelle",
-                "Méthodologie structurée",
-                "Architecture démontrable",
-                "Fusion AI (Orchestration)",
-                "Dashboards complémentaires",
-                "Boucle de synchronisation",
-                "KPIs de pilotage",
-              ].map((point, i) => (
-                <div key={i} className="flex gap-4 bg-white px-5 py-4 rounded-2xl border border-light-gray/50 shadow-sm items-center transition-all hover:bg-bg-page/50 hover:border-light-gray">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary-blue flex-shrink-0" />
-                  <span className="text-[11px] font-semibold text-dark-gray tracking-wide">{point}</span>
+                { v: "29 min", l: "MTTR réel mesuré", d: "Performance moyenne constatée", c: "text-primary-blue" },
+                { v: "91%", l: "Closure Rate live", d: "Efficacité opérationnelle", c: "text-primary-green" },
+                { v: "7 mois", l: "Break-even ROI", d: "Sur 2 lignes critiques", c: "text-main-text" },
+              ].map((stat, i) => (
+                <div key={i} className="bg-white border border-light-gray/40 rounded-3xl p-6 shadow-sm flex items-center justify-between group hover:border-primary-blue/30 transition-all">
+                  <div>
+                    <p className="text-sm font-bold text-main-text">{stat.l}</p>
+                    <p className="text-[10px] text-dark-gray font-light uppercase tracking-tight opacity-70">{stat.d}</p>
+                  </div>
+                  <p className={`text-4xl font-display font-black ${stat.c}`}>{stat.v}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="flex flex-col justify-center items-center text-center p-10">
-            <div className="mb-12 hover:scale-105 transition-transform duration-500">
-              <img src="/logo.png" alt="INDUPHARMA Logo" className="h-32 object-contain" referrerPolicy="no-referrer" />
+          <div className="flex flex-col justify-center space-y-10">
+            <div className="space-y-6">
+              <div className="mb-8 hover:scale-105 transition-transform duration-500">
+                <img src="/logo.png" alt="INDUPHARMA Logo" className="h-16 object-contain" referrerPolicy="no-referrer" />
+              </div>
+              <p className="text-3xl font-display font-black text-main-text leading-tight">
+                INDUPHARMA n'est pas seulement un dashboard.
+              </p>
+              <div className="inline-block px-4 py-2 bg-primary-blue/10 border border-primary-blue/20 rounded-full">
+                 <p className="text-sm font-bold text-primary-blue tracking-tight uppercase">FROM DOWNTIME REACTION TO REAL-TIME ORCHESTRATION</p>
+              </div>
+              <p className="text-lg text-dark-gray font-light leading-relaxed">
+                C'est une boucle opérationnelle continue entre le terrain, Fusion AI et la maintenance.
+              </p>
             </div>
-            <h3 className="text-4xl font-display font-light text-main-text mb-6 leading-tight">
-              INDUPHARMA n’est pas seulement un dashboard.
-            </h3>
-            <p className="text-sm uppercase tracking-[0.2em] font-semibold text-primary-blue mb-6">
-              From Downtime Reaction to Real-Time Orchestration.
-            </p>
-            <p className="text-xl font-light text-primary-gray leading-relaxed mb-12">
-              C’est une boucle opérationnelle entre le <span className="font-semibold text-primary-blue text-opacity-90">terrain</span>, <span className="font-semibold text-primary-blue text-opacity-90">Fusion AI</span> et la <span className="font-semibold text-primary-blue text-opacity-90">maintenance</span>.
-            </p>
 
-            <div className="flex flex-wrap justify-center gap-4">
-              {[
-                { l: "Accéder au Dashboard Live", i: Globe, h: "https://indupharma-live-dashboard.vercel.app/", highlight: true },
-                { l: "Questions", i: MessageSquare },
-                { l: "Contact", i: Users },
-              ].map((link, i) => (
-                <a
-                  key={i}
-                  href={link.h || "#"}
-                  target={link.h ? "_blank" : undefined}
-                  rel={link.h ? "noopener noreferrer" : undefined}
-                  className={`flex items-center gap-3 px-8 py-4 rounded-full border shadow-sm transition-all cursor-pointer group no-underline
-                      ${link.highlight
-                      ? "bg-primary-blue border-primary-blue text-white shadow-md hover:bg-opacity-90 hover:shadow-lg"
-                      : "bg-white border-light-gray/50 hover:bg-bg-page"}`}
-                >
-                  <link.i size={20} strokeWidth={1.5} className={link.highlight ? "text-white" : "text-primary-blue"} />
-                  <span className={`text-[11px] font-semibold uppercase tracking-widest ${link.highlight ? "text-white" : "text-dark-gray group-hover:text-primary-blue"} transition-colors`}>{link.l}</span>
-                </a>
-              ))}
+            <div className="space-y-4">
+               <div className="flex flex-wrap gap-4">
+                 <a href="https://indupharma-live-dashboard.vercel.app/" target="_blank" rel="noopener noreferrer" className="bg-primary-blue text-white px-8 py-4 rounded-full font-bold text-sm shadow-lg hover:shadow-primary-blue/20 hover:scale-105 transition-all text-center">
+                   Dashboard Live
+                 </a>
+                 <button className="bg-white border-2 border-main-text text-main-text px-8 py-4 rounded-full font-bold text-sm hover:bg-main-text hover:text-white transition-all">
+                   Questions & Réponses
+                 </button>
+               </div>
+               <div className="pt-8 border-t border-light-gray/20">
+                  <div className="flex items-center gap-3 mb-2">
+                     <div className="w-2 h-2 rounded-full bg-primary-green animate-pulse" />
+                     <p className="text-[10px] font-bold text-dark-gray/60 uppercase tracking-widest">Nous contacter</p>
+                  </div>
+                  <p className="text-xl font-display font-bold text-main-text">indupharma@indupharma.com</p>
+                  <p className="text-xs text-dark-gray mt-1 opacity-60 font-light italic">Smart Automation Challenge 2026 — Morocco</p>
+               </div>
             </div>
           </div>
         </div>
-
-        <div className="mt-8 flex justify-center">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.4em] text-dark-gray opacity-30">L'excellence au service du patient — INDUPHARMA 2026</p>
-        </div>
-      </div>
-    )
-
-  },
-  {
-    title: "Team",
-    notes: "Présentation de l'équipe projet INDUPHARMA.",
-    transition: "Merci pour votre attention.",
-    content: (
-      <div className="h-full flex flex-col items-center justify-center text-center">
-        <SlideTitle title="L'équipe projet INDUPHARMA" subtitle="" />
-        <div className="mt-20 flex flex-wrap justify-center gap-10 w-full max-w-3xl">
-          {["M. Kassi", "M. Ezzi", "H. Belayd", "M. Mabrouk"].map((name, i) => (
-            <div
-              key={i}
-              className="bg-white rounded-full border-2 border-primary-blue/20 shadow-md px-12 py-8 flex items-center justify-center text-3xl font-extrabold text-primary-blue tracking-wide hover:scale-105 transition-transform duration-300 min-w-[200px] min-h-[80px]"
-            >
-              {name}
-            </div>
-          ))}
-        </div>
-        <div className="mt-16 text-xs text-dark-gray/60 font-semibold tracking-widest uppercase">INDUPHARMA 2026</div>
       </div>
     )
   }
