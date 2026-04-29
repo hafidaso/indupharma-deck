@@ -442,9 +442,18 @@ const Slides: SlideData[] = [
                     <li className="flex gap-4"><span className="text-dark-gray/30 font-bold">•</span> <span><strong className="font-medium text-main-text">Rapport d'intervention</strong> manuel</span></li>
                  </ul>
               </div>
-              <div className="flex justify-center my-6">
-                 <div className="w-12 h-12 border border-light-gray bg-white text-primary-gray rounded-full flex items-center justify-center shadow-sm">
-                    <ArrowUpRight size={24} strokeWidth={1.5} className="text-primary-blue" />
+              <div className="flex flex-col items-center justify-center my-6 gap-4">
+                 <motion.div 
+                    animate={{ y: [0, -10, 0] }}
+                    transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                    className="w-16 h-16 border-2 border-primary-blue/30 bg-primary-blue text-white rounded-full flex items-center justify-center shadow-xl ring-8 ring-primary-blue/5"
+                 >
+                    <ArrowUpRight size={32} strokeWidth={2.5} />
+                 </motion.div>
+                 <div className="bg-white px-6 py-2 rounded-full border border-primary-blue/20 shadow-sm">
+                    <p className="text-sm font-bold text-primary-blue uppercase tracking-widest">
+                      MTTR : de plusieurs heures → <span className="text-primary-green">42 min</span>
+                    </p>
                  </div>
               </div>
               <div className="p-10 bg-primary-blue/5 rounded-3xl border border-primary-blue/20 transition-all hover:shadow-md hover:border-primary-blue/30">
