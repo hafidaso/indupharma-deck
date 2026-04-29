@@ -1469,6 +1469,30 @@ const Slides: SlideData[] = [
         </div>
       </div>
     )
+  },
+  {
+    title: "Accès Live Dashboard",
+    notes: "Pour conclure, nous vous invitons à tester par vous-mêmes. Scannez ce QR code pour accéder à l'environnement live et voir la synchronisation en temps réel.",
+    transition: "Nous sommes maintenant prêts pour vos questions.",
+    content: (
+      <div className="h-full flex flex-col items-center justify-center text-center">
+        <SlideTitle title="Accès Live Dashboard" subtitle="Scannez pour explorer l'environnement en temps réel" />
+        <div className="mt-12 relative">
+          <div className="absolute -inset-10 bg-primary-blue/5 rounded-[4rem] blur-3xl animate-pulse" />
+          <div className="relative bg-white p-12 rounded-[3rem] shadow-2xl border border-light-gray/50 hover:scale-105 transition-transform duration-500">
+             <img src="/dashboard-qr.png" alt="Dashboard QR Code" className="w-80 h-80 object-contain" referrerPolicy="no-referrer" />
+             <div className="mt-8 pt-8 border-t border-light-gray/20">
+               <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary-blue mb-2">Live URL</p>
+               <p className="text-sm font-bold text-main-text opacity-60">indupharma-live-dashboard.vercel.app</p>
+             </div>
+          </div>
+        </div>
+        <div className="mt-16 flex items-center gap-4 bg-bg-page px-8 py-4 rounded-full border border-primary-blue/10">
+          <div className="w-2 h-2 rounded-full bg-primary-green animate-pulse" />
+          <p className="text-xs font-bold text-dark-gray/60 uppercase tracking-widest">Environnement Live — Avril 2026 — Smart Automation Challenge</p>
+        </div>
+      </div>
+    )
   }
 ];
 
