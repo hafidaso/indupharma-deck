@@ -1246,26 +1246,58 @@ const Slides: SlideData[] = [
   },
   {
     title: "Go-to-Market & Deployment",
-    notes: "Le plan de déploiement progressif structure le passage du POC vers l’échelle.",
+    notes: "Plan de déploiement chiffré : 240k MAD pour le pilote (Phase 1), puis expansion via ROI (Phase 2). La Phase 3 standardise les SOP et le benchmark inter-sites.",
     transition: "Le scale doit rester conforme GMP, d’où la gouvernance et compliance.",
     content: (
       <div className="h-full">
         <SlideTitle title="Go-to-Market & Deployment Plan" subtitle="Passer du pilote à l’échelle multi-site" />
         <div className="mt-12 grid grid-cols-3 gap-8">
           {[
-            { p: "Phase 1", t: "Pilot", d: "1 site • 1-2 lignes • KPI baseline • 3 mois", c: "bg-primary-blue/10 border-primary-blue/20 text-primary-blue" },
-            { p: "Phase 2", t: "Scale", d: "Extension atelier complet • standard process • 6 mois", c: "bg-primary-green/10 border-primary-green/20 text-primary-green" },
-            { p: "Phase 3", t: "Multi-site", d: "Rollout groupe • benchmark OEE • centre d’excellence", c: "bg-bg-page border-light-gray text-main-text" },
+            { p: "Phase 1", t: "Pilot", d: "1 site • 1-2 lignes • 3 mois", b: "240k MAD", c: "bg-primary-blue/5 border-primary-blue/20 text-primary-blue" },
+            { p: "Phase 2", t: "Scale", d: "Atelier complet • 10 machines • 6 mois", b: "+180k MAD", c: "bg-primary-green/5 border-primary-green/20 text-primary-green" },
+            { p: "Phase 3", t: "Multi-site", d: "Standardisation SOP • Support 24/7", b: "ROI > 1M MAD", c: "bg-main-text/5 border-main-text/20 text-main-text" },
           ].map((phase, i) => (
-            <div key={i} className="bg-white rounded-3xl border border-light-gray/60 p-8 shadow-sm">
-              <div className={`inline-flex px-4 py-2 rounded-full border text-[11px] uppercase tracking-widest font-semibold ${phase.c}`}>{phase.p}</div>
-              <h4 className="text-3xl font-display font-bold text-main-text mt-6 mb-3">{phase.t}</h4>
-              <p className="text-sm text-dark-gray">{phase.d}</p>
+            <div key={i} className="bg-white rounded-[3rem] border border-light-gray/60 p-8 shadow-sm flex flex-col relative overflow-hidden group hover:shadow-md transition-all">
+              <div className={`inline-flex self-start px-4 py-2 rounded-full border text-[10px] uppercase tracking-widest font-bold ${phase.c}`}>{phase.p}</div>
+              <h4 className="text-3xl font-display font-black text-main-text mt-6 mb-2">{phase.t}</h4>
+              <p className="text-sm text-dark-gray font-light mb-8">{phase.d}</p>
+              <div className="mt-auto pt-6 border-t border-light-gray/30 flex justify-between items-center">
+                 <span className="text-[10px] font-bold text-dark-gray/50 uppercase tracking-widest">Budget / Cible</span>
+                 <span className={`text-lg font-bold ${phase.c.split(' ')[2]}`}>{phase.b}</span>
+              </div>
             </div>
           ))}
         </div>
-        <div className="mt-10 h-2 rounded-full bg-bg-page overflow-hidden border border-light-gray/50">
-          <div className="h-full w-full bg-gradient-to-r from-primary-blue via-primary-green to-primary-blue/70" />
+
+        <div className="mt-12 overflow-hidden rounded-[2.5rem] border border-light-gray/50 bg-white">
+          <table className="w-full text-left border-collapse">
+             <thead>
+                <tr className="bg-bg-page/50 border-b border-light-gray/40">
+                   <th className="p-6 text-[10px] font-bold uppercase tracking-widest text-dark-gray/60">Dimension</th>
+                   <th className="p-6 text-[10px] font-bold uppercase tracking-widest text-primary-blue text-center">Phase 1 (Pilote)</th>
+                   <th className="p-6 text-[10px] font-bold uppercase tracking-widest text-primary-green text-center">Phase 2 (Scale)</th>
+                   <th className="p-6 text-[10px] font-bold uppercase tracking-widest text-main-text text-center">Phase 3 (Multi-site)</th>
+                </tr>
+             </thead>
+             <tbody className="text-sm">
+                {[
+                   { d: "Durée estimée", p1: "3 mois", p2: "6 mois", p3: "12 mois" },
+                   { d: "Nombre de Machines", p1: "1-2", p2: "10 (Atelier complet)", p3: "Multi-site Groupe" },
+                   { d: "Objectif ROI", p1: "Baseline / Proof", p2: "+30% OEE", p3: "+70% ROI Groupe" },
+                ].map((row, i) => (
+                   <tr key={i} className="border-b border-light-gray/20 last:border-0 hover:bg-bg-page/20 transition-colors">
+                      <td className="p-5 font-bold text-dark-gray uppercase text-[10px] tracking-wider pl-8">{row.d}</td>
+                      <td className="p-5 text-center text-dark-gray font-light">{row.p1}</td>
+                      <td className="p-5 text-center text-dark-gray font-light">{row.p2}</td>
+                      <td className="p-5 text-center text-dark-gray font-light">{row.p3}</td>
+                   </tr>
+                ))}
+             </tbody>
+          </table>
+        </div>
+
+        <div className="mt-8 h-1.5 rounded-full bg-bg-page overflow-hidden border border-light-gray/30">
+          <div className="h-full w-1/3 bg-primary-blue rounded-full" />
         </div>
       </div>
     )
