@@ -292,9 +292,9 @@ const Slides: SlideData[] = [
           ))}
         </div>
         <div className="mt-16 flex justify-center">
-           <div className="px-6 py-3 rounded-full bg-main-text text-white text-[10px] font-bold uppercase tracking-[0.3em]">
-              Smart Automation Challenge 2026
-           </div>
+          <div className="px-6 py-3 rounded-full bg-main-text text-white text-[10px] font-bold uppercase tracking-[0.3em]">
+            Smart Automation Challenge 2026
+          </div>
         </div>
       </div>
     )
@@ -427,6 +427,15 @@ const Slides: SlideData[] = [
           <p className="text-sm uppercase tracking-widest font-semibold opacity-90">North Star Goal</p>
           <p className="text-lg font-light">Actuellement <span className="opacity-70 italic">MTTR = 42 min</span>. Notre cible : <span className="font-bold text-primary-green bg-white/10 px-3 py-1 rounded-lg">moins de 20 min</span>.</p>
         </div>
+        <div className="mt-10 p-6 bg-yellow-50 border-l-4 border-yellow-400 rounded-2xl flex items-start gap-4">
+          <AlertTriangle size={32} className="text-yellow-500 mt-1 flex-shrink-0" />
+          <div>
+            <span className="block text-xs font-bold uppercase tracking-widest text-yellow-700 mb-2">N.B.</span>
+            <span className="text-sm text-yellow-900 font-medium">
+              Le MTTR et les GMP représentent un double enjeu critique dans l’industrie pharmaceutique : un MTTR élevé prolonge les arrêts de production et augmente les pertes, tandis que le non-respect des GMP expose à des risques de non-conformité, de sanctions et d’atteinte à la réputation ; ainsi, plus le temps de réparation est long, plus le risque de compromettre la qualité et la conformité du produit augmente.
+            </span>
+          </div>
+        </div>
       </div>
     )
   },
@@ -520,144 +529,67 @@ const Slides: SlideData[] = [
             Cette méthodologie nous a permis de construire une réponse <span className="text-primary-blue font-semibold">structurée</span>, <span className="text-primary-blue font-semibold">mesurable</span> et <span className="text-primary-blue font-semibold">démontrable</span>.
           </p>
         </div>
-        <div className="mt-10 p-6 bg-yellow-50 border-l-4 border-yellow-400 rounded-2xl flex items-start gap-4">
-          <AlertTriangle size={32} className="text-yellow-500 mt-1 flex-shrink-0" />
-          <div>
-            <span className="block text-xs font-bold uppercase tracking-widest text-yellow-700 mb-2">N.B.</span>
-            <span className="text-sm text-yellow-900 font-medium">
-              Le MTTR et les GMP représentent un double enjeu critique dans l’industrie pharmaceutique : un MTTR élevé prolonge les arrêts de production et augmente les pertes, tandis que le non-respect des GMP expose à des risques de non-conformité, de sanctions et d’atteinte à la réputation ; ainsi, plus le temps de réparation est long, plus le risque de compromettre la qualité et la conformité du produit augmente.
-            </span>
-          </div>
-        </div>
-<<<<<<< HEAD
-      </div>
-    )
-  },
-  {
-    title: "De l’As-Is au To-Be",
-    notes: "Le BPMN nous a permis de visualiser le saut de maturité du processus. L’objectif n’est pas seulement d’ajouter des capteurs, mais de transformer la manière dont l’incident est détecté, traité et suivi.",
-    transition: "Cette transformation prend forme dans une solution intégrée : INDUPHARMA.",
-    content: (
-      <div className="h-full">
-        <SlideTitle title="De l’As-Is au To-Be" subtitle="Le saut de maturité vers l'excellence industrielle" />
-        <div className="grid grid-cols-2 gap-16 mt-16 items-center">
-          <div className="space-y-6">
-            <div className="p-10 bg-bg-page/50 rounded-3xl border border-light-gray/50 opacity-80 transition-all hover:opacity-100 hover:shadow-sm">
-              <h4 className="font-semibold text-dark-gray mb-8 flex items-center gap-3 uppercase text-sm tracking-widest"><AlertTriangle size={20} strokeWidth={1.5} className="text-dark-gray/50" /> Processus AS-IS (Réactif)</h4>
-              <ul className="space-y-6 text-[15px] font-light text-dark-gray leading-relaxed">
-                <li className="flex gap-4"><span className="text-dark-gray/30 font-bold">•</span> <span><strong className="font-medium text-main-text">Surveillance visuelle</strong> humaine</span></li>
-                <li className="flex gap-4"><span className="text-dark-gray/30 font-bold">•</span> <span><strong className="font-medium text-main-text">Signalement manuel</strong> via papier / téléphone</span></li>
-                <li className="flex gap-4"><span className="text-dark-gray/30 font-bold">•</span> <span><strong className="font-medium text-main-text">Diagnostic long</strong> et incertain</span></li>
-                <li className="flex gap-4"><span className="text-dark-gray/30 font-bold">•</span> <span><strong className="font-medium text-main-text">Rapport d'intervention</strong> manuel</span></li>
-              </ul>
-            </div>
-            <div className="flex flex-col items-center justify-center my-6 gap-4">
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                className="w-16 h-16 border-2 border-primary-blue/30 bg-primary-blue text-white rounded-full flex items-center justify-center shadow-xl ring-8 ring-primary-blue/5"
-              >
-              </motion.div>
-              <div className="bg-white px-6 py-2 rounded-full border border-primary-blue/20 shadow-sm">
-                <p className="text-sm font-bold text-primary-blue uppercase tracking-widest">
-                  MTTR : de plusieurs heures → <span className="text-primary-green">42 min</span>
-                </p>
-              </div>
-            </div>
-            <div className="p-10 bg-primary-blue/5 rounded-3xl border border-primary-blue/20 transition-all hover:shadow-md hover:border-primary-blue/30">
-          </div>
-              <h4 className="font-semibold text-primary-blue mb-8 flex items-center gap-3 uppercase text-sm tracking-widest"><Zap size={20} strokeWidth={1.5} /> Processus TO-BE (Connecté)</h4>
-              <ul className="space-y-6 text-[15px] font-light text-dark-gray leading-relaxed">
-                <li className="flex gap-4"><CheckCircle2 size={20} className="text-primary-green flex-shrink-0 mt-0.5" strokeWidth={1.5} /> <span><strong className="font-semibold text-main-text">Surveillance continue</strong> par capteurs IoT</span></li>
-                <li className="flex gap-4"><CheckCircle2 size={20} className="text-primary-green flex-shrink-0 mt-0.5" strokeWidth={1.5} /> <span><strong className="font-semibold text-main-text">Détection Edge AI</strong> & Automatisation ticket</span></li>
-                <li className="flex gap-4"><CheckCircle2 size={20} className="text-primary-green flex-shrink-0 mt-0.5" strokeWidth={1.5} /> <span><strong className="font-semibold text-main-text">Priorisation Live</strong> & Notification techniciens</span></li>
-                <li className="flex gap-4"><CheckCircle2 size={20} className="text-primary-green flex-shrink-0 mt-0.5" strokeWidth={1.5} /> <span><strong className="font-semibold text-main-text">Rapports & KPI</strong> auto-générés (ALCOA+)</span></li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="bg-white p-16 rounded-[3rem] border border-light-gray/50 shadow-sm text-center">
-            <div className="w-24 h-24 bg-primary-blue/5 rounded-3xl flex items-center justify-center text-primary-blue mx-auto mb-10">
-              <TrendingDown className="rotate-180" size={48} strokeWidth={1.5} />
-            </div>
-            <h3 className="text-3xl font-display font-bold text-main-text mb-6">Un saut de maturité digital</h3>
-            <p className="text-lg text-dark-gray leading-relaxed font-light">
-              Passage d'un processus <span className="font-semibold text-red-500/80">réactif et manuel</span> à un processus <span className="font-semibold text-primary-green">connecté, tracé et piloté</span> par la donnée.
-            </p>
-=======
-        <div className="mt-10 p-6 bg-yellow-50 border-l-4 border-yellow-400 rounded-2xl flex items-start gap-4">
-          <AlertTriangle size={32} className="text-yellow-500 mt-1 flex-shrink-0" />
-          <div>
-            <span className="block text-xs font-bold uppercase tracking-widest text-yellow-700 mb-2">N.B.</span>
-            <span className="text-sm text-yellow-900 font-medium">
-              Le MTTR et les GMP représentent un double enjeu critique dans l’industrie pharmaceutique : un MTTR élevé prolonge les arrêts de production et augmente les pertes, tandis que le non-respect des GMP expose à des risques de non-conformité, de sanctions et d’atteinte à la réputation ; ainsi, plus le temps de réparation est long, plus le risque de compromettre la qualité et la conformité du produit augmente.
-            </span>
->>>>>>> 74307de (feat: update slides order, add N.B. block to slide 5)
-          </div>
-        </div>
       </div>
     )
   },
   {
     title: "Architecture & Choix Techniques",
-    notes: "Pourquoi ces choix ? L'Makers Points pour son coût et sa robustesse, MQTT pour sa légèreté temps réel, et Fusion AI pour son orchestration low-code qui nous permet d'être agiles. On ne construit pas juste un gadget, on construit un système industriel scalable.",
-    transition: "Cette architecture repose sur des choix technologiques précis pour garantir performance et scalabilité.",
-    content: (
-      <div className="h-full">
-        <SlideTitle title="Architecture & Choix Techniques" subtitle="Pourquoi ces technologies pour l'industrie 4.0 ?" />
+            notes: "Pourquoi ces choix ? L'Makers Points pour son coût et sa robustesse, MQTT pour sa légèreté temps réel, et Fusion AI pour son orchestration low-code qui nous permet d'être agiles. On ne construit pas juste un gadget, on construit un système industriel scalable.",
+            transition: "Cette architecture repose sur des choix technologiques précis pour garantir performance et scalabilité.",
+            content: (
+            <div className="h-full">
+              <SlideTitle title="Architecture & Choix Techniques" subtitle="Pourquoi ces technologies pour l'industrie 4.0 ?" />
 
-        <div className="grid grid-cols-3 gap-8 mt-12">
-          {[
-            {
-              title: "Makers Points",
-              label: "Edge Computing",
-              icon: Cpu,
-              why: "Coût réduit, consommation ultra-basse et connectivité WiFi/BT native pour un déploiement industriel agile."
-            },
-            {
-              title: "MQTT",
-              label: "Protocole Temps Réel",
-              icon: Share2,
-              why: "Standard IoT (Pub/Sub) extrêmement léger, idéal pour les réseaux instables et la réactivité instantanée."
-            },
-            {
-              title: "Fusion AI",
-              label: "Orchestration Low-Code",
-              icon: AbaLogoIcon,
-              why: "Permet de modéliser des workflows complexes sans codage lourd, accélérant le cycle de développement."
-            }
-          ].map((tech, i) => (
-            <div key={i} className="bg-white p-8 rounded-3xl border border-light-gray/50 shadow-sm hover:shadow-md transition-all flex flex-col items-center text-center">
-              <div className="w-16 h-16 rounded-2xl bg-primary-blue/5 text-primary-blue flex items-center justify-center mb-6">
-                <tech.icon size={32} strokeWidth={1.5} />
+              <div className="grid grid-cols-3 gap-8 mt-12">
+                {[
+                  {
+                    title: "Makers Points",
+                    label: "Edge Computing",
+                    icon: Cpu,
+                    why: "Coût réduit, consommation ultra-basse et connectivité WiFi/BT native pour un déploiement industriel agile."
+                  },
+                  {
+                    title: "MQTT",
+                    label: "Protocole Temps Réel",
+                    icon: Share2,
+                    why: "Standard IoT (Pub/Sub) extrêmement léger, idéal pour les réseaux instables et la réactivité instantanée."
+                  },
+                  {
+                    title: "Fusion AI",
+                    label: "Orchestration Low-Code",
+                    icon: AbaLogoIcon,
+                    why: "Permet de modéliser des workflows complexes sans codage lourd, accélérant le cycle de développement."
+                  }
+                ].map((tech, i) => (
+                  <div key={i} className="bg-white p-8 rounded-3xl border border-light-gray/50 shadow-sm hover:shadow-md transition-all flex flex-col items-center text-center">
+                    <div className="w-16 h-16 rounded-2xl bg-primary-blue/5 text-primary-blue flex items-center justify-center mb-6">
+                      <tech.icon size={32} strokeWidth={1.5} />
+                    </div>
+                    <p className="text-[10px] font-black text-primary-blue/50 uppercase tracking-widest mb-1">{tech.label}</p>
+                    <h4 className="text-xl font-bold text-main-text mb-4">{tech.title}</h4>
+                    <p className="text-sm text-dark-gray font-light leading-relaxed">{tech.why}</p>
+                  </div>
+                ))}
               </div>
-              <p className="text-[10px] font-black text-primary-blue/50 uppercase tracking-widest mb-1">{tech.label}</p>
-              <h4 className="text-xl font-bold text-main-text mb-4">{tech.title}</h4>
-              <p className="text-sm text-dark-gray font-light leading-relaxed">{tech.why}</p>
-            </div>
-          ))}
-        </div>
 
-        <div className="mt-12 bg-bg-page/30 p-8 rounded-[2rem] border border-dashed border-light-gray flex items-center justify-between">
-          <div className="flex items-center gap-6">
-            <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-light-gray flex items-center justify-center text-primary-green">
-              <Database size={24} strokeWidth={1.5} />
+              <div className="mt-12 bg-bg-page/30 p-8 rounded-[2rem] border border-dashed border-light-gray flex items-center justify-between">
+                <div className="flex items-center gap-6">
+                  <div className="w-12 h-12 bg-white rounded-xl shadow-sm border border-light-gray flex items-center justify-center text-primary-green">
+                    <Database size={24} strokeWidth={1.5} />
+                  </div>
+                  <div className="flex flex-col">
+                    <p className="text-sm font-bold text-main-text">Persistance & Interconnectivité</p>
+                    <p className="text-xs text-dark-gray">Stockage Cloud (Supabase) + Webhooks temps réel</p>
+                  </div>
+                </div>
+                <div className="text-right border-l border-light-gray pl-12">
+                  <p className="text-xl font-display italic text-primary-blue leading-tight">"Scalabilité, Sécurité et<br />Réactivité Maximale"</p>
+                </div>
+              </div>
             </div>
-            <div className="flex flex-col">
-              <p className="text-sm font-bold text-main-text">Persistance & Interconnectivité</p>
-              <p className="text-xs text-dark-gray">Stockage Cloud (Supabase) + Webhooks temps réel</p>
-            </div>
-          </div>
-          <div className="text-right border-l border-light-gray pl-12">
-            <p className="text-xl font-display italic text-primary-blue leading-tight">"Scalabilité, Sécurité et<br />Réactivité Maximale"</p>
-          </div>
-        </div>
-      </div>
-    )
+            )
   },
-  {
-<<<<<<< HEAD
-=======
+            {
     title: "De l’As-Is au To-Be",
     notes: "Le BPMN nous a permis de visualiser le saut de maturité du processus. L’objectif n’est pas seulement d’ajouter des capteurs, mais de transformer la manière dont l’incident est détecté, traité et suivi.",
     transition: "Cette transformation prend forme dans une solution intégrée : INDUPHARMA.",
@@ -714,965 +646,964 @@ const Slides: SlideData[] = [
     )
   },
   {
->>>>>>> 74307de (feat: update slides order, add N.B. block to slide 5)
-    title: "Le moteur d’automatisation",
-    notes: "Fusion AI joue le rôle de moteur d’orchestration. Il permet de recevoir les données terrain, de les transmettre aux dashboards et surtout de poursuivre le workflow après une action humaine sur le dashboard technique.",
-    transition: "Cette orchestration est rendue possible par une boucle bidirectionnelle entre Fusion AI et nos dashboards.",
-    content: (
-      <div className="h-full flex flex-col">
-        <SlideTitle title="Le moteur d’orchestration" subtitle="Fusion AI : Le coeur de l'intelligence opérationnelle" />
+              title: "Le moteur d’automatisation",
+            notes: "Fusion AI joue le rôle de moteur d’orchestration. Il permet de recevoir les données terrain, de les transmettre aux dashboards et surtout de poursuivre le workflow après une action humaine sur le dashboard technique.",
+            transition: "Cette orchestration est rendue possible par une boucle bidirectionnelle entre Fusion AI et nos dashboards.",
+            content: (
+            <div className="h-full flex flex-col">
+              <SlideTitle title="Le moteur d’orchestration" subtitle="Fusion AI : Le coeur de l'intelligence opérationnelle" />
 
-        <div className="bg-primary-blue/5 border-l-4 border-primary-blue p-5 mb-10 rounded-r-2xl">
-          <p className="text-[15px] font-medium text-dark-gray leading-relaxed">
-            <span className="text-primary-blue font-bold">Fusion AI</span> = plateforme d'automatisation low-code qui orchestre les workflows complexes entre capteurs IoT, bases de données et équipes opérationnelles.
-          </p>
-        </div>
+              <div className="bg-primary-blue/5 border-l-4 border-primary-blue p-5 mb-10 rounded-r-2xl">
+                <p className="text-[15px] font-medium text-dark-gray leading-relaxed">
+                  <span className="text-primary-blue font-bold">Fusion AI</span> = plateforme d'automatisation low-code qui orchestre les workflows complexes entre capteurs IoT, bases de données et équipes opérationnelles.
+                </p>
+              </div>
 
-        <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          <div className="relative flex justify-center">
-            {/* Central Node */}
-            <div className="w-48 h-48 bg-primary-blue text-white rounded-full flex flex-col items-center justify-center shadow-2xl z-10 border-8 border-white ring-8 ring-primary-blue/5">
-              <AbaLogoIcon size={64} className="mb-2" onDark />
-              <p className="text-xs font-black uppercase tracking-widest text-center">FUSION AI</p>
-            </div>
-            {/* Orbiting rings - slowed down */}
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] border border-dashed border-primary-blue/20 rounded-full opacity-40"
-            />
-          </div>
-
-          <div className="bg-white p-10 rounded-[3rem] border border-light-gray shadow-sm">
-            <h4 className="font-bold text-main-text mb-8 uppercase text-[10px] tracking-widest border-b border-light-gray pb-4">Le Workflow d'Orchestration</h4>
-            <div className="space-y-8">
-              {[
-                { t: "Recevoir", d: "Ingestion des données IoT (Makers Points / MQTT)" },
-                { t: "Analyser", d: "Traitement & Détection d'anomalies intelligente en temps réel" },
-                { t: "Alerter", d: "Transmission instantanée aux Dashboards Ops" },
-                { t: "Déléguer", d: "Orchestration des actions & workflows techniciens" },
-                { t: "Synchroniser", d: "Historisation GMP & Mise à jour des statuts" },
-              ].map((feat, i) => (
-                <div key={i} className="flex gap-6 items-start relative group">
-                  {i < 4 && <div className="absolute left-4 top-10 bottom-[-20px] w-0.5 bg-light-gray group-hover:bg-primary-blue/20 transition-colors" />}
-                  <div className="w-8 h-8 rounded-full bg-bg-page border border-light-gray flex items-center justify-center text-[10px] font-bold text-primary-blue shrink-0 group-hover:bg-primary-blue group-hover:text-white transition-all">
-                    0{i + 1}
+              <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <div className="relative flex justify-center">
+                  {/* Central Node */}
+                  <div className="w-48 h-48 bg-primary-blue text-white rounded-full flex flex-col items-center justify-center shadow-2xl z-10 border-8 border-white ring-8 ring-primary-blue/5">
+                    <AbaLogoIcon size={64} className="mb-2" onDark />
+                    <p className="text-xs font-black uppercase tracking-widest text-center">FUSION AI</p>
                   </div>
-                  <div>
-                    <h5 className="font-bold text-sm text-main-text mb-1">{feat.t}</h5>
-                    <p className="text-xs text-dark-gray font-light">{feat.d}</p>
-                  </div>
+                  {/* Orbiting rings - slowed down */}
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[340px] h-[340px] border border-dashed border-primary-blue/20 rounded-full opacity-40"
+                  />
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
 
-        <div className="mt-12 p-8 bg-primary-blue text-white rounded-3xl shadow-xl flex items-center justify-between">
-          <div>
-            <p className="text-xl font-bold italic">"Fusion AI devient le point de liaison."</p>
-            <p className="text-sm font-medium opacity-80 uppercase tracking-widest mt-1">Entre la donnée terrain, la supervision et les actions de maintenance.</p>
-          </div>
-          <Zap size={40} className="opacity-40" />
-        </div>
-      </div>
-    )
-  },
-  {
-    title: "Boucle bidirectionnelle Fusion AI ↔ Dashboards",
-    notes: "Dans la version actuelle du projet, nous avons construit une logique très importante pour l’automatisation : une boucle bidirectionnelle entre Fusion AI et les dashboards. Fusion AI alimente le dashboard avec les données reçues, et le dashboard technique renvoie les actions du technicien vers Fusion AI. Cela permet de suivre tout le cycle de vie d’un incident.",
-    transition: "Cette architecture prend vie à travers deux interfaces complémentaires.",
-    content: (
-      <div className="h-full flex flex-col">
-        <SlideTitle title="Boucle bidirectionnelle Fusion AI ↔ Dashboards" subtitle="L'automatisation du cycle de vie de l'incident" />
-        <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center flex-1">
-          <div className="space-y-8">
-            <div className="bg-white p-8 rounded-3xl border border-light-gray shadow-sm relative overflow-hidden group">
-              <div className="absolute top-0 right-0 p-4 text-primary-blue/10 group-hover:scale-110 transition-transform"><ArrowRight size={64} /></div>
-              <h4 className="font-bold text-primary-blue mb-4 uppercase text-xs tracking-widest">1. Flux Entrant (Ops)</h4>
-              <p className="text-sm font-bold text-main-text mb-2">Fusion AI → Dashboard Opérationnel</p>
-              <ul className="text-xs text-dark-gray font-medium space-y-2">
-                <li>• Envoi des données via Webhook</li>
-                <li>• Affichage des machines et statuts</li>
-                <li>• Alertes et KPIs en temps réel</li>
-              </ul>
-            </div>
-            <div className="bg-white p-8 rounded-3xl border border-light-gray shadow-sm relative overflow-hidden group">
-              <div className="absolute top-0 right-0 p-4 text-primary-green/10 group-hover:scale-110 transition-transform"><RefreshCw size={64} /></div>
-              <h4 className="font-bold text-primary-green mb-4 uppercase text-xs tracking-widest">2. Flux Retour (Tech)</h4>
-              <p className="text-sm font-bold text-main-text mb-2">Dashboard Technique → Fusion AI</p>
-              <ul className="text-xs text-dark-gray font-medium space-y-2">
-                <li>• Prise en charge des tickets par le technicien</li>
-                <li>• Mise à jour des statuts d'intervention</li>
-                <li>• Synchronisation avec le workflow Fusion AI</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="relative flex flex-col items-center justify-center p-12 bg-bg-page rounded-[3rem] border border-light-gray overflow-hidden">
-            <div className="w-full max-w-xs aspect-square flex flex-col items-center justify-center relative">
-              <div className="w-24 h-24 bg-primary-blue text-white rounded-2xl flex items-center justify-center shadow-lg mb-8 relative z-10">
-                <AbaLogoIcon size={54} onDark />
-                <div className="absolute -top-2 -right-2 w-6 h-6 bg-primary-green rounded-full flex items-center justify-center border-2 border-white"><Zap size={10} /></div>
-              </div>
-
-              <div className="flex gap-12 w-full justify-center">
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-white border border-light-gray rounded-xl flex items-center justify-center text-dark-gray mb-2 shadow-sm"><LayoutDashboard size={24} /></div>
-                  <span className="text-[9px] font-black uppercase text-dark-gray">Dashboard Ops</span>
-                </div>
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-white border border-light-gray rounded-xl flex items-center justify-center text-dark-gray mb-2 shadow-sm"><Settings size={24} /></div>
-                  <span className="text-[9px] font-black uppercase text-dark-gray">Dashboard Tech</span>
-                </div>
-              </div>
-
-              {/* Arrows illustrating the loop */}
-              <motion.div animate={{ rotate: 360 }} transition={{ duration: 10, repeat: Infinity, ease: "linear" }} className="absolute inset-0 border-2 border-dashed border-primary-blue/20 rounded-full" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] pointer-events-none opacity-10"><RefreshCw size={240} className="text-primary-blue" /></div>
-            </div>
-          </div>
-        </div>
-        <div className="mt-8 p-6 bg-white border border-light-gray rounded-2xl text-center">
-          <p className="text-lg font-bold text-dark-gray leading-relaxed">
-            La valeur du projet vient de cette boucle : <span className="text-primary-blue">détecter</span>, <span className="text-primary-blue">afficher</span>, <span className="text-primary-blue font-black underline">agir</span>, puis <span className="text-primary-blue">synchroniser</span>.
-          </p>
-        </div>
-      </div>
-    )
-  },
-  {
-    title: "Dashboard du projet",
-    notes: "Voici la plateforme en action. C'est un environnement live qui connecte les capteurs aux dashboards. Notez l'interface épurée et la réactivité des données. En cas de coupure réseau, nous avons prévu des visuels de secours pour garantir la continuité de la présentation.",
-    transition: "Cette plateforme n'est pas seulement un outil, elle produit des indicateurs de performance mesurables.",
-    content: (
-      <div className="h-full flex flex-col">
-        <SlideTitle title="Dashboard Live" subtitle="Démonstration interactive de l'écosystème INDUPHARMA" />
-
-        <div className="flex-1 mt-6 relative group bg-bg-page rounded-[3rem] overflow-hidden border border-light-gray shadow-2xl">
-          {/* Fallback View (Visible while loading or if offline) */}
-          <div className="absolute inset-0 bg-white flex flex-col items-center justify-center text-center p-20 z-0">
-            <div className="w-24 h-24 bg-primary-blue/5 rounded-full flex items-center justify-center text-primary-blue mb-8">
-              <LayoutDashboard size={48} strokeWidth={1} />
-            </div>
-            <h4 className="text-2xl font-bold text-main-text mb-4">Plateforme INDUPHARMA Live</h4>
-            <p className="text-dark-gray max-w-md mx-auto font-light leading-relaxed">
-              Chargement de la console de supervision en temps réel...
-            </p>
-            <div className="mt-10 flex gap-6">
-              <div className="px-6 py-3 rounded-2xl bg-primary-blue/10 text-primary-blue text-xs font-bold uppercase tracking-widest">Vision Opérationnelle</div>
-              <div className="px-6 py-3 rounded-2xl bg-primary-green/10 text-primary-green text-xs font-bold uppercase tracking-widest">Outils Techniques</div>
-            </div>
-          </div>
-
-          {/* Live Iframe */}
-          <iframe
-            src="https://indupharma-live-dashboard.vercel.app/"
-            title="INDUPHARMA Live Dashboard"
-            className="absolute inset-0 w-full h-full border-0 z-10 opacity-0 transition-opacity duration-1000"
-            onLoad={(e) => (e.currentTarget.style.opacity = '1')}
-            loading="lazy"
-            referrerPolicy="no-referrer"
-          />
-
-          {/* Interactive Overlay Sidebar */}
-          <div className="absolute top-10 right-10 z-20 space-y-4 pointer-events-none group-hover:opacity-100 opacity-60 transition-opacity">
-            {[
-              { t: "Surveillance IoT", i: Zap },
-              { t: "Gestion d'Incidents", i: ShieldCheck },
-              { t: "Traçabilité ALCOA+", i: CheckCircle2 },
-            ].map((item, i) => (
-              <div key={i} className="bg-white/90 backdrop-blur-md px-6 py-4 rounded-2xl border border-white shadow-xl flex items-center gap-4 min-w-[240px]">
-                <div className="w-10 h-10 rounded-xl bg-primary-blue text-white flex items-center justify-center">
-                  <item.i size={20} />
-                </div>
-                <span className="text-sm font-bold text-main-text">{item.t}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-8 flex items-center justify-between px-10">
-          <p className="text-sm text-dark-gray/60 italic">Accès direct : <a href="https://indupharma-live-dashboard.vercel.app/" target="_blank" className="text-primary-blue underline">indupharma-live-dashboard.vercel.app</a></p>
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-primary-green animate-pulse" />
-            <span className="text-[10px] font-black text-primary-green uppercase tracking-widest">Status: Live Environment</span>
-          </div>
-        </div>
-      </div>
-    )
-  },
-
-  {
-    title: "Chiffres & KPI 2026",
-    notes: "Ces chiffres ne sont pas des projections. Ils sont extraits en temps réel de notre dashboard live au moment où nous vous parlons. Notez le MTTR descendu à 29 minutes grâce à l'orchestration automatique.",
-    transition: "Ces indicateurs permettent ensuite de fixer des objectifs de performance.",
-    content: (
-      <div className="h-full">
-        <SlideTitle title="Indicateurs 2026" subtitle="Performance opérationnelle en temps réel" />
-        <div className="mt-8 bg-gradient-to-r from-primary-blue to-[#1f7be8] text-white rounded-3xl p-8 shadow-lg relative overflow-hidden">
-          <div className="absolute top-0 right-0 p-4 opacity-10"><Database size={120} /></div>
-          <div className="grid grid-cols-3 gap-10 items-center relative z-10">
-            <div>
-              <p className="text-xs uppercase tracking-widest opacity-80 mb-2">Disponibilité Globale</p>
-              <p className="text-4xl font-display font-bold">89.4%</p>
-              <p className="text-[9px] mt-2 opacity-60 font-medium">Dashboard INDUPHARMA — Avril 2026</p>
-            </div>
-            <div className="text-center border-x border-white/20 px-4">
-              <p className="text-xs uppercase tracking-widest opacity-80 mb-2">MTTR (Temps de réponse moyen)</p>
-              <p className="text-3xl font-display font-bold text-primary-green bg-white px-4 py-1 rounded-xl inline-block">29 min</p>
-              <p className="text-[9px] mt-2 opacity-60 font-medium">API-derived KPI logs</p>
-            </div>
-            <div className="text-right">
-              <p className="text-xs uppercase tracking-widest opacity-80 mb-2">Downtime Total</p>
-              <p className="text-3xl font-display font-bold">213 min</p>
-              <p className="text-[9px] mt-2 opacity-60 font-medium">Derived from etat_global</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-4 gap-6 mt-8">
-          <KPICard label="Machines Actives" value="7/10" icon={Activity} showLiveBadge />
-          <KPICard label="Alertes Critiques" value="01" icon={AlertTriangle} colorClass="text-red-500" showLiveBadge />
-          <KPICard label="Incident Ouvert" value="01" icon={Smartphone} colorClass="text-red-400" showLiveBadge />
-          <KPICard label="Techniciens" value="06" icon={Users} showLiveBadge />
-        </div>
-
-        <div className="mt-10 grid grid-cols-2 gap-8">
-          <div className="bg-bg-page/60 rounded-3xl border border-primary-blue/10 shadow-sm p-8">
-            <h4 className="font-semibold text-xs uppercase tracking-widest text-dark-gray mb-8 flex items-center justify-between">
-              Tendance de disponibilité
-              <span className="text-[9px] bg-white px-2 py-1 rounded-full border border-light-gray">Données live</span>
-            </h4>
-            <MiniBarChart data={trendBars} />
-            <div className="mt-5 grid grid-cols-2 gap-3 text-xs">
-              <div className="bg-white rounded-xl border border-light-gray px-3 py-2 flex justify-between items-center"><span className="text-dark-gray/70">MTBF:</span> <span className="font-bold text-main-text text-primary-blue">208 h</span></div>
-              <div className="bg-white rounded-xl border border-light-gray px-3 py-2 flex justify-between items-center"><span className="text-dark-gray/70">Closure Rate:</span> <span className="font-bold text-primary-green">91%</span></div>
-            </div>
-          </div>
-          <div className="bg-bg-page/60 rounded-3xl border border-primary-green/15 shadow-sm p-8 flex flex-col items-center justify-center relative">
-            <h4 className="font-semibold text-xs uppercase tracking-widest text-dark-gray mb-6 w-full text-left">
-              Process Readiness Score
-            </h4>
-            <div
-              className="w-40 h-40 rounded-full border border-light-gray shadow-inner relative"
-              style={{
-                background: `conic-gradient(#1f5eff ${readinessScore}%, #2fcf8f ${readinessScore}% 100%)`,
-              }}
-            >
-              <div className="absolute inset-4 bg-white rounded-full flex items-center justify-center flex-col shadow-inner">
-                <p className="text-3xl font-display font-bold text-primary-blue">89%</p>
-                <p className="text-[10px] uppercase tracking-widest text-dark-gray/60 font-semibold">Ready</p>
-              </div>
-            </div>
-            <p className="text-[10px] text-dark-gray mt-6 text-center leading-relaxed">
-              <span className="font-bold text-primary-blue">89% des processus critiques</span> sont couverts par la boucle détection → action (Live Roster Synchronized).
-            </p>
-          </div>
-        </div>
-      </div>
-    )
-  },
-  {
-    title: "Objectifs de performance",
-    notes: "Ici, nous parlons d’impact opérationnel mesuré. Notre force est d’avoir transformé une vision qualitative en une boucle de réponse quantifiée et traçable.",
-    transition: "Au-delà du prototype, ce problème correspond aussi à une opportunité de marché réelle.",
-    content: (
-      <div className="h-full">
-        <SlideTitle title="Objectifs de performance" subtitle="Indicateurs de performance mesurés en conditions réelles et KPI" />
-        <div className="grid grid-cols-2 gap-16 mt-16 items-center">
-          <div className="space-y-6">
-            {[
-              { label: "Détection anomalie", value: "< 30 secondes", icon: Zap },
-              { label: "Affichage Centralisé", value: "10 machines / 3 zones", icon: LayoutDashboard },
-              { label: "Prise en charge Ticket", value: "MTTR : 29 min", icon: Clock },
-              { label: "Retour Technicien", value: "< 5s (Synchronisé)", icon: RefreshCw },
-              { label: "Traçabilité", value: "100% Audit Trail", icon: ShieldCheck },
-            ].map((obj, i) => (
-              <div key={i} className="flex justify-between items-center p-6 bg-white rounded-2xl border border-light-gray/50 shadow-sm transition-all hover:bg-bg-page/50 group">
-                <div className="flex items-center gap-4">
-                  <div className="w-8 h-8 rounded-lg bg-primary-blue/5 text-primary-blue flex items-center justify-center opacity-60 group-hover:opacity-100 transition-opacity">
-                    <obj.icon size={18} strokeWidth={2} />
-                  </div>
-                  <span className="text-xs font-semibold uppercase text-dark-gray/70 tracking-widest">{obj.label}</span>
-                </div>
-                <span className="text-base font-bold text-primary-blue bg-primary-blue/5 px-4 py-1 rounded-full border border-primary-blue/10">{obj.value}</span>
-              </div>
-            ))}
-          </div>
-
-          <div className="bg-primary-blue text-white p-14 rounded-[3rem] shadow-lg relative overflow-hidden flex flex-col justify-center min-h-[430px]">
-            <div className="absolute top-0 right-0 p-8 opacity-10 rotate-12"><Zap size={200} strokeWidth={1} /></div>
-            <h3 className="text-4xl font-display font-light mb-8 leading-tight z-10 relative">
-              De la détection à l'action : <span className="font-bold">29 min en moyenne.</span>
-            </h3>
-            <p className="text-lg font-light leading-relaxed opacity-90 z-10 relative">
-              Une performance mesurée en conditions réelles, permettant une réduction drastique du délai entre l'incident terrain et la remise en service.
-            </p>
-            <div className="mt-12 flex gap-3 z-10 relative items-center">
-              <div className="px-4 py-2 rounded-full border border-white/20 bg-white/10 text-[10px] font-bold uppercase tracking-widest">
-                Real-World Conditions
-              </div>
-              <div className="w-12 h-1 bg-white/30 rounded-full" />
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  },
-  {
-    title: "Opportunité marché",
-    notes: "Nous ne sommes pas sur un marché de niche. Toutes les usines pharmaceutiques cherchent à réduire leur downtime. Notez la spécificité du segment Pharma IIoT (~28 Md$) qui est notre cible prioritaire. La maturité IIoT est devenue une nécessité réglementaire et économique.",
-    transition: "Cette opportunité se traduit par des impacts concrets à plusieurs niveaux.",
-    content: (
-      <div className="h-full">
-        <SlideTitle title="Une opportunité réelle" subtitle="L'IIoT au cœur de la souveraineté industrielle" />
-        <div className="grid grid-cols-2 gap-16 mt-16">
-          <div className="space-y-8">
-            <div className="p-10 bg-white rounded-3xl border border-light-gray/50 shadow-sm transition-all hover:shadow-md relative overflow-hidden group">
-              <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-20 transition-opacity"><Globe size={80} /></div>
-              <h4 className="text-4xl font-display font-bold text-primary-blue mb-2 tracking-tight">~433 Md$</h4>
-              <p className="text-[10px] font-bold text-dark-gray/60 uppercase tracking-widest mb-4">Marché global Industrie 4.0 (2030)</p>
-              <div className="pt-4 border-t border-light-gray/50">
-                <p className="text-xl font-bold text-primary-blue mb-1">~28 Md$</p>
-                <p className="text-[10px] font-semibold text-dark-gray/70 uppercase tracking-widest">Sous-segment Pharma IIoT (Cible)</p>
-              </div>
-              <p className="text-[9px] text-dark-gray/40 mt-4 italic">Sources: NextMSC & MarketsandMarkets</p>
-            </div>
-            <div className="p-10 bg-white rounded-3xl border border-light-gray/50 shadow-sm transition-all hover:shadow-md relative overflow-hidden group">
-              <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-20 transition-opacity"><Zap size={80} /></div>
-              <h4 className="text-5xl font-display font-bold text-primary-green mb-4 tracking-tight">+30 à 50%</h4>
-              <p className="text-xs font-semibold text-dark-gray/70 uppercase tracking-widest leading-relaxed">Réduction de downtime via maintenance prédictive</p>
-              <p className="text-[10px] text-dark-gray/40 mt-6 italic">Source: McKinsey (Predictive Maintenance)</p>
-            </div>
-          </div>
-
-          <div className="bg-bg-page/50 p-12 rounded-[3.5rem] border border-light-gray/50 flex flex-col justify-center">
-            <h4 className="font-semibold text-main-text mb-8 uppercase text-sm tracking-widest flex items-center gap-3"><Globe size={20} strokeWidth={1.5} className="text-primary-blue" /> Pourquoi maintenant ?</h4>
-            <ul className="space-y-8">
-              {[
-                { t: "Pression réglementaire", d: "Alcoa+ et traçabilité temps réel." },
-                { t: "Pénurie de main d'œuvre", d: "Besoin d'outils d'assistance métiers." },
-                { t: "Coût de l'énergie", d: "Optimisation de la consommation énergétique." },
-              ].map((item, i) => (
-                <li key={i} className="flex gap-6">
-                  <div className="w-2.5 h-2.5 rounded-full bg-primary-blue/80 mt-1.5 flex-shrink-0" />
-                  <div>
-                    <p className="font-semibold text-base text-main-text mb-1">{item.t}</p>
-                    <p className="text-sm text-dark-gray font-light">{item.d}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        <div className="mt-8 bg-white rounded-3xl border border-light-gray/50 p-8 shadow-sm relative">
-          <div className="absolute top-6 right-8 px-4 py-1.5 bg-primary-green/5 border border-primary-green/20 rounded-full">
-            <p className="text-[10px] font-bold text-primary-green uppercase tracking-widest flex items-center gap-2">
-              <TrendingUp size={12} /> Le ROI de 70% sur site pilote finance l'expansion Phase 2
-            </p>
-          </div>
-          <h4 className="font-semibold text-main-text mb-4 uppercase text-sm tracking-widest flex items-center gap-3">
-            <ArrowUpRight size={18} className="text-primary-blue" />
-            Vision 2030 - Roadmap de déploiement
-          </h4>
-          <div className="grid grid-cols-3 gap-6 text-sm">
-            <div className="bg-primary-blue/5 border border-primary-blue/15 rounded-2xl p-5">
-              <p className="font-semibold text-primary-blue mb-2">2026-2027</p>
-              <p className="text-[11px] text-dark-gray leading-relaxed">Pilotes multi-lignes, fiabilisation capteurs, standardisation SOP GMP.</p>
-            </div>
-            <div className="bg-primary-green/5 border border-primary-green/15 rounded-2xl p-5">
-              <p className="font-semibold text-primary-green mb-2">2028</p>
-              <p className="text-[11px] text-dark-gray leading-relaxed">Déploiement inter-sites, scoring de criticité, maintenance prescriptive.</p>
-            </div>
-            <div className="bg-bg-page border border-light-gray rounded-2xl p-5">
-              <p className="font-semibold text-main-text mb-2">2029-2030</p>
-              <p className="text-[11px] text-dark-gray leading-relaxed">Jumeau digital, benchmark OEE groupe, pilotage ROI temps réel.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  },
-  {
-    title: "Analyse comparative & différenciation",
-    notes: "Des solutions existent, mais INDUPHARMA se distingue par une boucle opérationnelle ciblée sur le downtime pharmaceutique. Là où d'autres font du monitoring large, nous faisons de l'action synchrone.",
-    transition: "Cette différenciation est ce qui garantit un impact maximal sur le terrain.",
-    content: (
-      <div className="h-full">
-        <SlideTitle title="Différenciation Stratégique" subtitle="Se positionner là où la valeur est la plus critique" />
-
-        <div className="mt-12 overflow-hidden rounded-3xl border border-light-gray/50 shadow-sm bg-white relative">
-          <table className="w-full text-left border-collapse">
-            <thead>
-              <tr className="bg-bg-page/50 border-b border-light-gray/50">
-                <th className="p-6 text-xs font-semibold uppercase text-dark-gray/70 tracking-widest">Acteur / Solution</th>
-                <th className="p-6 text-xs font-semibold uppercase text-dark-gray/70 tracking-widest text-center">Focus Offre</th>
-                <th className="p-6 text-xs font-semibold uppercase text-dark-gray/70 tracking-widest text-center">Limite Critique</th>
-                <th className="p-6 text-xs font-bold uppercase tracking-widest bg-primary-blue/5 text-primary-blue text-center">Valeur Opérationnelle (ROI)</th>
-              </tr>
-            </thead>
-            <tbody className="text-sm font-light text-dark-gray">
-              {[
-                {
-                  name: "OCP Maintenance",
-                  offer: "Capteurs vibrostiques, diagnostics IA.",
-                  limit: "Usines lourdes, moins pharma-centric.",
-                  opp: "Générique (PdM standard)."
-                },
-                {
-                  name: "Indusnov Solutions",
-                  offer: "Maintenance 4.0, analyse vibratoire.",
-                  limit: "Générique industriel, pas de workflow.",
-                  opp: "Maintenance réactive."
-                },
-                {
-                  name: "VISIOPROCESS",
-                  offer: "Datavisualisation temps réel, GTC.",
-                  limit: "Orienté énergie et bâtiments.",
-                  opp: "Visualisation passive."
-                },
-                {
-                  name: "MySirius (JRI)",
-                  offer: "Monitoring connecté (froid, métrologie).",
-                  limit: "Centré conformité passive.",
-                  opp: "Audit Trail simple."
-                },
-                {
-                  name: "INDUPHARMA",
-                  offer: "Boucle IIoT + Fusion AI + GMP",
-                  limit: "—",
-                  opp: "MTTR 29 min / Closure Rate 91%",
-                  highlight: true
-                },
-              ].map((row, i) => (
-                <tr key={i} className={`border-b border-light-gray/30 last:border-0 transition-colors ${row.highlight ? 'bg-primary-blue/10 font-medium' : 'hover:bg-bg-page/30'}`}>
-                  <td className={`p-6 ${row.highlight ? 'font-bold text-primary-blue' : 'font-medium text-main-text'}`}>{row.name}</td>
-                  <td className="p-6 text-center">{row.offer}</td>
-                  <td className="p-6 italic text-center opacity-70">{row.limit}</td>
-                  <td className={`p-6 text-center ${row.highlight ? 'font-black text-primary-blue' : 'font-semibold text-primary-blue/60'}`}>
-                    {row.highlight ? (
-                      <div className="flex flex-col items-center gap-1">
-                        <span>{row.opp}</span>
-                        <span className="text-[10px] font-bold uppercase text-primary-green">Réduction MTTR -40%</span>
+                <div className="bg-white p-10 rounded-[3rem] border border-light-gray shadow-sm">
+                  <h4 className="font-bold text-main-text mb-8 uppercase text-[10px] tracking-widest border-b border-light-gray pb-4">Le Workflow d'Orchestration</h4>
+                  <div className="space-y-8">
+                    {[
+                      { t: "Recevoir", d: "Ingestion des données IoT (Makers Points / MQTT)" },
+                      { t: "Analyser", d: "Traitement & Détection d'anomalies intelligente en temps réel" },
+                      { t: "Alerter", d: "Transmission instantanée aux Dashboards Ops" },
+                      { t: "Déléguer", d: "Orchestration des actions & workflows techniciens" },
+                      { t: "Synchroniser", d: "Historisation GMP & Mise à jour des statuts" },
+                    ].map((feat, i) => (
+                      <div key={i} className="flex gap-6 items-start relative group">
+                        {i < 4 && <div className="absolute left-4 top-10 bottom-[-20px] w-0.5 bg-light-gray group-hover:bg-primary-blue/20 transition-colors" />}
+                        <div className="w-8 h-8 rounded-full bg-bg-page border border-light-gray flex items-center justify-center text-[10px] font-bold text-primary-blue shrink-0 group-hover:bg-primary-blue group-hover:text-white transition-all">
+                          0{i + 1}
+                        </div>
+                        <div>
+                          <h5 className="font-bold text-sm text-main-text mb-1">{feat.t}</h5>
+                          <p className="text-xs text-dark-gray font-light">{feat.d}</p>
+                        </div>
                       </div>
-                    ) : (
-                      row.opp
-                    )}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          <div className="bg-bg-page/30 p-4 border-t border-light-gray/50 flex justify-between items-center">
-            <p className="text-[10px] text-dark-gray/50 italic">
-              Analyse basée sur : sites web officiels, études de cas publiées et interviews terrain — Mars 2026
-            </p>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-primary-blue animate-pulse" />
-              <span className="text-[9px] font-bold uppercase tracking-widest text-primary-blue">INDUPHARMA LEADERSHIP</span>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-12 grid grid-cols-2 gap-10">
-          <div className="p-8 bg-primary-green/5 rounded-[2.5rem] border border-primary-green/10 flex items-center gap-6">
-            <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-primary-green shadow-sm">
-              <RefreshCw size={24} strokeWidth={1.5} />
-            </div>
-            <div>
-              <p className="text-[11px] font-bold uppercase tracking-widest text-primary-green mb-1">Notre Atout</p>
-              <p className="text-base font-medium text-main-text">La boucle fermée Supervision-Action.</p>
-            </div>
-          </div>
-          <div className="p-8 bg-primary-blue/5 rounded-[2.5rem] border border-primary-blue/10 flex items-center gap-6">
-            <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-primary-blue shadow-sm">
-              <ShieldCheck size={24} strokeWidth={1.5} />
-            </div>
-            <div>
-              <p className="text-[11px] font-bold uppercase tracking-widest text-primary-blue mb-1">Positionnement</p>
-              <p className="text-base font-medium text-main-text">Focus Processus Pharma & ALCOA+.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  },
-  {
-    title: "Impact du projet",
-    notes: "L’impact est désormais chiffré : ROI de 70%, 91% de taux de clôture des incidents, et une élimination totale du papier. C'est un gain de confiance opérationnelle autant que financière.",
-    transition: "Pour rendre ce projet viable, nous avons imaginé un business model simple.",
-    content: (
-      <div className="h-full">
-        <SlideTitle title="Impact global" subtitle="Performance mesurée sur le site pilote" />
-        <div className="grid grid-cols-3 gap-8 mt-16">
-          {[
-            { title: "Économique", sub: "ROI +70% / Break-even 7 mois", icon: BadgeEuro, desc: "Réduction drastique des pertes de lots et optimisation des coûts de maintenance." },
-            { title: "Humain", sub: "Closure Rate 91%", icon: Users, desc: "6 techniciens pilotés via dashboard — zéro appel téléphonique manuel, stress réduit." },
-            { title: "Qualité", sub: "100% Audit Trail", icon: ShieldCheck, desc: "Zéro rapport manuel horodaté. Traçabilité GMP native et sans faille." },
-          ].map((impact, i) => (
-            <div key={i} className="bg-white p-12 rounded-[3.5rem] border border-light-gray/50 shadow-sm flex flex-col items-center text-center transition-all hover:shadow-md hover:border-light-gray group">
-              <div className="w-20 h-20 rounded-[2rem] bg-bg-page flex items-center justify-center text-primary-blue mb-8 group-hover:bg-primary-blue/5 transition-colors">
-                <impact.icon size={36} strokeWidth={1} />
-              </div>
-              <h4 className="font-bold text-2xl mb-2 tracking-tight text-main-text">{impact.title}</h4>
-              <p className="text-[10px] font-bold text-primary-blue uppercase tracking-widest mb-6">{impact.sub}</p>
-              <p className="text-sm text-dark-gray font-light leading-relaxed px-4">{impact.desc}</p>
-            </div>
-          ))}
-        </div>
-        <div className="mt-20 p-10 bg-primary-blue/5 rounded-[3rem] border border-primary-blue/10 flex items-center justify-center gap-6">
-          <Zap className="text-primary-blue" strokeWidth={1.5} size={28} />
-          <p className="text-xl font-light text-dark-gray">"L'excellence industrielle ne se mesure pas seulement en <span className="font-bold">TRS</span>, mais en <span className="font-bold text-primary-blue">confiance opérationnelle</span>."</p>
-        </div>
-      </div>
-    )
-  },
-  // ...existing code...
-  {
-    title: "ROI 12 mois",
-    notes: "Détail du ROI : 240k MAD d'investissement (Matériel, Intégration, Formation) vs 410k MAD de gains (réduction downtime sur 2 lignes critiques). Le break-even est atteint à 7 mois.",
-    transition: "Après la rentabilité, nous montrons le scénario opérationnel en 30 secondes.",
-    content: (
-      <div className="h-full">
-        <SlideTitle title="ROI en 12 mois" subtitle="Un dossier économique transparent et justifiable" />
-        <div className="grid grid-cols-2 gap-12 mt-12 items-start">
-          <div className="space-y-6">
-            <div className="bg-white border border-light-gray/60 rounded-3xl p-8 shadow-sm">
-              <p className="text-xs uppercase tracking-widest font-bold text-dark-gray/60 mb-6 flex justify-between">
-                <span>Investissement Initial</span>
-                <span className="text-primary-blue">240k MAD</span>
-              </p>
-              <div className="space-y-3">
-                {[
-                  { l: "Capteurs & Infrastructure", v: "45k" },
-                  { l: "Intégration Fusion AI", v: "50k" },
-                  { l: "Développement Dashboards", v: "80k" },
-                  { l: "Formation & Onboarding", v: "40k" },
-                  { l: "Maintenance Année 1", v: "25k" },
-                ].map((item, i) => (
-                  <div key={i} className="flex justify-between text-xs border-b border-light-gray/20 pb-2 last:border-0">
-                    <span className="text-dark-gray font-light">{item.l}</span>
-                    <span className="font-semibold text-main-text">{item.v} MAD</span>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="bg-bg-page/50 border border-light-gray/40 rounded-3xl p-8">
-              <p className="text-xs uppercase tracking-widest font-bold text-dark-gray/60 mb-4 flex items-center gap-2">
-                <BarChart3 size={16} /> Logique de Calcul des Gains
-              </p>
-              <p className="text-sm text-dark-gray leading-relaxed font-light italic">
-                "213 min de downtime actuel × Coût/heure pharma ($100K-$500K) × Fréquence mensuelle × Réduction 30% = 410k MAD / an"
-              </p>
-            </div>
-          </div>
-
-          <div className="space-y-8">
-            <div className="grid grid-cols-2 gap-6">
-              <div className="bg-primary-green/5 border border-primary-green/20 rounded-3xl p-8 shadow-sm">
-                <p className="text-[10px] uppercase tracking-widest font-bold text-primary-green/80 mb-2">Gain Annuel</p>
-                <p className="text-4xl font-display font-bold text-primary-green">410k MAD</p>
-                <p className="text-[10px] text-primary-green/60 mt-2">Downtime évité & Pertes lots</p>
-              </div>
-              <div className="bg-main-text text-white rounded-3xl p-8 shadow-sm relative overflow-hidden">
-                <div className="absolute -right-4 -bottom-4 opacity-10"><Clock size={100} /></div>
-                <p className="text-[10px] uppercase tracking-widest font-bold opacity-70 mb-2">Break-even</p>
-                <p className="text-4xl font-display font-bold">7 mois</p>
-                <p className="text-[10px] opacity-60 mt-2">Point mort financier</p>
-              </div>
-            </div>
-
-            <div className="bg-primary-blue text-white rounded-[2.5rem] p-10 shadow-lg relative overflow-hidden">
-              <div className="absolute top-0 right-0 p-6 opacity-10"><BadgeEuro size={120} /></div>
-              <p className="text-xs uppercase tracking-widest font-bold opacity-80 mb-4">Hypothèse Clé (Scope)</p>
-              <h4 className="text-3xl font-display font-bold mb-4">Basé sur 2 lignes critiques.</h4>
-              <p className="text-lg opacity-90 font-light mb-8">Un ROI de <span className="font-bold underline">+70%</span> dès la première année, validant le potentiel de déploiement multi-site.</p>
-              <div className="inline-flex px-4 py-2 rounded-full bg-white/10 border border-white/20 text-[10px] font-bold tracking-widest uppercase">
-                Gains Prudents & Réalistes
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  },
-  {
-    title: "Demo Story 30 secondes",
-    notes: "Cette séquence de 30 secondes montre la réactivité du système. Notez que les 8 secondes d'orchestration sont validées par nos logs API. Ce cycle كامل aboutit à un MTTR réel de 29 minutes sur le site pilote.",
-    transition: "Après la démo, comment déployons-nous cette solution ? Voici notre stratégie Go-to-Market.",
-    content: (
-      <div className="h-full">
-        <SlideTitle title="Scénario opérationnel" subtitle="La boucle de valeur en 30 secondes chrono" />
-        <div className="grid grid-cols-4 gap-6 mt-12">
-          {[
-            { t: "00s", l: "Alarme détectée", d: "Anomalie autoclave remontée par Makers Points", i: BellRing, c: "bg-red-50 text-red-600 border-red-100" },
-            { t: "08s", l: "Ticket créé", d: "Fusion AI ouvre l'incident et priorise", i: Cpu, c: "bg-primary-blue/5 text-primary-blue border-primary-blue/10", tag: "Log API" },
-            { t: "18s", l: "Action technicien", d: "Admin technique met à jour le statut", i: Users, c: "bg-main-text/5 text-main-text border-main-text/10" },
-            { t: "30s", l: "KPI actualisé", d: "Dashboard Ops reflète l'état corrigé", i: BarChart3, c: "bg-primary-green/5 text-primary-green border-primary-green/10" },
-          ].map((s, i) => (
-            <div key={i} className={`p-8 rounded-[2.5rem] border shadow-sm flex flex-col items-center text-center relative ${s.c}`}>
-              {s.tag && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-primary-blue text-[8px] font-bold text-white uppercase tracking-widest">
-                  {s.tag}
                 </div>
-              )}
-              <p className="text-4xl font-display font-black mb-4">{s.t}</p>
-              <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center mb-6 shadow-sm">
-                <s.i size={24} strokeWidth={1.5} />
               </div>
-              <h4 className="font-bold text-lg mb-2">{s.l}</h4>
-              <p className="text-xs font-light leading-relaxed opacity-80">{s.d}</p>
-              {i < 3 && <ArrowRight className="absolute -right-4 top-1/2 -translate-y-1/2 text-light-gray/50 hidden lg:block" size={24} />}
-            </div>
-          ))}
-        </div>
 
-        <div className="mt-12 p-12 bg-white rounded-[3.5rem] border border-light-gray/50 shadow-sm relative overflow-hidden group hover:border-primary-blue/30 transition-all">
-          <div className="absolute -right-10 -bottom-10 opacity-5 group-hover:opacity-10 transition-opacity">
-            <TrendingUp size={240} />
-          </div>
-          <div className="flex items-center gap-10">
-            <div className="w-24 h-24 rounded-[2rem] bg-bg-page flex items-center justify-center text-primary-blue">
-              <Activity size={40} strokeWidth={1} />
-            </div>
-            <div className="flex-1">
-              <p className="text-xs font-bold text-primary-blue uppercase tracking-widest mb-2">Corrélation Réalité-Terrain</p>
-              <h4 className="text-3xl font-display font-bold text-main-text mb-4">
-                Ce cycle = MTTR réel de <span className="text-primary-blue underline decoration-2 underline-offset-4">29 min</span>
-              </h4>
-              <p className="text-lg text-dark-gray font-light max-w-3xl">
-                Performance mesurée en continu sur notre <span className="font-medium text-main-text">prototype live</span>. La rapidité de détection (30s) est le levier majeur de la réduction de 40% de la panne totale.
-              </p>
-            </div>
-            <div className="px-8 py-6 rounded-3xl bg-bg-page border border-light-gray/30 text-center">
-              <p className="text-[10px] font-bold text-dark-gray/50 uppercase tracking-widest mb-1">Délai moyen Log</p>
-              <p className="text-2xl font-display font-bold text-main-text">08.2s</p>
-              <p className="text-[8px] text-primary-blue font-bold uppercase tracking-widest mt-1">Orchestration AI</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  },
-  {
-    title: "Go-to-Market & Deployment",
-    notes: "Plan de déploiement chiffré : 240k MAD pour le pilote (Phase 1), puis expansion via ROI (Phase 2). La Phase 3 standardise les SOP et le benchmark inter-sites.",
-    transition: "Le scale doit rester conforme GMP, d’où la gouvernance et compliance.",
-    content: (
-      <div className="h-full">
-        <SlideTitle title="Go-to-Market & Deployment Plan" subtitle="Passer du pilote à l’échelle multi-site" />
-        <div className="mt-12 grid grid-cols-3 gap-8">
-          {[
-            { p: "Phase 1", t: "Pilot", d: "1 site • 1-2 lignes • 3 mois", b: "240k MAD", c: "bg-primary-blue/5 border-primary-blue/20 text-primary-blue" },
-            { p: "Phase 2", t: "Scale", d: "Atelier complet • 10 machines • 6 mois", b: "+180k MAD", c: "bg-primary-green/5 border-primary-green/20 text-primary-green" },
-            { p: "Phase 3", t: "Multi-site", d: "Standardisation SOP • Support 24/7", b: "ROI > 1M MAD", c: "bg-main-text/5 border-main-text/20 text-main-text" },
-          ].map((phase, i) => (
-            <div key={i} className="bg-white rounded-[3rem] border border-light-gray/60 p-8 shadow-sm flex flex-col relative overflow-hidden group hover:shadow-md transition-all">
-              <div className={`inline-flex self-start px-4 py-2 rounded-full border text-[10px] uppercase tracking-widest font-bold ${phase.c}`}>{phase.p}</div>
-              <h4 className="text-3xl font-display font-black text-main-text mt-6 mb-2">{phase.t}</h4>
-              <p className="text-sm text-dark-gray font-light mb-8">{phase.d}</p>
-              <div className="mt-auto pt-6 border-t border-light-gray/30 flex justify-between items-center">
-                 <span className="text-[10px] font-bold text-dark-gray/50 uppercase tracking-widest">Budget / Cible</span>
-                 <span className={`text-lg font-bold ${phase.c.split(' ')[2]}`}>{phase.b}</span>
+              <div className="mt-12 p-8 bg-primary-blue text-white rounded-3xl shadow-xl flex items-center justify-between">
+                <div>
+                  <p className="text-xl font-bold italic">"Fusion AI devient le point de liaison."</p>
+                  <p className="text-sm font-medium opacity-80 uppercase tracking-widest mt-1">Entre la donnée terrain, la supervision et les actions de maintenance.</p>
+                </div>
+                <Zap size={40} className="opacity-40" />
               </div>
             </div>
-          ))}
-        </div>
-
-        <div className="mt-12 overflow-hidden rounded-[2.5rem] border border-light-gray/50 bg-white">
-          <table className="w-full text-left border-collapse">
-             <thead>
-                <tr className="bg-bg-page/50 border-b border-light-gray/40">
-                   <th className="p-6 text-[10px] font-bold uppercase tracking-widest text-dark-gray/60">Dimension</th>
-                   <th className="p-6 text-[10px] font-bold uppercase tracking-widest text-primary-blue text-center">Phase 1 (Pilote)</th>
-                   <th className="p-6 text-[10px] font-bold uppercase tracking-widest text-primary-green text-center">Phase 2 (Scale)</th>
-                   <th className="p-6 text-[10px] font-bold uppercase tracking-widest text-main-text text-center">Phase 3 (Multi-site)</th>
-                </tr>
-             </thead>
-             <tbody className="text-sm">
-                {[
-                   { d: "Durée estimée", p1: "3 mois", p2: "6 mois", p3: "12 mois" },
-                   { d: "Nombre de Machines", p1: "1-2", p2: "10 (Atelier complet)", p3: "Multi-site Groupe" },
-                   { d: "Objectif ROI", p1: "Baseline / Proof", p2: "+30% OEE", p3: "+70% ROI Groupe" },
-                ].map((row, i) => (
-                   <tr key={i} className="border-b border-light-gray/20 last:border-0 hover:bg-bg-page/20 transition-colors">
-                      <td className="p-5 font-bold text-dark-gray uppercase text-[10px] tracking-wider pl-8">{row.d}</td>
-                      <td className="p-5 text-center text-dark-gray font-light">{row.p1}</td>
-                      <td className="p-5 text-center text-dark-gray font-light">{row.p2}</td>
-                      <td className="p-5 text-center text-dark-gray font-light">{row.p3}</td>
-                   </tr>
-                ))}
-             </tbody>
-          </table>
-        </div>
-
-        <div className="mt-8 h-1.5 rounded-full bg-bg-page overflow-hidden border border-light-gray/30">
-          <div className="h-full w-1/3 bg-primary-blue rounded-full" />
-        </div>
-      </div>
-    )
+            )
   },
-  {
-    title: "Governance & Compliance",
-    notes: "La conformité est au cœur du design : ALCOA+ est implémenté nativement (ex: timestamp/signature auto). Le RBAC (Ops, Admin, QA) est actif dans le dashboard.",
-    transition: "Nous pouvons conclure sur la promesse stratégique du projet.",
-    content: (
-      <div className="h-full">
-        <SlideTitle title="Governance & Compliance" subtitle="Conçu pour ALCOA+ et audit trail end-to-end" />
-        <div className="mt-12 grid grid-cols-2 gap-10">
-          <div className="space-y-5">
-            {[
-              { t: "ALCOA+ Ready", d: "Data Attributable, Legible, Contemporaneous, Original, Accurate", ex: "Ex: Clôture ticket → Timestamp auto + User ID + Signature Fusion AI", i: ShieldCheck },
-              { t: "Audit Trail", d: "Chaque action technicien est horodatée, signée, et historisée.", ex: "Log immuable stocké en base de données sécurisée", i: History },
-              { t: "Access Roles (RBAC)", d: "Séparation : Ops, Admin technique, Management, QA", ex: "Système de permissions natif & actif dans le dashboard", i: Users },
-              { t: "Incident Traceability", d: "Chaîne complète : détection → ticket → action → clôture", ex: "Lien déterministe entre alerte Makers Points et rapport final", i: Activity },
-            ].map((c, i) => (
-              <div key={i} className="bg-white border border-light-gray/50 rounded-[2rem] p-6 shadow-sm hover:border-primary-blue/30 transition-all group">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-bg-page flex items-center justify-center text-primary-blue group-hover:bg-primary-blue/5 transition-colors">
-                    <c.i size={24} strokeWidth={1.5} />
+            {
+              title: "Boucle bidirectionnelle Fusion AI ↔ Dashboards",
+            notes: "Dans la version actuelle du projet, nous avons construit une logique très importante pour l’automatisation : une boucle bidirectionnelle entre Fusion AI et les dashboards. Fusion AI alimente le dashboard avec les données reçues, et le dashboard technique renvoie les actions du technicien vers Fusion AI. Cela permet de suivre tout le cycle de vie d’un incident.",
+            transition: "Cette architecture prend vie à travers deux interfaces complémentaires.",
+            content: (
+            <div className="h-full flex flex-col">
+              <SlideTitle title="Boucle bidirectionnelle Fusion AI ↔ Dashboards" subtitle="L'automatisation du cycle de vie de l'incident" />
+              <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center flex-1">
+                <div className="space-y-8">
+                  <div className="bg-white p-8 rounded-3xl border border-light-gray shadow-sm relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 p-4 text-primary-blue/10 group-hover:scale-110 transition-transform"><ArrowRight size={64} /></div>
+                    <h4 className="font-bold text-primary-blue mb-4 uppercase text-xs tracking-widest">1. Flux Entrant (Ops)</h4>
+                    <p className="text-sm font-bold text-main-text mb-2">Fusion AI → Dashboard Opérationnel</p>
+                    <ul className="text-xs text-dark-gray font-medium space-y-2">
+                      <li>• Envoi des données via Webhook</li>
+                      <li>• Affichage des machines et statuts</li>
+                      <li>• Alertes et KPIs en temps réel</li>
+                    </ul>
+                  </div>
+                  <div className="bg-white p-8 rounded-3xl border border-light-gray shadow-sm relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 p-4 text-primary-green/10 group-hover:scale-110 transition-transform"><RefreshCw size={64} /></div>
+                    <h4 className="font-bold text-primary-green mb-4 uppercase text-xs tracking-widest">2. Flux Retour (Tech)</h4>
+                    <p className="text-sm font-bold text-main-text mb-2">Dashboard Technique → Fusion AI</p>
+                    <ul className="text-xs text-dark-gray font-medium space-y-2">
+                      <li>• Prise en charge des tickets par le technicien</li>
+                      <li>• Mise à jour des statuts d'intervention</li>
+                      <li>• Synchronisation avec le workflow Fusion AI</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="relative flex flex-col items-center justify-center p-12 bg-bg-page rounded-[3rem] border border-light-gray overflow-hidden">
+                  <div className="w-full max-w-xs aspect-square flex flex-col items-center justify-center relative">
+                    <div className="w-24 h-24 bg-primary-blue text-white rounded-2xl flex items-center justify-center shadow-lg mb-8 relative z-10">
+                      <AbaLogoIcon size={54} onDark />
+                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-primary-green rounded-full flex items-center justify-center border-2 border-white"><Zap size={10} /></div>
+                    </div>
+
+                    <div className="flex gap-12 w-full justify-center">
+                      <div className="flex flex-col items-center">
+                        <div className="w-16 h-16 bg-white border border-light-gray rounded-xl flex items-center justify-center text-dark-gray mb-2 shadow-sm"><LayoutDashboard size={24} /></div>
+                        <span className="text-[9px] font-black uppercase text-dark-gray">Dashboard Ops</span>
+                      </div>
+                      <div className="flex flex-col items-center">
+                        <div className="w-16 h-16 bg-white border border-light-gray rounded-xl flex items-center justify-center text-dark-gray mb-2 shadow-sm"><Settings size={24} /></div>
+                        <span className="text-[9px] font-black uppercase text-dark-gray">Dashboard Tech</span>
+                      </div>
+                    </div>
+
+                    {/* Arrows illustrating the loop */}
+                    <motion.div animate={{ rotate: 360 }} transition={{ duration: 10, repeat: Infinity, ease: "linear" }} className="absolute inset-0 border-2 border-dashed border-primary-blue/20 rounded-full" />
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] pointer-events-none opacity-10"><RefreshCw size={240} className="text-primary-blue" /></div>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-8 p-6 bg-white border border-light-gray rounded-2xl text-center">
+                <p className="text-lg font-bold text-dark-gray leading-relaxed">
+                  La valeur du projet vient de cette boucle : <span className="text-primary-blue">détecter</span>, <span className="text-primary-blue">afficher</span>, <span className="text-primary-blue font-black underline">agir</span>, puis <span className="text-primary-blue">synchroniser</span>.
+                </p>
+              </div>
+            </div>
+            )
+  },
+            {
+              title: "Dashboard du projet",
+            notes: "Voici la plateforme en action. C'est un environnement live qui connecte les capteurs aux dashboards. Notez l'interface épurée et la réactivité des données. En cas de coupure réseau, nous avons prévu des visuels de secours pour garantir la continuité de la présentation.",
+            transition: "Cette plateforme n'est pas seulement un outil, elle produit des indicateurs de performance mesurables.",
+            content: (
+            <div className="h-full flex flex-col">
+              <SlideTitle title="Dashboard Live" subtitle="Démonstration interactive de l'écosystème INDUPHARMA" />
+
+              <div className="flex-1 mt-6 relative group bg-bg-page rounded-[3rem] overflow-hidden border border-light-gray shadow-2xl">
+                {/* Fallback View (Visible while loading or if offline) */}
+                <div className="absolute inset-0 bg-white flex flex-col items-center justify-center text-center p-20 z-0">
+                  <div className="w-24 h-24 bg-primary-blue/5 rounded-full flex items-center justify-center text-primary-blue mb-8">
+                    <LayoutDashboard size={48} strokeWidth={1} />
+                  </div>
+                  <h4 className="text-2xl font-bold text-main-text mb-4">Plateforme INDUPHARMA Live</h4>
+                  <p className="text-dark-gray max-w-md mx-auto font-light leading-relaxed">
+                    Chargement de la console de supervision en temps réel...
+                  </p>
+                  <div className="mt-10 flex gap-6">
+                    <div className="px-6 py-3 rounded-2xl bg-primary-blue/10 text-primary-blue text-xs font-bold uppercase tracking-widest">Vision Opérationnelle</div>
+                    <div className="px-6 py-3 rounded-2xl bg-primary-green/10 text-primary-green text-xs font-bold uppercase tracking-widest">Outils Techniques</div>
+                  </div>
+                </div>
+
+                {/* Live Iframe */}
+                <iframe
+                  src="https://indupharma-live-dashboard.vercel.app/"
+                  title="INDUPHARMA Live Dashboard"
+                  className="absolute inset-0 w-full h-full border-0 z-10 opacity-0 transition-opacity duration-1000"
+                  onLoad={(e) => (e.currentTarget.style.opacity = '1')}
+                  loading="lazy"
+                  referrerPolicy="no-referrer"
+                />
+
+                {/* Interactive Overlay Sidebar */}
+                <div className="absolute top-10 right-10 z-20 space-y-4 pointer-events-none group-hover:opacity-100 opacity-60 transition-opacity">
+                  {[
+                    { t: "Surveillance IoT", i: Zap },
+                    { t: "Gestion d'Incidents", i: ShieldCheck },
+                    { t: "Traçabilité ALCOA+", i: CheckCircle2 },
+                  ].map((item, i) => (
+                    <div key={i} className="bg-white/90 backdrop-blur-md px-6 py-4 rounded-2xl border border-white shadow-xl flex items-center gap-4 min-w-[240px]">
+                      <div className="w-10 h-10 rounded-xl bg-primary-blue text-white flex items-center justify-center">
+                        <item.i size={20} />
+                      </div>
+                      <span className="text-sm font-bold text-main-text">{item.t}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="mt-8 flex items-center justify-between px-10">
+                <p className="text-sm text-dark-gray/60 italic">Accès direct : <a href="https://indupharma-live-dashboard.vercel.app/" target="_blank" className="text-primary-blue underline">indupharma-live-dashboard.vercel.app</a></p>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-primary-green animate-pulse" />
+                  <span className="text-[10px] font-black text-primary-green uppercase tracking-widest">Status: Live Environment</span>
+                </div>
+              </div>
+            </div>
+            )
+  },
+
+            {
+              title: "Chiffres & KPI 2026",
+            notes: "Ces chiffres ne sont pas des projections. Ils sont extraits en temps réel de notre dashboard live au moment où nous vous parlons. Notez le MTTR descendu à 29 minutes grâce à l'orchestration automatique.",
+            transition: "Ces indicateurs permettent ensuite de fixer des objectifs de performance.",
+            content: (
+            <div className="h-full">
+              <SlideTitle title="Indicateurs 2026" subtitle="Performance opérationnelle en temps réel" />
+              <div className="mt-8 bg-gradient-to-r from-primary-blue to-[#1f7be8] text-white rounded-3xl p-8 shadow-lg relative overflow-hidden">
+                <div className="absolute top-0 right-0 p-4 opacity-10"><Database size={120} /></div>
+                <div className="grid grid-cols-3 gap-10 items-center relative z-10">
+                  <div>
+                    <p className="text-xs uppercase tracking-widest opacity-80 mb-2">Disponibilité Globale</p>
+                    <p className="text-4xl font-display font-bold">89.4%</p>
+                    <p className="text-[9px] mt-2 opacity-60 font-medium">Dashboard INDUPHARMA — Avril 2026</p>
+                  </div>
+                  <div className="text-center border-x border-white/20 px-4">
+                    <p className="text-xs uppercase tracking-widest opacity-80 mb-2">MTTR (Temps de réponse moyen)</p>
+                    <p className="text-3xl font-display font-bold text-primary-green bg-white px-4 py-1 rounded-xl inline-block">29 min</p>
+                    <p className="text-[9px] mt-2 opacity-60 font-medium">API-derived KPI logs</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-xs uppercase tracking-widest opacity-80 mb-2">Downtime Total</p>
+                    <p className="text-3xl font-display font-bold">213 min</p>
+                    <p className="text-[9px] mt-2 opacity-60 font-medium">Derived from etat_global</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-4 gap-6 mt-8">
+                <KPICard label="Machines Actives" value="7/10" icon={Activity} showLiveBadge />
+                <KPICard label="Alertes Critiques" value="01" icon={AlertTriangle} colorClass="text-red-500" showLiveBadge />
+                <KPICard label="Incident Ouvert" value="01" icon={Smartphone} colorClass="text-red-400" showLiveBadge />
+                <KPICard label="Techniciens" value="06" icon={Users} showLiveBadge />
+              </div>
+
+              <div className="mt-10 grid grid-cols-2 gap-8">
+                <div className="bg-bg-page/60 rounded-3xl border border-primary-blue/10 shadow-sm p-8">
+                  <h4 className="font-semibold text-xs uppercase tracking-widest text-dark-gray mb-8 flex items-center justify-between">
+                    Tendance de disponibilité
+                    <span className="text-[9px] bg-white px-2 py-1 rounded-full border border-light-gray">Données live</span>
+                  </h4>
+                  <MiniBarChart data={trendBars} />
+                  <div className="mt-5 grid grid-cols-2 gap-3 text-xs">
+                    <div className="bg-white rounded-xl border border-light-gray px-3 py-2 flex justify-between items-center"><span className="text-dark-gray/70">MTBF:</span> <span className="font-bold text-main-text text-primary-blue">208 h</span></div>
+                    <div className="bg-white rounded-xl border border-light-gray px-3 py-2 flex justify-between items-center"><span className="text-dark-gray/70">Closure Rate:</span> <span className="font-bold text-primary-green">91%</span></div>
+                  </div>
+                </div>
+                <div className="bg-bg-page/60 rounded-3xl border border-primary-green/15 shadow-sm p-8 flex flex-col items-center justify-center relative">
+                  <h4 className="font-semibold text-xs uppercase tracking-widest text-dark-gray mb-6 w-full text-left">
+                    Process Readiness Score
+                  </h4>
+                  <div
+                    className="w-40 h-40 rounded-full border border-light-gray shadow-inner relative"
+                    style={{
+                      background: `conic-gradient(#1f5eff ${readinessScore}%, #2fcf8f ${readinessScore}% 100%)`,
+                    }}
+                  >
+                    <div className="absolute inset-4 bg-white rounded-full flex items-center justify-center flex-col shadow-inner">
+                      <p className="text-3xl font-display font-bold text-primary-blue">89%</p>
+                      <p className="text-[10px] uppercase tracking-widest text-dark-gray/60 font-semibold">Ready</p>
+                    </div>
+                  </div>
+                  <p className="text-[10px] text-dark-gray mt-6 text-center leading-relaxed">
+                    <span className="font-bold text-primary-blue">89% des processus critiques</span> sont couverts par la boucle détection → action (Live Roster Synchronized).
+                  </p>
+                </div>
+              </div>
+            </div>
+            )
+  },
+            {
+              title: "Objectifs de performance",
+            notes: "Ici, nous parlons d’impact opérationnel mesuré. Notre force est d’avoir transformé une vision qualitative en une boucle de réponse quantifiée et traçable.",
+            transition: "Au-delà du prototype, ce problème correspond aussi à une opportunité de marché réelle.",
+            content: (
+            <div className="h-full">
+              <SlideTitle title="Objectifs de performance" subtitle="Indicateurs de performance mesurés en conditions réelles et KPI" />
+              <div className="grid grid-cols-2 gap-16 mt-16 items-center">
+                <div className="space-y-6">
+                  {[
+                    { label: "Détection anomalie", value: "< 30 secondes", icon: Zap },
+                    { label: "Affichage Centralisé", value: "10 machines / 3 zones", icon: LayoutDashboard },
+                    { label: "Prise en charge Ticket", value: "MTTR : 29 min", icon: Clock },
+                    { label: "Retour Technicien", value: "< 5s (Synchronisé)", icon: RefreshCw },
+                    { label: "Traçabilité", value: "100% Audit Trail", icon: ShieldCheck },
+                  ].map((obj, i) => (
+                    <div key={i} className="flex justify-between items-center p-6 bg-white rounded-2xl border border-light-gray/50 shadow-sm transition-all hover:bg-bg-page/50 group">
+                      <div className="flex items-center gap-4">
+                        <div className="w-8 h-8 rounded-lg bg-primary-blue/5 text-primary-blue flex items-center justify-center opacity-60 group-hover:opacity-100 transition-opacity">
+                          <obj.icon size={18} strokeWidth={2} />
+                        </div>
+                        <span className="text-xs font-semibold uppercase text-dark-gray/70 tracking-widest">{obj.label}</span>
+                      </div>
+                      <span className="text-base font-bold text-primary-blue bg-primary-blue/5 px-4 py-1 rounded-full border border-primary-blue/10">{obj.value}</span>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="bg-primary-blue text-white p-14 rounded-[3rem] shadow-lg relative overflow-hidden flex flex-col justify-center min-h-[430px]">
+                  <div className="absolute top-0 right-0 p-8 opacity-10 rotate-12"><Zap size={200} strokeWidth={1} /></div>
+                  <h3 className="text-4xl font-display font-light mb-8 leading-tight z-10 relative">
+                    De la détection à l'action : <span className="font-bold">29 min en moyenne.</span>
+                  </h3>
+                  <p className="text-lg font-light leading-relaxed opacity-90 z-10 relative">
+                    Une performance mesurée en conditions réelles, permettant une réduction drastique du délai entre l'incident terrain et la remise en service.
+                  </p>
+                  <div className="mt-12 flex gap-3 z-10 relative items-center">
+                    <div className="px-4 py-2 rounded-full border border-white/20 bg-white/10 text-[10px] font-bold uppercase tracking-widest">
+                      Real-World Conditions
+                    </div>
+                    <div className="w-12 h-1 bg-white/30 rounded-full" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            )
+  },
+            {
+              title: "Opportunité marché",
+            notes: "Nous ne sommes pas sur un marché de niche. Toutes les usines pharmaceutiques cherchent à réduire leur downtime. Notez la spécificité du segment Pharma IIoT (~28 Md$) qui est notre cible prioritaire. La maturité IIoT est devenue une nécessité réglementaire et économique.",
+            transition: "Cette opportunité se traduit par des impacts concrets à plusieurs niveaux.",
+            content: (
+            <div className="h-full">
+              <SlideTitle title="Une opportunité réelle" subtitle="L'IIoT au cœur de la souveraineté industrielle" />
+              <div className="grid grid-cols-2 gap-16 mt-16">
+                <div className="space-y-8">
+                  <div className="p-10 bg-white rounded-3xl border border-light-gray/50 shadow-sm transition-all hover:shadow-md relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-20 transition-opacity"><Globe size={80} /></div>
+                    <h4 className="text-4xl font-display font-bold text-primary-blue mb-2 tracking-tight">~433 Md$</h4>
+                    <p className="text-[10px] font-bold text-dark-gray/60 uppercase tracking-widest mb-4">Marché global Industrie 4.0 (2030)</p>
+                    <div className="pt-4 border-t border-light-gray/50">
+                      <p className="text-xl font-bold text-primary-blue mb-1">~28 Md$</p>
+                      <p className="text-[10px] font-semibold text-dark-gray/70 uppercase tracking-widest">Sous-segment Pharma IIoT (Cible)</p>
+                    </div>
+                    <p className="text-[9px] text-dark-gray/40 mt-4 italic">Sources: NextMSC & MarketsandMarkets</p>
+                  </div>
+                  <div className="p-10 bg-white rounded-3xl border border-light-gray/50 shadow-sm transition-all hover:shadow-md relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-20 transition-opacity"><Zap size={80} /></div>
+                    <h4 className="text-5xl font-display font-bold text-primary-green mb-4 tracking-tight">+30 à 50%</h4>
+                    <p className="text-xs font-semibold text-dark-gray/70 uppercase tracking-widest leading-relaxed">Réduction de downtime via maintenance prédictive</p>
+                    <p className="text-[10px] text-dark-gray/40 mt-6 italic">Source: McKinsey (Predictive Maintenance)</p>
+                  </div>
+                </div>
+
+                <div className="bg-bg-page/50 p-12 rounded-[3.5rem] border border-light-gray/50 flex flex-col justify-center">
+                  <h4 className="font-semibold text-main-text mb-8 uppercase text-sm tracking-widest flex items-center gap-3"><Globe size={20} strokeWidth={1.5} className="text-primary-blue" /> Pourquoi maintenant ?</h4>
+                  <ul className="space-y-8">
+                    {[
+                      { t: "Pression réglementaire", d: "Alcoa+ et traçabilité temps réel." },
+                      { t: "Pénurie de main d'œuvre", d: "Besoin d'outils d'assistance métiers." },
+                      { t: "Coût de l'énergie", d: "Optimisation de la consommation énergétique." },
+                    ].map((item, i) => (
+                      <li key={i} className="flex gap-6">
+                        <div className="w-2.5 h-2.5 rounded-full bg-primary-blue/80 mt-1.5 flex-shrink-0" />
+                        <div>
+                          <p className="font-semibold text-base text-main-text mb-1">{item.t}</p>
+                          <p className="text-sm text-dark-gray font-light">{item.d}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <div className="mt-8 bg-white rounded-3xl border border-light-gray/50 p-8 shadow-sm relative">
+                <div className="absolute top-6 right-8 px-4 py-1.5 bg-primary-green/5 border border-primary-green/20 rounded-full">
+                  <p className="text-[10px] font-bold text-primary-green uppercase tracking-widest flex items-center gap-2">
+                    <TrendingUp size={12} /> Le ROI de 70% sur site pilote finance l'expansion Phase 2
+                  </p>
+                </div>
+                <h4 className="font-semibold text-main-text mb-4 uppercase text-sm tracking-widest flex items-center gap-3">
+                  <ArrowUpRight size={18} className="text-primary-blue" />
+                  Vision 2030 - Roadmap de déploiement
+                </h4>
+                <div className="grid grid-cols-3 gap-6 text-sm">
+                  <div className="bg-primary-blue/5 border border-primary-blue/15 rounded-2xl p-5">
+                    <p className="font-semibold text-primary-blue mb-2">2026-2027</p>
+                    <p className="text-[11px] text-dark-gray leading-relaxed">Pilotes multi-lignes, fiabilisation capteurs, standardisation SOP GMP.</p>
+                  </div>
+                  <div className="bg-primary-green/5 border border-primary-green/15 rounded-2xl p-5">
+                    <p className="font-semibold text-primary-green mb-2">2028</p>
+                    <p className="text-[11px] text-dark-gray leading-relaxed">Déploiement inter-sites, scoring de criticité, maintenance prescriptive.</p>
+                  </div>
+                  <div className="bg-bg-page border border-light-gray rounded-2xl p-5">
+                    <p className="font-semibold text-main-text mb-2">2029-2030</p>
+                    <p className="text-[11px] text-dark-gray leading-relaxed">Jumeau digital, benchmark OEE groupe, pilotage ROI temps réel.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            )
+  },
+            {
+              title: "Analyse comparative & différenciation",
+            notes: "Des solutions existent, mais INDUPHARMA se distingue par une boucle opérationnelle ciblée sur le downtime pharmaceutique. Là où d'autres font du monitoring large, nous faisons de l'action synchrone.",
+            transition: "Cette différenciation est ce qui garantit un impact maximal sur le terrain.",
+            content: (
+            <div className="h-full">
+              <SlideTitle title="Différenciation Stratégique" subtitle="Se positionner là où la valeur est la plus critique" />
+
+              <div className="mt-12 overflow-hidden rounded-3xl border border-light-gray/50 shadow-sm bg-white relative">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="bg-bg-page/50 border-b border-light-gray/50">
+                      <th className="p-6 text-xs font-semibold uppercase text-dark-gray/70 tracking-widest">Acteur / Solution</th>
+                      <th className="p-6 text-xs font-semibold uppercase text-dark-gray/70 tracking-widest text-center">Focus Offre</th>
+                      <th className="p-6 text-xs font-semibold uppercase text-dark-gray/70 tracking-widest text-center">Limite Critique</th>
+                      <th className="p-6 text-xs font-bold uppercase tracking-widest bg-primary-blue/5 text-primary-blue text-center">Valeur Opérationnelle (ROI)</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-sm font-light text-dark-gray">
+                    {[
+                      {
+                        name: "OCP Maintenance",
+                        offer: "Capteurs vibrostiques, diagnostics IA.",
+                        limit: "Usines lourdes, moins pharma-centric.",
+                        opp: "Générique (PdM standard)."
+                      },
+                      {
+                        name: "Indusnov Solutions",
+                        offer: "Maintenance 4.0, analyse vibratoire.",
+                        limit: "Générique industriel, pas de workflow.",
+                        opp: "Maintenance réactive."
+                      },
+                      {
+                        name: "VISIOPROCESS",
+                        offer: "Datavisualisation temps réel, GTC.",
+                        limit: "Orienté énergie et bâtiments.",
+                        opp: "Visualisation passive."
+                      },
+                      {
+                        name: "MySirius (JRI)",
+                        offer: "Monitoring connecté (froid, métrologie).",
+                        limit: "Centré conformité passive.",
+                        opp: "Audit Trail simple."
+                      },
+                      {
+                        name: "INDUPHARMA",
+                        offer: "Boucle IIoT + Fusion AI + GMP",
+                        limit: "—",
+                        opp: "MTTR 29 min / Closure Rate 91%",
+                        highlight: true
+                      },
+                    ].map((row, i) => (
+                      <tr key={i} className={`border-b border-light-gray/30 last:border-0 transition-colors ${row.highlight ? 'bg-primary-blue/10 font-medium' : 'hover:bg-bg-page/30'}`}>
+                        <td className={`p-6 ${row.highlight ? 'font-bold text-primary-blue' : 'font-medium text-main-text'}`}>{row.name}</td>
+                        <td className="p-6 text-center">{row.offer}</td>
+                        <td className="p-6 italic text-center opacity-70">{row.limit}</td>
+                        <td className={`p-6 text-center ${row.highlight ? 'font-black text-primary-blue' : 'font-semibold text-primary-blue/60'}`}>
+                          {row.highlight ? (
+                            <div className="flex flex-col items-center gap-1">
+                              <span>{row.opp}</span>
+                              <span className="text-[10px] font-bold uppercase text-primary-green">Réduction MTTR -40%</span>
+                            </div>
+                          ) : (
+                            row.opp
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                <div className="bg-bg-page/30 p-4 border-t border-light-gray/50 flex justify-between items-center">
+                  <p className="text-[10px] text-dark-gray/50 italic">
+                    Analyse basée sur : sites web officiels, études de cas publiées et interviews terrain — Mars 2026
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-primary-blue animate-pulse" />
+                    <span className="text-[9px] font-bold uppercase tracking-widest text-primary-blue">INDUPHARMA LEADERSHIP</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-12 grid grid-cols-2 gap-10">
+                <div className="p-8 bg-primary-green/5 rounded-[2.5rem] border border-primary-green/10 flex items-center gap-6">
+                  <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-primary-green shadow-sm">
+                    <RefreshCw size={24} strokeWidth={1.5} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-main-text text-lg">{c.t}</h4>
-                    <p className="text-xs text-dark-gray font-light mb-2">{c.d}</p>
-                    <div className="inline-block px-3 py-1 rounded-lg bg-primary-blue/5 border border-primary-blue/10 text-[9px] font-bold text-primary-blue uppercase tracking-tight">
-                       {c.ex}
+                    <p className="text-[11px] font-bold uppercase tracking-widest text-primary-green mb-1">Notre Atout</p>
+                    <p className="text-base font-medium text-main-text">La boucle fermée Supervision-Action.</p>
+                  </div>
+                </div>
+                <div className="p-8 bg-primary-blue/5 rounded-[2.5rem] border border-primary-blue/10 flex items-center gap-6">
+                  <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-primary-blue shadow-sm">
+                    <ShieldCheck size={24} strokeWidth={1.5} />
+                  </div>
+                  <div>
+                    <p className="text-[11px] font-bold uppercase tracking-widest text-primary-blue mb-1">Positionnement</p>
+                    <p className="text-base font-medium text-main-text">Focus Processus Pharma & ALCOA+.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            )
+  },
+            {
+              title: "Impact du projet",
+            notes: "L’impact est désormais chiffré : ROI de 70%, 91% de taux de clôture des incidents, et une élimination totale du papier. C'est un gain de confiance opérationnelle autant que financière.",
+            transition: "Pour rendre ce projet viable, nous avons imaginé un business model simple.",
+            content: (
+            <div className="h-full">
+              <SlideTitle title="Impact global" subtitle="Performance mesurée sur le site pilote" />
+              <div className="grid grid-cols-3 gap-8 mt-16">
+                {[
+                  { title: "Économique", sub: "ROI +70% / Break-even 7 mois", icon: BadgeEuro, desc: "Réduction drastique des pertes de lots et optimisation des coûts de maintenance." },
+                  { title: "Humain", sub: "Closure Rate 91%", icon: Users, desc: "6 techniciens pilotés via dashboard — zéro appel téléphonique manuel, stress réduit." },
+                  { title: "Qualité", sub: "100% Audit Trail", icon: ShieldCheck, desc: "Zéro rapport manuel horodaté. Traçabilité GMP native et sans faille." },
+                ].map((impact, i) => (
+                  <div key={i} className="bg-white p-12 rounded-[3.5rem] border border-light-gray/50 shadow-sm flex flex-col items-center text-center transition-all hover:shadow-md hover:border-light-gray group">
+                    <div className="w-20 h-20 rounded-[2rem] bg-bg-page flex items-center justify-center text-primary-blue mb-8 group-hover:bg-primary-blue/5 transition-colors">
+                      <impact.icon size={36} strokeWidth={1} />
+                    </div>
+                    <h4 className="font-bold text-2xl mb-2 tracking-tight text-main-text">{impact.title}</h4>
+                    <p className="text-[10px] font-bold text-primary-blue uppercase tracking-widest mb-6">{impact.sub}</p>
+                    <p className="text-sm text-dark-gray font-light leading-relaxed px-4">{impact.desc}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-20 p-10 bg-primary-blue/5 rounded-[3rem] border border-primary-blue/10 flex items-center justify-center gap-6">
+                <Zap className="text-primary-blue" strokeWidth={1.5} size={28} />
+                <p className="text-xl font-light text-dark-gray">"L'excellence industrielle ne se mesure pas seulement en <span className="font-bold">TRS</span>, mais en <span className="font-bold text-primary-blue">confiance opérationnelle</span>."</p>
+              </div>
+            </div>
+            )
+  },
+            // ...existing code...
+            {
+              title: "ROI 12 mois",
+            notes: "Détail du ROI : 240k MAD d'investissement (Matériel, Intégration, Formation) vs 410k MAD de gains (réduction downtime sur 2 lignes critiques). Le break-even est atteint à 7 mois.",
+            transition: "Après la rentabilité, nous montrons le scénario opérationnel en 30 secondes.",
+            content: (
+            <div className="h-full">
+              <SlideTitle title="ROI en 12 mois" subtitle="Un dossier économique transparent et justifiable" />
+              <div className="grid grid-cols-2 gap-12 mt-12 items-start">
+                <div className="space-y-6">
+                  <div className="bg-white border border-light-gray/60 rounded-3xl p-8 shadow-sm">
+                    <p className="text-xs uppercase tracking-widest font-bold text-dark-gray/60 mb-6 flex justify-between">
+                      <span>Investissement Initial</span>
+                      <span className="text-primary-blue">240k MAD</span>
+                    </p>
+                    <div className="space-y-3">
+                      {[
+                        { l: "Capteurs & Infrastructure", v: "45k" },
+                        { l: "Intégration Fusion AI", v: "50k" },
+                        { l: "Développement Dashboards", v: "80k" },
+                        { l: "Formation & Onboarding", v: "40k" },
+                        { l: "Maintenance Année 1", v: "25k" },
+                      ].map((item, i) => (
+                        <div key={i} className="flex justify-between text-xs border-b border-light-gray/20 pb-2 last:border-0">
+                          <span className="text-dark-gray font-light">{item.l}</span>
+                          <span className="font-semibold text-main-text">{item.v} MAD</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="bg-bg-page/50 border border-light-gray/40 rounded-3xl p-8">
+                    <p className="text-xs uppercase tracking-widest font-bold text-dark-gray/60 mb-4 flex items-center gap-2">
+                      <BarChart3 size={16} /> Logique de Calcul des Gains
+                    </p>
+                    <p className="text-sm text-dark-gray leading-relaxed font-light italic">
+                      "213 min de downtime actuel × Coût/heure pharma ($100K-$500K) × Fréquence mensuelle × Réduction 30% = 410k MAD / an"
+                    </p>
+                  </div>
+                </div>
+
+                <div className="space-y-8">
+                  <div className="grid grid-cols-2 gap-6">
+                    <div className="bg-primary-green/5 border border-primary-green/20 rounded-3xl p-8 shadow-sm">
+                      <p className="text-[10px] uppercase tracking-widest font-bold text-primary-green/80 mb-2">Gain Annuel</p>
+                      <p className="text-4xl font-display font-bold text-primary-green">410k MAD</p>
+                      <p className="text-[10px] text-primary-green/60 mt-2">Downtime évité & Pertes lots</p>
+                    </div>
+                    <div className="bg-main-text text-white rounded-3xl p-8 shadow-sm relative overflow-hidden">
+                      <div className="absolute -right-4 -bottom-4 opacity-10"><Clock size={100} /></div>
+                      <p className="text-[10px] uppercase tracking-widest font-bold opacity-70 mb-2">Break-even</p>
+                      <p className="text-4xl font-display font-bold">7 mois</p>
+                      <p className="text-[10px] opacity-60 mt-2">Point mort financier</p>
+                    </div>
+                  </div>
+
+                  <div className="bg-primary-blue text-white rounded-[2.5rem] p-10 shadow-lg relative overflow-hidden">
+                    <div className="absolute top-0 right-0 p-6 opacity-10"><BadgeEuro size={120} /></div>
+                    <p className="text-xs uppercase tracking-widest font-bold opacity-80 mb-4">Hypothèse Clé (Scope)</p>
+                    <h4 className="text-3xl font-display font-bold mb-4">Basé sur 2 lignes critiques.</h4>
+                    <p className="text-lg opacity-90 font-light mb-8">Un ROI de <span className="font-bold underline">+70%</span> dès la première année, validant le potentiel de déploiement multi-site.</p>
+                    <div className="inline-flex px-4 py-2 rounded-full bg-white/10 border border-white/20 text-[10px] font-bold tracking-widest uppercase">
+                      Gains Prudents & Réalistes
                     </div>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
-          <div className="flex flex-col gap-6">
-            <div className="bg-primary-blue text-white rounded-[3rem] p-10 shadow-lg relative overflow-hidden flex-1 flex flex-col justify-center">
-              <div className="absolute -right-12 -bottom-12 opacity-10 rotate-12">
-                 <ShieldCheck size={280} />
-              </div>
-              <h4 className="text-4xl font-display font-black mb-6 leading-tight">Audit-ready by design.</h4>
-              <p className="text-xl font-light opacity-90 leading-relaxed">
-                La conformité n'est pas un module ajouté : elle est <span className="font-bold underline decoration-2 underline-offset-4 text-white">intégrée nativement</span> au workflow opérationnel <span className="font-bold">INDUPHARMA</span>.
-              </p>
-              <div className="mt-10 flex items-center gap-4">
-                 <div className="flex -space-x-3">
-                    {[1,2,3].map(i => <div key={i} className="w-8 h-8 rounded-full border-2 border-primary-blue bg-white/20 backdrop-blur-sm" />)}
-                 </div>
-                 <p className="text-[10px] font-bold uppercase tracking-widest opacity-70">Approuvé par QA Strategy</p>
-              </div>
             </div>
-            <div className="bg-main-text text-white rounded-[2.5rem] p-8 flex items-center justify-between border border-white/10">
-               <div>
-                  <p className="text-[10px] font-bold opacity-50 uppercase tracking-widest mb-1">Standard de Conformité</p>
-                  <p className="text-xl font-display font-bold">GMP & ALCOA+ Compliant</p>
-               </div>
-               <CheckCircle2 className="text-primary-green" size={32} />
-            </div>
-          </div>
-        </div>
-      </div>
-    )
+            )
   },
-  {
-    title: "Conclusion",
-    notes: "Merci de nous avoir écoutés. INDUPHARMA répond à un problème concret : réduire les arrêts non planifiés et améliorer la traçabilité. Nous concluons sur nos 3 piliers de réussite.",
-    transition: "Fin de la présentation.",
-    content: (
-      <div className="h-full flex flex-col">
-        <SlideTitle title="L'Usine Innovante et Connectée 4.0" subtitle="Conclusion et Perspectives" />
-
-        <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-16 mt-8">
-          <div className="bg-bg-page/50 p-12 rounded-[3.5rem] border border-light-gray/50 flex flex-col justify-center shadow-sm relative overflow-hidden">
-            <div className="absolute top-0 right-0 p-10 opacity-5">
-               <BarChart3 size={200} />
-            </div>
-            <h4 className="font-bold text-main-text mb-10 uppercase text-xs tracking-widest flex items-center gap-3">
-               <div className="w-8 h-8 rounded-lg bg-primary-blue text-white flex items-center justify-center">
-                  <Activity size={16} />
-               </div>
-               Performance mesurée sur site pilote
-            </h4>
-            <div className="space-y-6">
-              {[
-                { v: "29 min", l: "MTTR réel mesuré", d: "Performance moyenne constatée", c: "text-primary-blue" },
-                { v: "91%", l: "Closure Rate live", d: "Efficacité opérationnelle", c: "text-primary-green" },
-                { v: "7 mois", l: "Break-even ROI", d: "Sur 2 lignes critiques", c: "text-main-text" },
-              ].map((stat, i) => (
-                <div key={i} className="bg-white border border-light-gray/40 rounded-3xl p-6 shadow-sm flex items-center justify-between group hover:border-primary-blue/30 transition-all">
-                  <div>
-                    <p className="text-sm font-bold text-main-text">{stat.l}</p>
-                    <p className="text-[10px] text-dark-gray font-light uppercase tracking-tight opacity-70">{stat.d}</p>
+            {
+              title: "Demo Story 30 secondes",
+            notes: "Cette séquence de 30 secondes montre la réactivité du système. Notez que les 8 secondes d'orchestration sont validées par nos logs API. Ce cycle كامل aboutit à un MTTR réel de 29 minutes sur le site pilote.",
+            transition: "Après la démo, comment déployons-nous cette solution ? Voici notre stratégie Go-to-Market.",
+            content: (
+            <div className="h-full">
+              <SlideTitle title="Scénario opérationnel" subtitle="La boucle de valeur en 30 secondes chrono" />
+              <div className="grid grid-cols-4 gap-6 mt-12">
+                {[
+                  { t: "00s", l: "Alarme détectée", d: "Anomalie autoclave remontée par Makers Points", i: BellRing, c: "bg-red-50 text-red-600 border-red-100" },
+                  { t: "08s", l: "Ticket créé", d: "Fusion AI ouvre l'incident et priorise", i: Cpu, c: "bg-primary-blue/5 text-primary-blue border-primary-blue/10", tag: "Log API" },
+                  { t: "18s", l: "Action technicien", d: "Admin technique met à jour le statut", i: Users, c: "bg-main-text/5 text-main-text border-main-text/10" },
+                  { t: "30s", l: "KPI actualisé", d: "Dashboard Ops reflète l'état corrigé", i: BarChart3, c: "bg-primary-green/5 text-primary-green border-primary-green/10" },
+                ].map((s, i) => (
+                  <div key={i} className={`p-8 rounded-[2.5rem] border shadow-sm flex flex-col items-center text-center relative ${s.c}`}>
+                    {s.tag && (
+                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-primary-blue text-[8px] font-bold text-white uppercase tracking-widest">
+                        {s.tag}
+                      </div>
+                    )}
+                    <p className="text-4xl font-display font-black mb-4">{s.t}</p>
+                    <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center mb-6 shadow-sm">
+                      <s.i size={24} strokeWidth={1.5} />
+                    </div>
+                    <h4 className="font-bold text-lg mb-2">{s.l}</h4>
+                    <p className="text-xs font-light leading-relaxed opacity-80">{s.d}</p>
+                    {i < 3 && <ArrowRight className="absolute -right-4 top-1/2 -translate-y-1/2 text-light-gray/50 hidden lg:block" size={24} />}
                   </div>
-                  <p className={`text-4xl font-display font-black ${stat.c}`}>{stat.v}</p>
+                ))}
+              </div>
+
+              <div className="mt-12 p-12 bg-white rounded-[3.5rem] border border-light-gray/50 shadow-sm relative overflow-hidden group hover:border-primary-blue/30 transition-all">
+                <div className="absolute -right-10 -bottom-10 opacity-5 group-hover:opacity-10 transition-opacity">
+                  <TrendingUp size={240} />
                 </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="flex flex-col justify-center space-y-10">
-            <div className="space-y-6">
-              <div className="mb-8 hover:scale-105 transition-transform duration-500">
-                <img src="/logo.png" alt="INDUPHARMA Logo" className="h-16 object-contain" referrerPolicy="no-referrer" />
-              </div>
-              <p className="text-3xl font-display font-black text-main-text leading-tight">
-                INDUPHARMA n'est pas seulement un dashboard.
-              </p>
-              <div className="inline-block px-4 py-2 bg-primary-blue/10 border border-primary-blue/20 rounded-full">
-                 <p className="text-sm font-bold text-primary-blue tracking-tight uppercase">FROM DOWNTIME REACTION TO REAL-TIME ORCHESTRATION</p>
-              </div>
-              <p className="text-lg text-dark-gray font-light leading-relaxed">
-                C'est une boucle opérationnelle continue entre le terrain, Fusion AI et la maintenance.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-               <div className="flex flex-wrap gap-4">
-                 <a href="https://indupharma-live-dashboard.vercel.app/" target="_blank" rel="noopener noreferrer" className="bg-primary-blue text-white px-8 py-4 rounded-full font-bold text-sm shadow-lg hover:shadow-primary-blue/20 hover:scale-105 transition-all text-center">
-                   Dashboard Live
-                 </a>
-                 <button className="bg-white border-2 border-main-text text-main-text px-8 py-4 rounded-full font-bold text-sm hover:bg-main-text hover:text-white transition-all">
-                   Questions & Réponses
-                 </button>
-               </div>
-               <div className="pt-8 border-t border-light-gray/20">
-                  <div className="flex items-center gap-3 mb-2">
-                     <div className="w-2 h-2 rounded-full bg-primary-green animate-pulse" />
-                     <p className="text-[10px] font-bold text-dark-gray/60 uppercase tracking-widest">Nous contacter</p>
+                <div className="flex items-center gap-10">
+                  <div className="w-24 h-24 rounded-[2rem] bg-bg-page flex items-center justify-center text-primary-blue">
+                    <Activity size={40} strokeWidth={1} />
                   </div>
-                  <p className="text-xl font-display font-bold text-main-text">indupharma@indupharma.com</p>
-                  <p className="text-xs text-dark-gray mt-1 opacity-60 font-light italic">Smart Automation Challenge 2026 — Morocco</p>
-               </div>
+                  <div className="flex-1">
+                    <p className="text-xs font-bold text-primary-blue uppercase tracking-widest mb-2">Corrélation Réalité-Terrain</p>
+                    <h4 className="text-3xl font-display font-bold text-main-text mb-4">
+                      Ce cycle = MTTR réel de <span className="text-primary-blue underline decoration-2 underline-offset-4">29 min</span>
+                    </h4>
+                    <p className="text-lg text-dark-gray font-light max-w-3xl">
+                      Performance mesurée en continu sur notre <span className="font-medium text-main-text">prototype live</span>. La rapidité de détection (30s) est le levier majeur de la réduction de 40% de la panne totale.
+                    </p>
+                  </div>
+                  <div className="px-8 py-6 rounded-3xl bg-bg-page border border-light-gray/30 text-center">
+                    <p className="text-[10px] font-bold text-dark-gray/50 uppercase tracking-widest mb-1">Délai moyen Log</p>
+                    <p className="text-2xl font-display font-bold text-main-text">08.2s</p>
+                    <p className="text-[8px] text-primary-blue font-bold uppercase tracking-widest mt-1">Orchestration AI</p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    )
+            )
   },
-  {
-    title: "Accès Live Dashboard",
-    notes: "Pour conclure, nous vous invitons à tester par vous-mêmes. Scannez ce QR code pour accéder à l'environnement live et voir la synchronisation en temps réel.",
-    transition: "Nous sommes maintenant prêts pour vos questions.",
-    content: (
-      <div className="h-full flex flex-col items-center justify-center text-center">
-        <SlideTitle title="Accès Live Dashboard" subtitle="Scannez pour explorer l'environnement en temps réel" />
-        <div className="mt-12 relative">
-          <div className="absolute -inset-10 bg-primary-blue/5 rounded-[4rem] blur-3xl animate-pulse" />
-          <div className="relative bg-white p-12 rounded-[3rem] shadow-2xl border border-light-gray/50 hover:scale-105 transition-transform duration-500">
-             <img src="/dashboard-qr.png" alt="Dashboard QR Code" className="w-80 h-80 object-contain" referrerPolicy="no-referrer" />
-             <div className="mt-8 pt-8 border-t border-light-gray/20">
-               <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary-blue mb-2">Live URL</p>
-               <p className="text-sm font-bold text-main-text opacity-60">indupharma-live-dashboard.vercel.app</p>
-             </div>
-          </div>
-        </div>
-        <div className="mt-16 flex items-center gap-4 bg-bg-page px-8 py-4 rounded-full border border-primary-blue/10">
-          <div className="w-2 h-2 rounded-full bg-primary-green animate-pulse" />
-          <p className="text-xs font-bold text-dark-gray/60 uppercase tracking-widest">Environnement Live — Avril 2026 — Smart Automation Challenge</p>
-        </div>
-      </div>
-    )
-  }
-];
+            {
+              title: "Go-to-Market & Deployment",
+            notes: "Plan de déploiement chiffré : 240k MAD pour le pilote (Phase 1), puis expansion via ROI (Phase 2). La Phase 3 standardise les SOP et le benchmark inter-sites.",
+            transition: "Le scale doit rester conforme GMP, d’où la gouvernance et compliance.",
+            content: (
+            <div className="h-full">
+              <SlideTitle title="Go-to-Market & Deployment Plan" subtitle="Passer du pilote à l’échelle multi-site" />
+              <div className="mt-12 grid grid-cols-3 gap-8">
+                {[
+                  { p: "Phase 1", t: "Pilot", d: "1 site • 1-2 lignes • 3 mois", b: "240k MAD", c: "bg-primary-blue/5 border-primary-blue/20 text-primary-blue" },
+                  { p: "Phase 2", t: "Scale", d: "Atelier complet • 10 machines • 6 mois", b: "+180k MAD", c: "bg-primary-green/5 border-primary-green/20 text-primary-green" },
+                  { p: "Phase 3", t: "Multi-site", d: "Standardisation SOP • Support 24/7", b: "ROI > 1M MAD", c: "bg-main-text/5 border-main-text/20 text-main-text" },
+                ].map((phase, i) => (
+                  <div key={i} className="bg-white rounded-[3rem] border border-light-gray/60 p-8 shadow-sm flex flex-col relative overflow-hidden group hover:shadow-md transition-all">
+                    <div className={`inline-flex self-start px-4 py-2 rounded-full border text-[10px] uppercase tracking-widest font-bold ${phase.c}`}>{phase.p}</div>
+                    <h4 className="text-3xl font-display font-black text-main-text mt-6 mb-2">{phase.t}</h4>
+                    <p className="text-sm text-dark-gray font-light mb-8">{phase.d}</p>
+                    <div className="mt-auto pt-6 border-t border-light-gray/30 flex justify-between items-center">
+                      <span className="text-[10px] font-bold text-dark-gray/50 uppercase tracking-widest">Budget / Cible</span>
+                      <span className={`text-lg font-bold ${phase.c.split(' ')[2]}`}>{phase.b}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
 
-export default function App() {
+              <div className="mt-12 overflow-hidden rounded-[2.5rem] border border-light-gray/50 bg-white">
+                <table className="w-full text-left border-collapse">
+                  <thead>
+                    <tr className="bg-bg-page/50 border-b border-light-gray/40">
+                      <th className="p-6 text-[10px] font-bold uppercase tracking-widest text-dark-gray/60">Dimension</th>
+                      <th className="p-6 text-[10px] font-bold uppercase tracking-widest text-primary-blue text-center">Phase 1 (Pilote)</th>
+                      <th className="p-6 text-[10px] font-bold uppercase tracking-widest text-primary-green text-center">Phase 2 (Scale)</th>
+                      <th className="p-6 text-[10px] font-bold uppercase tracking-widest text-main-text text-center">Phase 3 (Multi-site)</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-sm">
+                    {[
+                      { d: "Durée estimée", p1: "3 mois", p2: "6 mois", p3: "12 mois" },
+                      { d: "Nombre de Machines", p1: "1-2", p2: "10 (Atelier complet)", p3: "Multi-site Groupe" },
+                      { d: "Objectif ROI", p1: "Baseline / Proof", p2: "+30% OEE", p3: "+70% ROI Groupe" },
+                    ].map((row, i) => (
+                      <tr key={i} className="border-b border-light-gray/20 last:border-0 hover:bg-bg-page/20 transition-colors">
+                        <td className="p-5 font-bold text-dark-gray uppercase text-[10px] tracking-wider pl-8">{row.d}</td>
+                        <td className="p-5 text-center text-dark-gray font-light">{row.p1}</td>
+                        <td className="p-5 text-center text-dark-gray font-light">{row.p2}</td>
+                        <td className="p-5 text-center text-dark-gray font-light">{row.p3}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+
+              <div className="mt-8 h-1.5 rounded-full bg-bg-page overflow-hidden border border-light-gray/30">
+                <div className="h-full w-1/3 bg-primary-blue rounded-full" />
+              </div>
+            </div>
+            )
+  },
+            {
+              title: "Governance & Compliance",
+            notes: "La conformité est au cœur du design : ALCOA+ est implémenté nativement (ex: timestamp/signature auto). Le RBAC (Ops, Admin, QA) est actif dans le dashboard.",
+            transition: "Nous pouvons conclure sur la promesse stratégique du projet.",
+            content: (
+            <div className="h-full">
+              <SlideTitle title="Governance & Compliance" subtitle="Conçu pour ALCOA+ et audit trail end-to-end" />
+              <div className="mt-12 grid grid-cols-2 gap-10">
+                <div className="space-y-5">
+                  {[
+                    { t: "ALCOA+ Ready", d: "Data Attributable, Legible, Contemporaneous, Original, Accurate", ex: "Ex: Clôture ticket → Timestamp auto + User ID + Signature Fusion AI", i: ShieldCheck },
+                    { t: "Audit Trail", d: "Chaque action technicien est horodatée, signée, et historisée.", ex: "Log immuable stocké en base de données sécurisée", i: History },
+                    { t: "Access Roles (RBAC)", d: "Séparation : Ops, Admin technique, Management, QA", ex: "Système de permissions natif & actif dans le dashboard", i: Users },
+                    { t: "Incident Traceability", d: "Chaîne complète : détection → ticket → action → clôture", ex: "Lien déterministe entre alerte Makers Points et rapport final", i: Activity },
+                  ].map((c, i) => (
+                    <div key={i} className="bg-white border border-light-gray/50 rounded-[2rem] p-6 shadow-sm hover:border-primary-blue/30 transition-all group">
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 rounded-xl bg-bg-page flex items-center justify-center text-primary-blue group-hover:bg-primary-blue/5 transition-colors">
+                          <c.i size={24} strokeWidth={1.5} />
+                        </div>
+                        <div>
+                          <h4 className="font-bold text-main-text text-lg">{c.t}</h4>
+                          <p className="text-xs text-dark-gray font-light mb-2">{c.d}</p>
+                          <div className="inline-block px-3 py-1 rounded-lg bg-primary-blue/5 border border-primary-blue/10 text-[9px] font-bold text-primary-blue uppercase tracking-tight">
+                            {c.ex}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="flex flex-col gap-6">
+                  <div className="bg-primary-blue text-white rounded-[3rem] p-10 shadow-lg relative overflow-hidden flex-1 flex flex-col justify-center">
+                    <div className="absolute -right-12 -bottom-12 opacity-10 rotate-12">
+                      <ShieldCheck size={280} />
+                    </div>
+                    <h4 className="text-4xl font-display font-black mb-6 leading-tight">Audit-ready by design.</h4>
+                    <p className="text-xl font-light opacity-90 leading-relaxed">
+                      La conformité n'est pas un module ajouté : elle est <span className="font-bold underline decoration-2 underline-offset-4 text-white">intégrée nativement</span> au workflow opérationnel <span className="font-bold">INDUPHARMA</span>.
+                    </p>
+                    <div className="mt-10 flex items-center gap-4">
+                      <div className="flex -space-x-3">
+                        {[1, 2, 3].map(i => <div key={i} className="w-8 h-8 rounded-full border-2 border-primary-blue bg-white/20 backdrop-blur-sm" />)}
+                      </div>
+                      <p className="text-[10px] font-bold uppercase tracking-widest opacity-70">Approuvé par QA Strategy</p>
+                    </div>
+                  </div>
+                  <div className="bg-main-text text-white rounded-[2.5rem] p-8 flex items-center justify-between border border-white/10">
+                    <div>
+                      <p className="text-[10px] font-bold opacity-50 uppercase tracking-widest mb-1">Standard de Conformité</p>
+                      <p className="text-xl font-display font-bold">GMP & ALCOA+ Compliant</p>
+                    </div>
+                    <CheckCircle2 className="text-primary-green" size={32} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            )
+  },
+            {
+              title: "Conclusion",
+            notes: "Merci de nous avoir écoutés. INDUPHARMA répond à un problème concret : réduire les arrêts non planifiés et améliorer la traçabilité. Nous concluons sur nos 3 piliers de réussite.",
+            transition: "Fin de la présentation.",
+            content: (
+            <div className="h-full flex flex-col">
+              <SlideTitle title="L'Usine Innovante et Connectée 4.0" subtitle="Conclusion et Perspectives" />
+
+              <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-16 mt-8">
+                <div className="bg-bg-page/50 p-12 rounded-[3.5rem] border border-light-gray/50 flex flex-col justify-center shadow-sm relative overflow-hidden">
+                  <div className="absolute top-0 right-0 p-10 opacity-5">
+                    <BarChart3 size={200} />
+                  </div>
+                  <h4 className="font-bold text-main-text mb-10 uppercase text-xs tracking-widest flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-lg bg-primary-blue text-white flex items-center justify-center">
+                      <Activity size={16} />
+                    </div>
+                    Performance mesurée sur site pilote
+                  </h4>
+                  <div className="space-y-6">
+                    {[
+                      { v: "29 min", l: "MTTR réel mesuré", d: "Performance moyenne constatée", c: "text-primary-blue" },
+                      { v: "91%", l: "Closure Rate live", d: "Efficacité opérationnelle", c: "text-primary-green" },
+                      { v: "7 mois", l: "Break-even ROI", d: "Sur 2 lignes critiques", c: "text-main-text" },
+                    ].map((stat, i) => (
+                      <div key={i} className="bg-white border border-light-gray/40 rounded-3xl p-6 shadow-sm flex items-center justify-between group hover:border-primary-blue/30 transition-all">
+                        <div>
+                          <p className="text-sm font-bold text-main-text">{stat.l}</p>
+                          <p className="text-[10px] text-dark-gray font-light uppercase tracking-tight opacity-70">{stat.d}</p>
+                        </div>
+                        <p className={`text-4xl font-display font-black ${stat.c}`}>{stat.v}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="flex flex-col justify-center space-y-10">
+                  <div className="space-y-6">
+                    <div className="mb-8 hover:scale-105 transition-transform duration-500">
+                      <img src="/logo.png" alt="INDUPHARMA Logo" className="h-16 object-contain" referrerPolicy="no-referrer" />
+                    </div>
+                    <p className="text-3xl font-display font-black text-main-text leading-tight">
+                      INDUPHARMA n'est pas seulement un dashboard.
+                    </p>
+                    <div className="inline-block px-4 py-2 bg-primary-blue/10 border border-primary-blue/20 rounded-full">
+                      <p className="text-sm font-bold text-primary-blue tracking-tight uppercase">FROM DOWNTIME REACTION TO REAL-TIME ORCHESTRATION</p>
+                    </div>
+                    <p className="text-lg text-dark-gray font-light leading-relaxed">
+                      C'est une boucle opérationnelle continue entre le terrain, Fusion AI et la maintenance.
+                    </p>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div className="flex flex-wrap gap-4">
+                      <a href="https://indupharma-live-dashboard.vercel.app/" target="_blank" rel="noopener noreferrer" className="bg-primary-blue text-white px-8 py-4 rounded-full font-bold text-sm shadow-lg hover:shadow-primary-blue/20 hover:scale-105 transition-all text-center">
+                        Dashboard Live
+                      </a>
+                      <button className="bg-white border-2 border-main-text text-main-text px-8 py-4 rounded-full font-bold text-sm hover:bg-main-text hover:text-white transition-all">
+                        Questions & Réponses
+                      </button>
+                    </div>
+                    <div className="pt-8 border-t border-light-gray/20">
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="w-2 h-2 rounded-full bg-primary-green animate-pulse" />
+                        <p className="text-[10px] font-bold text-dark-gray/60 uppercase tracking-widest">Nous contacter</p>
+                      </div>
+                      <p className="text-xl font-display font-bold text-main-text">indupharma@indupharma.com</p>
+                      <p className="text-xs text-dark-gray mt-1 opacity-60 font-light italic">Smart Automation Challenge 2026 — Morocco</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            )
+  },
+            {
+              title: "Accès Live Dashboard",
+            notes: "Pour conclure, nous vous invitons à tester par vous-mêmes. Scannez ce QR code pour accéder à l'environnement live et voir la synchronisation en temps réel.",
+            transition: "Nous sommes maintenant prêts pour vos questions.",
+            content: (
+            <div className="h-full flex flex-col items-center justify-center text-center">
+              <SlideTitle title="Accès Live Dashboard" subtitle="Scannez pour explorer l'environnement en temps réel" />
+              <div className="mt-12 relative">
+                <div className="absolute -inset-10 bg-primary-blue/5 rounded-[4rem] blur-3xl animate-pulse" />
+                <div className="relative bg-white p-12 rounded-[3rem] shadow-2xl border border-light-gray/50 hover:scale-105 transition-transform duration-500">
+                  <img src="/dashboard-qr.png" alt="Dashboard QR Code" className="w-80 h-80 object-contain" referrerPolicy="no-referrer" />
+                  <div className="mt-8 pt-8 border-t border-light-gray/20">
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary-blue mb-2">Live URL</p>
+                    <p className="text-sm font-bold text-main-text opacity-60">indupharma-live-dashboard.vercel.app</p>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-16 flex items-center gap-4 bg-bg-page px-8 py-4 rounded-full border border-primary-blue/10">
+                <div className="w-2 h-2 rounded-full bg-primary-green animate-pulse" />
+                <p className="text-xs font-bold text-dark-gray/60 uppercase tracking-widest">Environnement Live — Avril 2026 — Smart Automation Challenge</p>
+              </div>
+            </div>
+            )
+  }
+            ];
+
+            export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [showNotes, setShowNotes] = useState(false);
-  const totalSlides = Slides.length;
+            const [showNotes, setShowNotes] = useState(false);
+            const totalSlides = Slides.length;
 
   const nextSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev + 1) % totalSlides);
+              setCurrentSlide((prev) => (prev + 1) % totalSlides);
   }, [totalSlides]);
 
   const prevSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+              setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
   }, [totalSlides]);
 
   const goToFirstSlide = useCallback(() => {
-    setCurrentSlide(0);
+              setCurrentSlide(0);
   }, []);
 
   const goToLastSlide = useCallback(() => {
-    setCurrentSlide(totalSlides - 1);
+              setCurrentSlide(totalSlides - 1);
   }, [totalSlides]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'ArrowRight' || e.key === ' ') nextSlide();
-      if (e.key === 'ArrowLeft') prevSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
       if (e.key === 'n') setShowNotes(prev => !prev);
     };
-    window.addEventListener('keydown', handleKeyDown);
+            window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [nextSlide, prevSlide]);
 
-  const slide = Slides[currentSlide];
+            const slide = Slides[currentSlide];
 
-  return (
-    <div className="min-h-screen w-full bg-bg-page flex flex-col items-center justify-center font-sans overflow-x-hidden overflow-y-auto p-4 lg:p-8 select-none custom-scrollbar">
-      <div className="w-full max-w-[1500px] min-h-[980px] bg-white shadow-2xl rounded-3xl relative overflow-hidden border border-light-gray flex flex-col transition-all duration-500">
-        {/* Navigation Overlays */}
-        <div className="absolute top-6 right-6 z-40 flex items-center gap-2">
-          <BrandButton onClick={goToFirstSlide} small>
-            <ChevronsLeft size={16} className="mr-1" />
-            First
-          </BrandButton>
-          <BrandButton onClick={goToLastSlide} small>
-            Last
-            <ChevronsRight size={16} className="ml-1" />
-          </BrandButton>
-        </div>
-
-        {/* Global Branding on slides that are not intro/outro */}
-        {currentSlide > 0 && currentSlide < totalSlides - 1 && (
-          <div className="absolute top-8 left-12 right-12 z-20">
-            <Logo />
-          </div>
-        )}
-        {currentSlide > 0 && currentSlide < totalSlides - 1 && <BrandMemoryChip />}
-
-        {/* Dynamic Slide Content */}
-        <SlideContainer active={true}>
-          {/* @ts-ignore - Handle mix of object and functions during transition */}
-          {typeof slide === 'function' ? slide() : slide.content}
-        </SlideContainer>
-
-        {/* Presenter Notes Overlay */}
-        <AnimatePresence>
-          {showNotes && !((typeof slide === 'function')) && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              className="absolute bottom-[72px] left-12 right-12 bg-dark-gray text-white p-6 rounded-2xl z-40 shadow-2xl border border-white/10"
-            >
-              <div className="flex gap-12">
-                <div className="flex-1">
-                  <p className="text-[10px] font-black uppercase text-primary-blue mb-2 tracking-widest">Notes de Présentation</p>
-                  <p className="text-sm font-medium leading-relaxed opacity-90">{slide.notes}</p>
+            return (
+            <div className="min-h-screen w-full bg-bg-page flex flex-col items-center justify-center font-sans overflow-x-hidden overflow-y-auto p-4 lg:p-8 select-none custom-scrollbar">
+              <div className="w-full max-w-[1500px] min-h-[980px] bg-white shadow-2xl rounded-3xl relative overflow-hidden border border-light-gray flex flex-col transition-all duration-500">
+                {/* Navigation Overlays */}
+                <div className="absolute top-6 right-6 z-40 flex items-center gap-2">
+                  <BrandButton onClick={goToFirstSlide} small>
+                    <ChevronsLeft size={16} className="mr-1" />
+                    First
+                  </BrandButton>
+                  <BrandButton onClick={goToLastSlide} small>
+                    Last
+                    <ChevronsRight size={16} className="ml-1" />
+                  </BrandButton>
                 </div>
-                <div className="w-1/3 border-l border-white/10 pl-6">
-                  <p className="text-[10px] font-black uppercase text-primary-green mb-2 tracking-widest">Transition</p>
-                  <p className="text-sm font-bold opacity-90">{slide.transition}</p>
+
+                {/* Global Branding on slides that are not intro/outro */}
+                {currentSlide > 0 && currentSlide < totalSlides - 1 && (
+                  <div className="absolute top-8 left-12 right-12 z-20">
+                    <Logo />
+                  </div>
+                )}
+                {currentSlide > 0 && currentSlide < totalSlides - 1 && <BrandMemoryChip />}
+
+                {/* Dynamic Slide Content */}
+                <SlideContainer active={true}>
+                  {/* @ts-ignore - Handle mix of object and functions during transition */}
+                  {typeof slide === 'function' ? slide() : slide.content}
+                </SlideContainer>
+
+                {/* Presenter Notes Overlay */}
+                <AnimatePresence>
+                  {showNotes && !((typeof slide === 'function')) && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      className="absolute bottom-[72px] left-12 right-12 bg-dark-gray text-white p-6 rounded-2xl z-40 shadow-2xl border border-white/10"
+                    >
+                      <div className="flex gap-12">
+                        <div className="flex-1">
+                          <p className="text-[10px] font-black uppercase text-primary-blue mb-2 tracking-widest">Notes de Présentation</p>
+                          <p className="text-sm font-medium leading-relaxed opacity-90">{slide.notes}</p>
+                        </div>
+                        <div className="w-1/3 border-l border-white/10 pl-6">
+                          <p className="text-[10px] font-black uppercase text-primary-green mb-2 tracking-widest">Transition</p>
+                          <p className="text-sm font-bold opacity-90">{slide.transition}</p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                {/* Progress Bar */}
+                <div className="absolute bottom-0 left-0 h-1 bg-primary-blue/10 w-full z-30">
+                  <motion.div
+                    className="h-full bg-primary-blue shadow-[0_0_8px_rgba(31,94,255,0.5)]"
+                    initial={false}
+                    animate={{ width: `${((currentSlide + 1) / totalSlides) * 100}%` }}
+                    transition={{ duration: 0.4 }}
+                  />
                 </div>
+
+                {/* Standard Footer */}
+                <Footer current={currentSlide + 1} total={totalSlides} />
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
 
-        {/* Progress Bar */}
-        <div className="absolute bottom-0 left-0 h-1 bg-primary-blue/10 w-full z-30">
-          <motion.div
-            className="h-full bg-primary-blue shadow-[0_0_8px_rgba(31,94,255,0.5)]"
-            initial={false}
-            animate={{ width: `${((currentSlide + 1) / totalSlides) * 100}%` }}
-            transition={{ duration: 0.4 }}
-          />
-        </div>
-
-        {/* Standard Footer */}
-        <Footer current={currentSlide + 1} total={totalSlides} />
-      </div>
-
-    </div>
-  );
+            </div>
+            );
 }
