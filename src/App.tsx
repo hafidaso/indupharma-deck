@@ -440,6 +440,42 @@ const Slides: SlideData[] = [
     )
   },
   {
+    title: "Notre méthodologie",
+    notes: "Nous ne sommes pas partis directement de la technologie. Nous sommes partis du besoin. Cette approche permet de convaincre un jury mixte, car elle montre que la solution répond à un problème réel et structuré.",
+    transition: "Grâce à cette méthode, nous avons comparé le processus actuel et le processus cible.",
+    content: (
+      <div className="h-full">
+        <SlideTitle title="Notre méthodologie" subtitle="Une démarche structurée pour un impact métier réel" />
+        <div className="grid grid-cols-4 gap-8 mt-16">
+          {[
+            { label: "Cadrer", title: "Problem Scoping", icon: Search, sub: "Définition du besoin", output: "Scope & Objectifs" },
+            { label: "Comprendre", title: "Root Cause Analysis", icon: HelpCircle, sub: "Analyse des causes racines", output: "Cartographie de la douleur" },
+            { label: "Modéliser", title: "BPMN", icon: GitCompare, sub: "As-Is / To-Be", output: "Carte BPMN As-Is / To-Be" },
+            { label: "Démontrer", title: "Prototypage", icon: Terminal, sub: "IoT & AI Proof", output: "MVP IoT & Dashboard" },
+          ].map((item, i) => (
+            <div key={i} className="bg-white p-10 rounded-3xl border border-light-gray/50 shadow-sm flex flex-col items-center text-center group hover:shadow-md transition-all">
+              <div className="w-16 h-16 rounded-2xl bg-bg-page flex items-center justify-center text-primary-blue mb-6 group-hover:bg-primary-blue group-hover:text-white transition-colors">
+                <item.icon size={32} strokeWidth={1.5} />
+              </div>
+              <p className="text-[11px] font-bold text-primary-blue/80 uppercase tracking-widest mb-2">{item.label}</p>
+              <h4 className="font-semibold text-xl mb-3 text-main-text">{item.title}</h4>
+              <p className="text-sm text-dark-gray font-light mb-8">{item.sub}</p>
+              <div className="mt-auto pt-4 border-t border-light-gray w-full">
+                <p className="text-[10px] font-black text-primary-green uppercase tracking-wider mb-1">Livrable :</p>
+                <p className="text-[11px] text-dark-gray font-bold">{item.output}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-20 p-8 bg-primary-blue/5 rounded-3xl border border-primary-blue/10 flex items-center justify-center gap-6">
+          <p className="text-xl text-dark-gray font-light text-center">
+            Cette méthodologie nous a permis de construire une réponse <span className="text-primary-blue font-semibold">structurée</span>, <span className="text-primary-blue font-semibold">mesurable</span> et <span className="text-primary-blue font-semibold">démontrable</span>.
+          </p>
+        </div>
+      </div>
+    )
+  },
+  {
     title: "Use case : Autoclave ",
     notes: "Nous avons choisi l’autoclave comme cas démonstratif parce qu’il s’agit d’un équipement critique. Ce use case permet de montrer toute la chaîne de valeur : détection, transmission, analyse, décision et pilotage.",
     transition: "Pour éviter de construire une solution uniquement technique, nous avons utilisé une méthodologie de cadrage.",
@@ -492,42 +528,6 @@ const Slides: SlideData[] = [
               <p className="text-3xl font-display font-black text-primary-green italic tracking-tighter">"Du capteur à l'action,<br />sans rupture."</p>
             </div>
           </div>
-        </div>
-      </div>
-    )
-  },
-  {
-    title: "Notre méthodologie",
-    notes: "Nous ne sommes pas partis directement de la technologie. Nous sommes partis du besoin. Cette approche permet de convaincre un jury mixte, car elle montre que la solution répond à un problème réel et structuré.",
-    transition: "Grâce à cette méthode, nous avons comparé le processus actuel et le processus cible.",
-    content: (
-      <div className="h-full">
-        <SlideTitle title="Notre méthodologie" subtitle="Une démarche structurée pour un impact métier réel" />
-        <div className="grid grid-cols-4 gap-8 mt-16">
-          {[
-            { label: "Cadrer", title: "Problem Scoping", icon: Search, sub: "Définition du besoin", output: "Scope & Objectifs" },
-            { label: "Comprendre", title: "Root Cause Analysis", icon: HelpCircle, sub: "Analyse des causes racines", output: "Cartographie de la douleur" },
-            { label: "Modéliser", title: "BPMN", icon: GitCompare, sub: "As-Is / To-Be", output: "Carte BPMN As-Is / To-Be" },
-            { label: "Démontrer", title: "Prototypage", icon: Terminal, sub: "IoT & AI Proof", output: "MVP IoT & Dashboard" },
-          ].map((item, i) => (
-            <div key={i} className="bg-white p-10 rounded-3xl border border-light-gray/50 shadow-sm flex flex-col items-center text-center group hover:shadow-md transition-all">
-              <div className="w-16 h-16 rounded-2xl bg-bg-page flex items-center justify-center text-primary-blue mb-6 group-hover:bg-primary-blue group-hover:text-white transition-colors">
-                <item.icon size={32} strokeWidth={1.5} />
-              </div>
-              <p className="text-[11px] font-bold text-primary-blue/80 uppercase tracking-widest mb-2">{item.label}</p>
-              <h4 className="font-semibold text-xl mb-3 text-main-text">{item.title}</h4>
-              <p className="text-sm text-dark-gray font-light mb-8">{item.sub}</p>
-              <div className="mt-auto pt-4 border-t border-light-gray w-full">
-                <p className="text-[10px] font-black text-primary-green uppercase tracking-wider mb-1">Livrable :</p>
-                <p className="text-[11px] text-dark-gray font-bold">{item.output}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="mt-20 p-8 bg-primary-blue/5 rounded-3xl border border-primary-blue/10 flex items-center justify-center gap-6">
-          <p className="text-xl text-dark-gray font-light text-center">
-            Cette méthodologie nous a permis de construire une réponse <span className="text-primary-blue font-semibold">structurée</span>, <span className="text-primary-blue font-semibold">mesurable</span> et <span className="text-primary-blue font-semibold">démontrable</span>.
-          </p>
         </div>
       </div>
     )
