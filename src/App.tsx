@@ -520,6 +520,15 @@ const Slides: SlideData[] = [
             Cette méthodologie nous a permis de construire une réponse <span className="text-primary-blue font-semibold">structurée</span>, <span className="text-primary-blue font-semibold">mesurable</span> et <span className="text-primary-blue font-semibold">démontrable</span>.
           </p>
         </div>
+        <div className="mt-10 p-6 bg-yellow-50 border-l-4 border-yellow-400 rounded-2xl flex items-start gap-4">
+          <AlertTriangle size={32} className="text-yellow-500 mt-1 flex-shrink-0" />
+          <div>
+            <span className="block text-xs font-bold uppercase tracking-widest text-yellow-700 mb-2">N.B.</span>
+            <span className="text-sm text-yellow-900 font-medium">
+              Le MTTR et les GMP représentent un double enjeu critique dans l’industrie pharmaceutique : un MTTR élevé prolonge les arrêts de production et augmente les pertes, tandis que le non-respect des GMP expose à des risques de non-conformité, de sanctions et d’atteinte à la réputation ; ainsi, plus le temps de réparation est long, plus le risque de compromettre la qualité et la conformité du produit augmente.
+            </span>
+          </div>
+        </div>
 <<<<<<< HEAD
       </div>
     )
