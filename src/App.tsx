@@ -557,7 +557,6 @@ const Slides: SlideData[] = [
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                 className="w-16 h-16 border-2 border-primary-blue/30 bg-primary-blue text-white rounded-full flex items-center justify-center shadow-xl ring-8 ring-primary-blue/5"
               >
-                <ArrowUpRight size={32} strokeWidth={2.5} />
               </motion.div>
               <div className="bg-white px-6 py-2 rounded-full border border-primary-blue/20 shadow-sm">
                 <p className="text-sm font-bold text-primary-blue uppercase tracking-widest">
@@ -566,6 +565,7 @@ const Slides: SlideData[] = [
               </div>
             </div>
             <div className="p-10 bg-primary-blue/5 rounded-3xl border border-primary-blue/20 transition-all hover:shadow-md hover:border-primary-blue/30">
+          </div>
               <h4 className="font-semibold text-primary-blue mb-8 flex items-center gap-3 uppercase text-sm tracking-widest"><Zap size={20} strokeWidth={1.5} /> Processus TO-BE (Connecté)</h4>
               <ul className="space-y-6 text-[15px] font-light text-dark-gray leading-relaxed">
                 <li className="flex gap-4"><CheckCircle2 size={20} className="text-primary-green flex-shrink-0 mt-0.5" strokeWidth={1.5} /> <span><strong className="font-semibold text-main-text">Surveillance continue</strong> par capteurs IoT</span></li>
