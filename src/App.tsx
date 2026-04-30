@@ -141,12 +141,82 @@ const AbaLogoIcon = ({
 );
 
 const readinessScore = 89;
-const trendBars = [
-  { label: "Q1", value: 54, color: "bg-primary-blue/40" },
-  { label: "Q2", value: 68, color: "bg-primary-blue/60" },
-  { label: "Q3", value: 78, color: "bg-primary-blue/80" },
-  { label: "Q4", value: 89, color: "bg-primary-green" },
+const trendData = [
+  { label: "Jan", value: 42 },
+  { label: "Feb", value: 58 },
+  { label: "Mar", value: 52 },
+  { label: "Apr", value: 71 },
+  { label: "May", value: 84 },
+  { label: "Jun", value: 89 },
 ];
+const MiniLineChart = ({
+  data,
+}: {
+  data: Array<{ label: string; value: number }>;
+}) => {
+  const points = data.map((item, i) => ({
+    x: (i / (data.length - 1)) * 100,
+    y: 100 - item.value,
+  }));
+
+  const pathData = points
+    .map((p, i) => (i === 0 ? `M ${p.x},${p.y}` : `L ${p.x},${p.y}`))
+    .join(" ");
+
+  return (
+    <div className="w-full">
+      <div className="h-44 w-full relative pt-4">
+        <svg viewBox="0 0 100 100" className="w-full h-full overflow-visible" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="line-gradient" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#1f5eff" stopOpacity="0.3" />
+              <stop offset="100%" stopColor="#1f5eff" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+          <motion.path
+            d={`${pathData} L 100,100 L 0,100 Z`}
+            fill="url(#line-gradient)"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          />
+          <motion.path
+            d={pathData}
+            fill="none"
+            stroke="#1f5eff"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            initial={{ pathLength: 0 }}
+            animate={{ pathLength: 1 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+          />
+          {points.map((p, i) => (
+            <motion.circle
+              key={i}
+              cx={p.x}
+              cy={p.y}
+              r="2.5"
+              fill="white"
+              stroke="#1f5eff"
+              strokeWidth="1.5"
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 0.1 * i + 0.5 }}
+            />
+          ))}
+        </svg>
+      </div>
+      <div className="flex justify-between mt-6">
+        {data.map((item) => (
+          <span key={item.label} className="text-[10px] font-bold uppercase tracking-widest text-dark-gray/40">
+            {item.label}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const Footer = ({ current, total }: { current: number, total: number }) => (
   <div className="absolute bottom-6 left-12 right-12 flex justify-between items-center text-xs text-dark-gray border-t border-light-gray pt-4 font-bold uppercase tracking-widest">
@@ -899,7 +969,7 @@ const Slides: SlideData[] = [
                     Tendance de disponibilité
                     <span className="text-[9px] bg-white px-2 py-1 rounded-full border border-light-gray">Données live</span>
                   </h4>
-                  <MiniBarChart data={trendBars} />
+                  <MiniLineChart data={trendData} />
                   <div className="mt-5 grid grid-cols-2 gap-3 text-xs">
                     <div className="bg-white rounded-xl border border-light-gray px-3 py-2 flex justify-between items-center"><span className="text-dark-gray/70">MTBF:</span> <span className="font-bold text-main-text text-primary-blue">208 h</span></div>
                     <div className="bg-white rounded-xl border border-light-gray px-3 py-2 flex justify-between items-center"><span className="text-dark-gray/70">Closure Rate:</span> <span className="font-bold text-primary-green">91%</span></div>
