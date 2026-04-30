@@ -520,6 +520,7 @@ const Slides: SlideData[] = [
             Cette méthodologie nous a permis de construire une réponse <span className="text-primary-blue font-semibold">structurée</span>, <span className="text-primary-blue font-semibold">mesurable</span> et <span className="text-primary-blue font-semibold">démontrable</span>.
           </p>
         </div>
+<<<<<<< HEAD
       </div>
     )
   },
@@ -574,6 +575,15 @@ const Slides: SlideData[] = [
             <p className="text-lg text-dark-gray leading-relaxed font-light">
               Passage d'un processus <span className="font-semibold text-red-500/80">réactif et manuel</span> à un processus <span className="font-semibold text-primary-green">connecté, tracé et piloté</span> par la donnée.
             </p>
+=======
+        <div className="mt-10 p-6 bg-yellow-50 border-l-4 border-yellow-400 rounded-2xl flex items-start gap-4">
+          <AlertTriangle size={32} className="text-yellow-500 mt-1 flex-shrink-0" />
+          <div>
+            <span className="block text-xs font-bold uppercase tracking-widest text-yellow-700 mb-2">N.B.</span>
+            <span className="text-sm text-yellow-900 font-medium">
+              Le MTTR et les GMP représentent un double enjeu critique dans l’industrie pharmaceutique : un MTTR élevé prolonge les arrêts de production et augmente les pertes, tandis que le non-respect des GMP expose à des risques de non-conformité, de sanctions et d’atteinte à la réputation ; ainsi, plus le temps de réparation est long, plus le risque de compromettre la qualité et la conformité du produit augmente.
+            </span>
+>>>>>>> 74307de (feat: update slides order, add N.B. block to slide 5)
           </div>
         </div>
       </div>
@@ -637,6 +647,65 @@ const Slides: SlideData[] = [
     )
   },
   {
+<<<<<<< HEAD
+=======
+    title: "De l’As-Is au To-Be",
+    notes: "Le BPMN nous a permis de visualiser le saut de maturité du processus. L’objectif n’est pas seulement d’ajouter des capteurs, mais de transformer la manière dont l’incident est détecté, traité et suivi.",
+    transition: "Cette transformation prend forme dans une solution intégrée : INDUPHARMA.",
+    content: (
+      <div className="h-full">
+        <SlideTitle title="De l’As-Is au To-Be" subtitle="Le saut de maturité vers l'excellence industrielle" />
+        <div className="grid grid-cols-2 gap-16 mt-16 items-center">
+          <div className="space-y-6">
+            <div className="p-10 bg-bg-page/50 rounded-3xl border border-light-gray/50 opacity-80 transition-all hover:opacity-100 hover:shadow-sm">
+              <h4 className="font-semibold text-dark-gray mb-8 flex items-center gap-3 uppercase text-sm tracking-widest"><AlertTriangle size={20} strokeWidth={1.5} className="text-dark-gray/50" /> Processus AS-IS (Réactif)</h4>
+              <ul className="space-y-6 text-[15px] font-light text-dark-gray leading-relaxed">
+                <li className="flex gap-4"><span className="text-dark-gray/30 font-bold">•</span> <span><strong className="font-medium text-main-text">Surveillance visuelle</strong> humaine</span></li>
+                <li className="flex gap-4"><span className="text-dark-gray/30 font-bold">•</span> <span><strong className="font-medium text-main-text">Signalement manuel</strong> via papier / téléphone</span></li>
+                <li className="flex gap-4"><span className="text-dark-gray/30 font-bold">•</span> <span><strong className="font-medium text-main-text">Diagnostic long</strong> et incertain</span></li>
+                <li className="flex gap-4"><span className="text-dark-gray/30 font-bold">•</span> <span><strong className="font-medium text-main-text">Rapport d'intervention</strong> manuel</span></li>
+              </ul>
+            </div>
+            <div className="flex flex-col items-center justify-center my-6 gap-4">
+              <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                className="w-16 h-16 border-2 border-primary-blue/30 bg-primary-blue text-white rounded-full flex items-center justify-center shadow-xl ring-8 ring-primary-blue/5"
+              >
+                <ArrowUpRight size={32} strokeWidth={2.5} />
+              </motion.div>
+              <div className="bg-white px-6 py-2 rounded-full border border-primary-blue/20 shadow-sm">
+                <p className="text-sm font-bold text-primary-blue uppercase tracking-widest">
+                  MTTR : de plusieurs heures → <span className="text-primary-green">42 min</span>
+                </p>
+              </div>
+            </div>
+            <div className="p-10 bg-primary-blue/5 rounded-3xl border border-primary-blue/20 transition-all hover:shadow-md hover:border-primary-blue/30">
+              <h4 className="font-semibold text-primary-blue mb-8 flex items-center gap-3 uppercase text-sm tracking-widest"><Zap size={20} strokeWidth={1.5} /> Processus TO-BE (Connecté)</h4>
+              <ul className="space-y-6 text-[15px] font-light text-dark-gray leading-relaxed">
+                <li className="flex gap-4"><CheckCircle2 size={20} className="text-primary-green flex-shrink-0 mt-0.5" strokeWidth={1.5} /> <span><strong className="font-semibold text-main-text">Surveillance continue</strong> par capteurs IoT</span></li>
+                <li className="flex gap-4"><CheckCircle2 size={20} className="text-primary-green flex-shrink-0 mt-0.5" strokeWidth={1.5} /> <span><strong className="font-semibold text-main-text">Détection Edge AI</strong> & Automatisation ticket</span></li>
+                <li className="flex gap-4"><CheckCircle2 size={20} className="text-primary-green flex-shrink-0 mt-0.5" strokeWidth={1.5} /> <span><strong className="font-semibold text-main-text">Priorisation Live</strong> & Notification techniciens</span></li>
+                <li className="flex gap-4"><CheckCircle2 size={20} className="text-primary-green flex-shrink-0 mt-0.5" strokeWidth={1.5} /> <span><strong className="font-semibold text-main-text">Rapports & KPI</strong> auto-générés (ALCOA+)</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="bg-white p-16 rounded-[3rem] border border-light-gray/50 shadow-sm text-center">
+            <div className="w-24 h-24 bg-primary-blue/5 rounded-3xl flex items-center justify-center text-primary-blue mx-auto mb-10">
+              <TrendingDown className="rotate-180" size={48} strokeWidth={1.5} />
+            </div>
+            <h3 className="text-3xl font-display font-bold text-main-text mb-6">Un saut de maturité digital</h3>
+            <p className="text-lg text-dark-gray leading-relaxed font-light">
+              Passage d'un processus <span className="font-semibold text-red-500/80">réactif et manuel</span> à un processus <span className="font-semibold text-primary-green">connecté, tracé et piloté</span> par la donnée.
+            </p>
+          </div>
+        </div>
+      </div>
+    )
+  },
+  {
+>>>>>>> 74307de (feat: update slides order, add N.B. block to slide 5)
     title: "Le moteur d’automatisation",
     notes: "Fusion AI joue le rôle de moteur d’orchestration. Il permet de recevoir les données terrain, de les transmettre aux dashboards et surtout de poursuivre le workflow après une action humaine sur le dashboard technique.",
     transition: "Cette orchestration est rendue possible par une boucle bidirectionnelle entre Fusion AI et nos dashboards.",
