@@ -642,6 +642,15 @@ const Slides: SlideData[] = [
             </p>
           </div>
         </div>
+        <div className="mt-10 p-6 bg-blue-50 border-l-4 border-blue-400 rounded-2xl flex items-start gap-4">
+          <ShieldCheck size={32} className="text-blue-500 mt-1 flex-shrink-0" />
+          <div>
+            <span className="block text-xs font-bold uppercase tracking-widest text-blue-700 mb-2">N.B.</span>
+            <span className="text-sm text-blue-900 font-medium">
+              ALCOA+ est un principe clé d’intégrité des données dans l’industrie pharmaceutique, garantissant que chaque donnée est attribuable, lisible, enregistrée en temps réel, originale et précise, tout en étant complète, cohérente, durable et disponible ; il constitue un pilier essentiel des exigences GMP pour assurer la traçabilité, la conformité réglementaire et la fiabilité des opérations.
+            </span>
+          </div>
+        </div>
       </div>
     )
   },
@@ -846,17 +855,32 @@ const Slides: SlideData[] = [
                 <div className="grid grid-cols-3 gap-10 items-center relative z-10">
                   <div>
                     <p className="text-xs uppercase tracking-widest opacity-80 mb-2">Disponibilité Globale</p>
-                    <p className="text-4xl font-display font-bold">89.4%</p>
+                    <div className="flex items-center gap-3">
+                      <p className="text-4xl font-display font-bold">89.4%</p>
+                      <div className="flex items-center bg-white/10 px-2 py-0.5 rounded-full text-primary-green text-[10px] font-black tracking-tighter">
+                        <TrendingUp size={10} className="mr-0.5" /> +10% <span className="ml-1 opacity-50 uppercase">J-1</span>
+                      </div>
+                    </div>
                     <p className="text-[9px] mt-2 opacity-60 font-medium">Dashboard INDUPHARMA — Avril 2026</p>
                   </div>
                   <div className="text-center border-x border-white/20 px-4">
                     <p className="text-xs uppercase tracking-widest opacity-80 mb-2">MTTR (Temps de réponse moyen)</p>
-                    <p className="text-3xl font-display font-bold text-primary-green bg-white px-4 py-1 rounded-xl inline-block">29 min</p>
+                    <div className="flex items-center justify-center gap-3">
+                      <p className="text-3xl font-display font-bold text-primary-green bg-white px-4 py-1 rounded-xl inline-block">29 min</p>
+                      <div className="flex items-center bg-white/10 px-2 py-0.5 rounded-full text-primary-green text-[10px] font-black tracking-tighter">
+                        <TrendingDown size={10} className="mr-0.5" /> -4 min <span className="ml-1 opacity-50 uppercase">J-1</span>
+                      </div>
+                    </div>
                     <p className="text-[9px] mt-2 opacity-60 font-medium">API-derived KPI logs</p>
                   </div>
                   <div className="text-right">
                     <p className="text-xs uppercase tracking-widest opacity-80 mb-2">Downtime Total</p>
-                    <p className="text-3xl font-display font-bold">213 min</p>
+                    <div className="flex items-center justify-end gap-3">
+                      <p className="text-3xl font-display font-bold">10 min</p>
+                      <div className="flex items-center bg-white/10 px-2 py-0.5 rounded-full text-primary-green text-[10px] font-black tracking-tighter">
+                        <TrendingDown size={10} className="mr-0.5" /> -3 min <span className="ml-1 opacity-50 uppercase">J-1</span>
+                      </div>
+                    </div>
                     <p className="text-[9px] mt-2 opacity-60 font-medium">Derived from etat_global</p>
                   </div>
                 </div>
@@ -1195,7 +1219,7 @@ const Slides: SlideData[] = [
                       <BarChart3 size={16} /> Logique de Calcul des Gains
                     </p>
                     <p className="text-sm text-dark-gray leading-relaxed font-light italic">
-                      "213 min de downtime actuel × Coût/heure pharma ($100K-$500K) × Fréquence mensuelle × Réduction 30% = 410k MAD / an"
+                      "10 min de downtime actuel × Coût/heure pharma ($100K-$500K) × Fréquence mensuelle × Réduction 30% = 410k MAD / an"
                     </p>
                   </div>
                 </div>
