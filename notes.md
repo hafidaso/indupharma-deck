@@ -127,7 +127,7 @@
 ---
 
 ### Slide 22 - Conclusion
-**Note**: Merci de nous avoir écoutés. INDUPHARMA répond à un problème concret : réduire les arrêts non planifiés et améliorer la traçabilité. Nous concluون sur nos 3 piliers de réussite.
+**Note**: Merci de nous avoir écoutés. INDUPHARMA répond à un problème concret : réduire les arrêts non planifiés et améliorer la traçabilité. Nous conclusion sur nos 3 piliers de réussite.
 **Transition**: Fin de la présentation.
 
 ---
