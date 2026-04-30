@@ -275,10 +275,10 @@ const Slides: SlideData[] = [
         <SlideTitle title="L'équipe projet INDUPHARMA" subtitle="Une expertise complémentaire pour l'industrie 4.0" />
         <div className="mt-12 grid grid-cols-2 gap-8 max-w-5xl mx-auto">
           {[
-            { n: "M. Kassi", r: "Chef de projet / Architecture IIoT", i: Users },
+            { n: "M. Kassi", r: "Architecture IoT/ \n Conception Hardware", i: Users },
             { n: "M. Ezzi", r: "Développement Fusion AI & Workflows", i: Cpu },
             { n: "H. Belayd", r: "Dashboard & Frontend", i: LayoutDashboard },
-            { n: "M. Mabrouk", r: "Hardware ESP32 & Capteurs", i: Settings },
+            { n: "M. Mabrouk", r: "Chef de projet et Coordination ", i: Settings },
           ].map((member, i) => (
             <div key={i} className="bg-white border border-light-gray/60 rounded-[3rem] p-8 shadow-sm flex items-center gap-8 group hover:border-primary-blue/30 transition-all hover:shadow-md">
               <div className="w-20 h-20 rounded-[2rem] bg-bg-page flex items-center justify-center text-primary-blue group-hover:bg-primary-blue/5 transition-colors">
@@ -307,7 +307,7 @@ const Slides: SlideData[] = [
       <div className="h-full flex flex-col items-center justify-center text-center">
         <SlideTitle title="Question critique" subtitle="Combien coûte 1 heure d'arrêt dans une ligne pharmaceutique ?" />
         <div className="mt-20 flex flex-col items-center justify-center">
-          <span className="text-[120px] font-extrabold text-primary-blue leading-none mb-6">$500K</span>
+          <span className="text-[120px] font-extrabold text-primary-blue leading-none mb-6">500K MAD</span>
           <p className="text-lg font-semibold text-dark-gray mb-2">Coût max par heure d'arrêt non planifié</p>
           <p className="text-xs text-dark-gray/60 mb-8">Source: Siemens True Cost of Downtime, 2024</p>
           <div className="flex flex-wrap gap-10 justify-center mt-8">
@@ -380,7 +380,7 @@ const Slides: SlideData[] = [
   {
     title: "Vision Stratégique",
     notes: "Notre projet ne se contente pas d'être une interface technique. C'est une vision de l'industrie pharmaceutique de demain : connectée, résiliente et centrée sur la performance. Cette vision définit notre objectif 'North Star'.",
-    transition: "Cette vision se concrétise à travers un cas d’usage critique : l’autoclave M02.",
+    transition: "Cette vision se concrétise à travers un cas d’usage critique : l’autoclave.",
     content: (
       <div className="h-full">
         <SlideTitle title="Vision Stratégique" subtitle="De la surveillance passive à la décision augmentée" />
@@ -405,7 +405,7 @@ const Slides: SlideData[] = [
             <h4 className="text-xs uppercase tracking-widest font-semibold text-dark-gray/70 mb-6">Boucle de valeur cible</h4>
             <div className="space-y-4">
               {[
-                { title: "Detect", desc: "Anomalie identifiée en temps réel via ESP32 + règles Fusion AI.", icon: AlertTriangle, tone: "text-primary-blue bg-primary-blue/10 border-primary-blue/20" },
+                { title: "Detect", desc: "Anomalie identifiée en temps réel via Makers Points + règles Fusion AI.", icon: AlertTriangle, tone: "text-primary-blue bg-primary-blue/10 border-primary-blue/20" },
                 { title: "Decide", desc: "Priorisation et orientation du ticket avec contexte opérationnel.", icon: LayoutDashboard, tone: "text-primary-green bg-primary-green/10 border-primary-green/20" },
                 { title: "Act", desc: "Intervention technicien puis synchronisation automatique du cycle incident.", icon: Zap, tone: "text-dark-gray bg-white border-light-gray" },
               ].map((step, i) => (
@@ -431,12 +431,12 @@ const Slides: SlideData[] = [
     )
   },
   {
-    title: "Use case : Autoclave M02",
-    notes: "Nous avons choisi l’autoclave M02 comme cas démonstratif parce qu’il s’agit d’un équipement critique. Ce use case permet de montrer toute la chaîne de valeur : détection, transmission, analyse, décision et pilotage.",
+    title: "Use case : Autoclave ",
+    notes: "Nous avons choisi l’autoclave comme cas démonstratif parce qu’il s’agit d’un équipement critique. Ce use case permet de montrer toute la chaîne de valeur : détection, transmission, analyse, décision et pilotage.",
     transition: "Pour éviter de construire une solution uniquement technique, nous avons utilisé une méthodologie de cadrage.",
     content: (
       <div className="h-full flex flex-col">
-        <SlideTitle title="Use case : Autoclave M02" subtitle="Démonstration du scénario 2026 : Du capteur à l'action" />
+        <SlideTitle title="Use case : Autoclave " subtitle="Démonstration du scénario 2026 : Du capteur à l'action" />
 
         <div className="flex-1 flex flex-col justify-center mt-4">
           {/* 7-step pipeline */}
@@ -444,7 +444,7 @@ const Slides: SlideData[] = [
             <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-primary-blue/10 -z-10" />
             {[
               { label: "Autoclave", type: "gray", icon: Settings },
-              { label: "ESP32", type: "blue", icon: Cpu },
+              { label: "Makers Points", type: "blue", icon: Cpu },
               { label: "MQTT", type: "blue", icon: Share2 },
               { label: "Fusion AI", type: "green", icon: AbaLogoIcon },
               { label: "Webhook", type: "green", icon: Zap },
@@ -473,7 +473,7 @@ const Slides: SlideData[] = [
             <div className="flex-1 pr-12 border-r border-light-gray">
               <h4 className="font-bold text-sm mb-4">Le flux d'information</h4>
               <div className="grid grid-cols-2 gap-4 text-[10px] font-medium text-dark-gray">
-                <div className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary-blue mt-1" />Anomalie détectée par l'ESP32</div>
+                <div className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary-blue mt-1" />Anomalie détectée par l'Makers Points</div>
                 <div className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary-blue mt-1" />Envoi temps réel via MQTT</div>
                 <div className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary-green mt-1" />Fusion AI transmet via Webhook</div>
                 <div className="flex gap-2"><div className="w-1.5 h-1.5 rounded-full bg-primary-green mt-1" />Pilotage Dashboards Live</div>
@@ -581,7 +581,7 @@ const Slides: SlideData[] = [
   },
   {
     title: "Architecture & Choix Techniques",
-    notes: "Pourquoi ces choix ? L'ESP32 pour son coût et sa robustesse, MQTT pour sa légèreté temps réel, et Fusion AI pour son orchestration no-code qui nous permet d'être agiles. On ne construit pas juste un gadget, on construit un système industriel scalable.",
+    notes: "Pourquoi ces choix ? L'Makers Points pour son coût et sa robustesse, MQTT pour sa légèreté temps réel, et Fusion AI pour son orchestration low-code qui nous permet d'être agiles. On ne construit pas juste un gadget, on construit un système industriel scalable.",
     transition: "Cette architecture repose sur des choix technologiques précis pour garantir performance et scalabilité.",
     content: (
       <div className="h-full">
@@ -590,7 +590,7 @@ const Slides: SlideData[] = [
         <div className="grid grid-cols-3 gap-8 mt-12">
           {[
             {
-              title: "ESP32",
+              title: "Makers Points",
               label: "Edge Computing",
               icon: Cpu,
               why: "Coût réduit, consommation ultra-basse et connectivité WiFi/BT native pour un déploiement industriel agile."
@@ -603,7 +603,7 @@ const Slides: SlideData[] = [
             },
             {
               title: "Fusion AI",
-              label: "Orchestration No-Code",
+              label: "Orchestration Low-Code",
               icon: AbaLogoIcon,
               why: "Permet de modéliser des workflows complexes sans codage lourd, accélérant le cycle de développement."
             }
@@ -646,7 +646,7 @@ const Slides: SlideData[] = [
 
         <div className="bg-primary-blue/5 border-l-4 border-primary-blue p-5 mb-10 rounded-r-2xl">
           <p className="text-[15px] font-medium text-dark-gray leading-relaxed">
-            <span className="text-primary-blue font-bold">Fusion AI</span> = plateforme d'automatisation no-code qui orchestre les workflows complexes entre capteurs IoT, bases de données et équipes opérationnelles.
+            <span className="text-primary-blue font-bold">Fusion AI</span> = plateforme d'automatisation low-code qui orchestre les workflows complexes entre capteurs IoT, bases de données et équipes opérationnelles.
           </p>
         </div>
 
@@ -669,8 +669,8 @@ const Slides: SlideData[] = [
             <h4 className="font-bold text-main-text mb-8 uppercase text-[10px] tracking-widest border-b border-light-gray pb-4">Le Workflow d'Orchestration</h4>
             <div className="space-y-8">
               {[
-                { t: "Recevoir", d: "Ingestion des données IoT (ESP32 / MQTT)" },
-                { t: "Analyser", d: "Traitement & Détection d'anomalies en temps réel" },
+                { t: "Recevoir", d: "Ingestion des données IoT (Makers Points / MQTT)" },
+                { t: "Analyser", d: "Traitement & Détection d'anomalies intelligente en temps réel" },
                 { t: "Alerter", d: "Transmission instantanée aux Dashboards Ops" },
                 { t: "Déléguer", d: "Orchestration des actions & workflows techniciens" },
                 { t: "Synchroniser", d: "Historisation GMP & Mise à jour des statuts" },
@@ -841,7 +841,7 @@ const Slides: SlideData[] = [
               <p className="text-[9px] mt-2 opacity-60 font-medium">Dashboard INDUPHARMA — Avril 2026</p>
             </div>
             <div className="text-center border-x border-white/20 px-4">
-              <p className="text-xs uppercase tracking-widest opacity-80 mb-2">MTTR (Temps de réponse)</p>
+              <p className="text-xs uppercase tracking-widest opacity-80 mb-2">MTTR (Temps de réponse moyen)</p>
               <p className="text-3xl font-display font-bold text-primary-green bg-white px-4 py-1 rounded-xl inline-block">29 min</p>
               <p className="text-[9px] mt-2 opacity-60 font-medium">API-derived KPI logs</p>
             </div>
@@ -901,7 +901,7 @@ const Slides: SlideData[] = [
     transition: "Au-delà du prototype, ce problème correspond aussi à une opportunité de marché réelle.",
     content: (
       <div className="h-full">
-        <SlideTitle title="Objectifs de performance" subtitle="Indicateurs de performance mesurés en conditions réelles" />
+        <SlideTitle title="Objectifs de performance" subtitle="Indicateurs de performance mesurés en conditions réelles et KPI" />
         <div className="grid grid-cols-2 gap-16 mt-16 items-center">
           <div className="space-y-6">
             {[
@@ -1229,7 +1229,7 @@ const Slides: SlideData[] = [
         <SlideTitle title="Scénario opérationnel" subtitle="La boucle de valeur en 30 secondes chrono" />
         <div className="grid grid-cols-4 gap-6 mt-12">
           {[
-            { t: "00s", l: "Alarme détectée", d: "Anomalie autoclave M02 remontée par ESP32", i: BellRing, c: "bg-red-50 text-red-600 border-red-100" },
+            { t: "00s", l: "Alarme détectée", d: "Anomalie autoclave remontée par Makers Points", i: BellRing, c: "bg-red-50 text-red-600 border-red-100" },
             { t: "08s", l: "Ticket créé", d: "Fusion AI ouvre l'incident et priorise", i: Cpu, c: "bg-primary-blue/5 text-primary-blue border-primary-blue/10", tag: "Log API" },
             { t: "18s", l: "Action technicien", d: "Admin technique met à jour le statut", i: Users, c: "bg-main-text/5 text-main-text border-main-text/10" },
             { t: "30s", l: "KPI actualisé", d: "Dashboard Ops reflète l'état corrigé", i: BarChart3, c: "bg-primary-green/5 text-primary-green border-primary-green/10" },
@@ -1349,7 +1349,7 @@ const Slides: SlideData[] = [
               { t: "ALCOA+ Ready", d: "Data Attributable, Legible, Contemporaneous, Original, Accurate", ex: "Ex: Clôture ticket → Timestamp auto + User ID + Signature Fusion AI", i: ShieldCheck },
               { t: "Audit Trail", d: "Chaque action technicien est horodatée, signée, et historisée.", ex: "Log immuable stocké en base de données sécurisée", i: History },
               { t: "Access Roles (RBAC)", d: "Séparation : Ops, Admin technique, Management, QA", ex: "Système de permissions natif & actif dans le dashboard", i: Users },
-              { t: "Incident Traceability", d: "Chaîne complète : détection → ticket → action → clôture", ex: "Lien déterministe entre alerte ESP32 et rapport final", i: Activity },
+              { t: "Incident Traceability", d: "Chaîne complète : détection → ticket → action → clôture", ex: "Lien déterministe entre alerte Makers Points et rapport final", i: Activity },
             ].map((c, i) => (
               <div key={i} className="bg-white border border-light-gray/50 rounded-[2rem] p-6 shadow-sm hover:border-primary-blue/30 transition-all group">
                 <div className="flex items-start gap-4">
@@ -1401,7 +1401,7 @@ const Slides: SlideData[] = [
     transition: "Fin de la présentation.",
     content: (
       <div className="h-full flex flex-col">
-        <SlideTitle title="L'Usine Innovante et Connectée" subtitle="Conclusion et Perspectives" />
+        <SlideTitle title="L'Usine Innovante et Connectée 4.0" subtitle="Conclusion et Perspectives" />
 
         <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-16 mt-8">
           <div className="bg-bg-page/50 p-12 rounded-[3.5rem] border border-light-gray/50 flex flex-col justify-center shadow-sm relative overflow-hidden">
